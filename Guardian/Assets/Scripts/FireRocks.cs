@@ -9,9 +9,9 @@ public class FireRocks : MonoBehaviour {
 	public Transform spawnPoint;
 	//RockStuff rScript;
 	Rigidbody rb;
-	public float launchSpeed = 200;
-	public float initialCharge = 100;
-	public float chargeSpeed = 200;
+	public float launchSpeed = 50;
+	public float initialCharge = 25;
+	public float chargeSpeed = 50;
 	float chargedLaunch = 0;
 	// Use this for initialization
 	void Start () {
@@ -29,7 +29,7 @@ public class FireRocks : MonoBehaviour {
 		if (Input.GetButtonDown ("Fire2")) {
 			rockUsedHere = Instantiate (rock, spawnPoint.position, spawnPoint.rotation);
 			rb = rockUsedHere.GetComponent<Rigidbody> ();
-			rb.useGravity = false;
+            rb.useGravity = true;
 			chargedLaunch += chargeSpeed * Time.deltaTime;
 		}
 		if (Input.GetButton ("Fire2")) {

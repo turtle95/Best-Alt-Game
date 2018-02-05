@@ -8,14 +8,15 @@ public class PlayerMovement001 : MonoBehaviour {
 
 	Vector3 movement;
 	Rigidbody rb;
+
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody> ();
+		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		movement = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis("Vertical"));
-		rb.velocity = transform.TransformDirection(movement * walkSpeed) ;
+		movement = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis("Vertical")); //creates a Vector3 out of the input Axis's
+		rb.velocity = transform.TransformDirection(movement * walkSpeed) ; //directly assigns the player a velocity based on the movement and speed
 	}
 }

@@ -5,10 +5,10 @@ using UnityEngine;
 public class CloseGame : MonoBehaviour {
 
 
-	// Update is called once per frame
+	// Quits the game when you press escape
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
-			Application.Quit ();
+			Application.Quit (); 
 		}
 	}
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44997066, g: 0.49735856, b: 0.5612137, a: 1}
+  m_IndirectSpecularColor: {r: 0.44997084, g: 0.49735904, b: 0.561214, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -870,7 +870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rock: {fileID: 1140442603084176, guid: e95ce4b3dc0ef5e4a8d921c08019d946, type: 2}
   spawnPoint: {fileID: 785349689}
-  launchSpeed: 50
+  launchSpeed: 25
   initialCharge: 10
   chargeSpeed: 50
 --- !u!114 &706134838

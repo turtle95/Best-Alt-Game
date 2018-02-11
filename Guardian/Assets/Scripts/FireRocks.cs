@@ -9,9 +9,9 @@ public class FireRocks : MonoBehaviour {
 	public Transform spawnPoint; //spot that the rock is spawned from
 	 
 	Rigidbody rb; 
-	public float launchSpeed = 25; //launch speed for normal rocks
-	public float initialCharge = 10; //initial speed for charge-up rocks  
-	public float chargeSpeed = 50; //speed that charge-up rocks gain speed
+	public float launchSpeed = 100; //launch speed for normal rocks
+	public float initialCharge = 100; //initial speed for charge-up rocks  
+	public float chargeSpeed = 100; //speed that charge-up rocks gain speed
 	float chargedLaunch = 0;
 	// Use this for initialization
 	void Start () {
@@ -29,7 +29,7 @@ public class FireRocks : MonoBehaviour {
 		if (Input.GetButtonDown ("Fire2")) { //if someone presses fire1 then spawn a rock, disable its gravity, and start charging up speed
 			rockUsedHere = Instantiate (rock, spawnPoint.position, spawnPoint.rotation);
 			rb = rockUsedHere.GetComponent<Rigidbody> ();
-			rb.useGravity = false;
+			rb.useGravity = true;
 			chargedLaunch += chargeSpeed * Time.deltaTime;
 		}
 		if (Input.GetButton ("Fire2")) { //while fire2 is held, charge up the speed and make the rock larger, also keep it attatched to the spawn point
@@ -42,5 +42,11 @@ public class FireRocks : MonoBehaviour {
 			rb.velocity = spawnPoint.forward * chargedLaunch;
 			chargedLaunch = initialCharge;
 		}
+        if (Input.GetButtonUp("Fire1"))
+        { //when fire2 is released, turn on the rock's gravity, give it a launch speed, and reset the chargedLaunch variable
+            rb.useGravity = true;
+            rb.velocity = spawnPoint.forward * chargedLaunch;
+            chargedLaunch = initialCharge;
+        }
 	}
 }

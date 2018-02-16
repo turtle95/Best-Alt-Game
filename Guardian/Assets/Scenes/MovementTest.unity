@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44997025, g: 0.49735826, b: 0.56121314, a: 1}
+  m_IndirectSpecularColor: {r: 0.44997084, g: 0.49735904, b: 0.561214, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -521,6 +521,7 @@ MonoBehaviour:
   rangeY: 15
   playerTrans: {fileID: 706134834}
   invert: 1
+  player: {fileID: 0}
 --- !u!1 &575214291
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,6 +754,7 @@ GameObject:
   - component: {fileID: 706134835}
   - component: {fileID: 706134837}
   - component: {fileID: 706134838}
+  - component: {fileID: 706134840}
   m_Layer: 8
   m_Name: PlayerBox
   m_TagString: Player
@@ -885,6 +887,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e78e0c90e624af4d96be0b5c4acaee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!143 &706134840
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 706134830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &785349688
 GameObject:
   m_ObjectHideFlags: 0

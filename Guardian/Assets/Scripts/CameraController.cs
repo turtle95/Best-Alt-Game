@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour {
 
 	public float sensitivity = 60f; //sensitivity of mouse when moving the camera
 	public float rangeY = 30f; //movement range for y mouse look
-	float mouseX =0;
+	public float mouseX =0;
 	float mouseY = 0; //values for mouse input
 
 	Quaternion localRotPlayer; //quaternion to assign the player's rotation
@@ -36,8 +36,8 @@ public class CameraController : MonoBehaviour {
 
 		//also creates a rotation quaternion but sets the whole player's rotation
         //equal to it, that way the player rotates left/right with the camera
-		localRotPlayer = Quaternion.Euler (mouseY * invert, mouseX, 0);
-		playerTrans.localRotation = localRotPlayer;
+		//localRotPlayer = Quaternion.Euler (mouseY * invert, mouseX, 0);
+		//playerTrans.localRotation = localRotPlayer;
 
         //transform.position = player.transform.position + offset;
 

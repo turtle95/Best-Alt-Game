@@ -9,6 +9,7 @@ public class variableTracker : MonoBehaviour {
 
     public int EnemiesKilled = 0;       //Some basic things we may want to track
     public int CurrentStage = 1;
+    public int ObjectsDestroyed = 0;
     public int PlayerHP = 0;
     public Text KilledNumber;
 

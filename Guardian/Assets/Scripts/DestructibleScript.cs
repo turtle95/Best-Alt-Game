@@ -1,0 +1,61 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DestructibleScript : MonoBehaviour {
+
+    public variableTracker varTrack;
+    public Color32 objectColor;
+    public Color32 currentColor;
+    public Color32 foggedColor;
+    public bool fogged;
+
+    // Use this for initialization
+    void Start () {
+        varTrack = GameObject.Find("variableTracker").GetComponent<variableTracker>();
+        objectColor = currentColor = this.GetComponentInChildren<Renderer>().material.color;
+        foggedColor = new Color32(0, 0, 0, 255);
+        fogged = false;
+    }
+	
+	// Update is called once per frame
+	void FixedUpdate () {
+        if (!fogged)
+        {
+            if (this.GetComponentInChildren<Renderer>().material.color != objectColor)
+            {
+                Color32 currentColor = this.GetComponentInChildren<Renderer>().material.color;
+                currentColor.b = currentColor.g = currentColor.r += 1;
+                this.GetComponentInChildren<Renderer>().material.color = currentColor;
+            }
+        }
+	}
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Rock")
+        {
+            varTrack.ObjectsDestroyed += 1;
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerStay(Collider collision)
+    {
+        if (collision.gameObject.tag == "Fog")
+        {
+            fogged = true;
+            print("Collide");
+            if (this.GetComponentInChildren<Renderer>().material.color != foggedColor)
+            {
+                Color32 currentColor = this.GetComponentInChildren<Renderer>().material.color;
+                currentColor.b = currentColor.g = currentColor.r -= 1;
+                this.GetComponentInChildren<Renderer>().material.color = currentColor;
+            }
+        }
+        else
+        {
+            fogged = false;
+        }
+    }
+}

@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 198262539858909478}
   - component: {fileID: 199577732058291110}
   - component: {fileID: 135374515527765560}
+  - component: {fileID: 114920748804378120}
   m_Layer: 0
   m_Name: Fog
   m_TagString: Fog
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1112841570756172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3491135, y: 3.8645375e-17, z: -1.7404331}
+  m_LocalPosition: {x: -9.017833, y: 2.14, z: 3.3344038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4422044331453184}
@@ -116,6 +117,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1112841570756172}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114920748804378120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1261727309962408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60943c9968cee745935524e344a0be3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114998624481411350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,7 +225,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -121016111
+  randomSeed: -1861581612
   InitialModule:
     serializedVersion: 3
     enabled: 1

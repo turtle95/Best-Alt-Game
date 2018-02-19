@@ -29,6 +29,16 @@ public class DestructibleScript : MonoBehaviour {
                 this.GetComponentInChildren<Renderer>().material.color = currentColor;
             }
         }
+
+        if (fogged)
+        {
+            if (this.GetComponentInChildren<Renderer>().material.color != foggedColor)
+            {
+                Color32 currentColor = this.GetComponentInChildren<Renderer>().material.color;
+                currentColor.b = currentColor.g = currentColor.r -= 1;
+                this.GetComponentInChildren<Renderer>().material.color = currentColor;
+            }
+        }
 	}
 
     void OnCollisionEnter(Collision col)
@@ -37,25 +47,6 @@ public class DestructibleScript : MonoBehaviour {
         {
             varTrack.ObjectsDestroyed += 1;
             Destroy(this.gameObject);
-        }
-    }
-
-    private void OnTriggerStay(Collider collision)
-    {
-        if (collision.gameObject.tag == "Fog")
-        {
-            fogged = true;
-            print("Collide");
-            if (this.GetComponentInChildren<Renderer>().material.color != foggedColor)
-            {
-                Color32 currentColor = this.GetComponentInChildren<Renderer>().material.color;
-                currentColor.b = currentColor.g = currentColor.r -= 1;
-                this.GetComponentInChildren<Renderer>().material.color = currentColor;
-            }
-        }
-        else
-        {
-            fogged = false;
         }
     }
 }

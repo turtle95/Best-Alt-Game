@@ -39,6 +39,7 @@ public class DestructibleScript : MonoBehaviour {
                 this.GetComponentInChildren<Renderer>().material.color = currentColor;
             }
         }
+        fogged = false;
 	}
 
     void OnCollisionEnter(Collision col)

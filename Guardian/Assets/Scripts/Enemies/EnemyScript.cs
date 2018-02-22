@@ -9,10 +9,11 @@ public class EnemyScript : MonoBehaviour {
 
 	//kills the enemy when a rock hits it
 	void OnCollisionEnter(Collision col){
-        if (col.gameObject.CompareTag("Rock"))
-            varTrack = GameObject.Find("variableTracker").GetComponent<variableTracker>();
-            varTrack.EnemiesKilled += 1;
+		if (col.gameObject.CompareTag ("Rock")) {
+			varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
+			varTrack.EnemiesKilled += 1;
 			Destroy (this.gameObject);
+		}
 	}
 
     void Update()

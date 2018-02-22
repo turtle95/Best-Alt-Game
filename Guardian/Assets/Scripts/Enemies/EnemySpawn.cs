@@ -38,7 +38,6 @@ public class EnemySpawn : MonoBehaviour {
 						j = Random.Range (0, points.Length);
 						doAgain = true;
 						i = spawnedEnemys.Length;
-						Debug.Log ("Deflected");
 					} 
 				}
 			} while(doAgain);

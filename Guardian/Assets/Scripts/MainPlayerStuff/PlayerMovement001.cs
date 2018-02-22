@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement001 : MonoBehaviour {
 
-	public float walkSpeed = 5;
+	public float walkSpeed = 10;
 
 	Vector3 movement;
 	private Rigidbody rb;
 
-	public float distToGrounded = 5f; //the distance from player's origin to the ground when grounded
+	Collider enemCol;
+	bool triggered = false;
+
 	GameObject checkground;
 	public CameraController camScript;
 	// Use this for initialization
@@ -22,6 +24,11 @@ public class PlayerMovement001 : MonoBehaviour {
 	void Update () {
 
 
+		if (triggered && !enemCol) {
+			walkSpeed = 10;
+			triggered = false;
+		}
+
         //creates a Vector3 out of the input Axis's
 		movement = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis("Vertical"));
 		//turns the player with the mouse
@@ -29,5 +36,20 @@ public class PlayerMovement001 : MonoBehaviour {
         
 		//moves the player
 		rb.MovePosition (rb.position +transform.TransformDirection(movement * walkSpeed * Time.deltaTime));
+	}
+
+	void OnTriggerStay(Collider col){
+		if (col.CompareTag ("Fog")) {
+			walkSpeed = 3;
+			enemCol = col;
+			triggered = true;
+		}
+	}
+
+	void OnTriggerExit(Collider col){
+		if (col.CompareTag ("Fog")) {
+			walkSpeed = 10;
+			triggered = false;
+		}
 	}
 }

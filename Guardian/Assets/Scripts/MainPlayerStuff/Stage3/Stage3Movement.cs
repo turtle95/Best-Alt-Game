@@ -8,30 +8,30 @@ public class Stage3Movement : MonoBehaviour {
 	public Transform planet;
 	public float walkSpeed = 10;
 	public float gravity = -10;
-	//public float distToGrounded = 5f; //the distance from player's origin to the ground when grounded
-	//GameObject checkground;
-	//Transform player;
+
 	public CameraController camScript;
 
 	Vector3 movement;
 	private Rigidbody rb;
+
+
+	Collider enemCol;
+	bool triggered = false;
+
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
-		//player = transform;
+
 	}
 		
 
 	void Update () {
 		
-		/* Commented out the check ground stuff becuase we might need it later, don't need it for anything right now though
-		bool fall;
-		if (Grounded ())
-			fall = false;
-		else
-			fall = true;
-		*/
-
+		if (triggered && !enemCol) {
+			walkSpeed = 10;
+			triggered = false;
+		}
 
 		//rotates the player based on its relation to the planet, applies gravity
 		WorldGravity();
@@ -46,6 +46,21 @@ public class Stage3Movement : MonoBehaviour {
 		//rotates the items parented to the main player container based on mouse movement
 		mover.localRotation = Quaternion.Euler (mover.localRotation.x, camScript.mouseX, mover.localRotation.z);
 
+	}
+
+	void OnTriggerStay(Collider col){
+		if (col.CompareTag ("Fog")) {
+			walkSpeed = 3;
+			enemCol = col;
+			triggered = true;
+		}
+	}
+
+	void OnTriggerExit(Collider col){
+		if (col.CompareTag ("Fog")) {
+			walkSpeed = 10;
+			triggered = false;
+		}
 	}
 
 
@@ -65,11 +80,4 @@ public class Stage3Movement : MonoBehaviour {
 		//smoothly rotates the player to the target rotation
 		transform.rotation = Quaternion.Slerp (transform.rotation, targetRotation, 50 * Time.deltaTime);
 	}
-
-	/*
-	bool Grounded(){
-		return Physics.Raycast (transform.position, -transform.up, distToGrounded);
-	}*/
-
-
 }

@@ -10,7 +10,7 @@ public class variableTracker : MonoBehaviour {
     public int EnemiesKilled = 0;       //Some basic things we may want to track
     public int CurrentStage = 1;
     public int ObjectsDestroyed = 0;
-    public int PlayerHP = 0;
+    public float PlayerHP = 100;
     public Text KilledNumber;
 
 	// Use this for initialization
@@ -52,4 +52,12 @@ public class variableTracker : MonoBehaviour {
             }
         }
     }
+
+	//Resets all the variables for when the game restarts
+	public void ResetVars(){
+		CurrentStage = 1;
+		EnemiesKilled = 0;
+		ObjectsDestroyed = 0;
+		PlayerHP = 100;
+	}
 }

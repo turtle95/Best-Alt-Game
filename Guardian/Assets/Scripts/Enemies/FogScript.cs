@@ -18,7 +18,6 @@ public class FogScript : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Destructible")
         {
-            print("Collide");
             collision.gameObject.GetComponent<DestructibleScript>().fogged = true;
         }
     }

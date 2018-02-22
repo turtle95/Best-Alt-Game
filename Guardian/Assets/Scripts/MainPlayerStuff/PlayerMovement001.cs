@@ -21,33 +21,13 @@ public class PlayerMovement001 : MonoBehaviour {
 	//// Update is called once per frame
 	void Update () {
 
-		float fall;
-		if (Grounded ())
-			fall = 0;
-		else
-			fall = -0.5f;
 
         //creates a Vector3 out of the input Axis's
-		movement = new Vector3 (Input.GetAxis ("Horizontal"), fall, Input.GetAxis("Vertical"));
+		movement = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis("Vertical"));
+		//turns the player with the mouse
 		transform.localRotation = Quaternion.Euler (transform.localRotation.x, camScript.mouseX, transform.localRotation.z);
-        //directly assigns the player a velocity based on the movement and speed
-       rb.velocity = transform.TransformDirection(movement * walkSpeed) ; 
+        
+		//moves the player
+		rb.MovePosition (rb.position +transform.TransformDirection(movement * walkSpeed * Time.deltaTime));
 	}
-
-	bool Grounded(){
-		return Physics.Raycast (transform.position, Vector3.down, distToGrounded);
-	}
-
-    /*
-    void FixedUpdate()
-    {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-
-        rb.AddForce(movement * walkSpeed);
-    }
-
-    */
 }

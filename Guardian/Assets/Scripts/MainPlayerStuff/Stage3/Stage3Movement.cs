@@ -10,7 +10,7 @@ public class Stage3Movement : MonoBehaviour {
 	public float gravity = -10;
 	//public float distToGrounded = 5f; //the distance from player's origin to the ground when grounded
 	//GameObject checkground;
-	Transform player;
+	//Transform player;
 	public CameraController camScript;
 
 	Vector3 movement;
@@ -18,7 +18,7 @@ public class Stage3Movement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
-		player = transform;
+		//player = transform;
 	}
 		
 

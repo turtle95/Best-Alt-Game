@@ -9,6 +9,8 @@ TagManager:
   - Destructible
   - DownLooker
   - Planet
+  - Enemy
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX

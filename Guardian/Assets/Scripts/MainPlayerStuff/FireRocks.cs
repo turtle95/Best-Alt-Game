@@ -31,10 +31,12 @@ public class FireRocks : MonoBehaviour {
 			rb.velocity = spawnPoint.forward * launchSpeed;
 
 		}
-		if (Input.GetButtonDown ("Fire2")) { //if someone presses fire1 then spawn a rock, disable its gravity, and start charging up speed
+
+		//Stuff for Goku Rock, probably will delete at some point
+		if (Input.GetButtonDown ("Fire2")) { //if someone presses fire2 then spawn a rock, disable its gravity, and start charging up speed
 			rockUsedHere = Instantiate (rock, spawnPoint.position, spawnPoint.rotation);
 			rb = rockUsedHere.GetComponent<Rigidbody> ();
-			rb.useGravity = true;
+			rb.useGravity = false;
 			chargedLaunch += chargeSpeed * Time.deltaTime;
 		}
 		if (Input.GetButton ("Fire2")) { //while fire2 is held, charge up the speed and make the rock larger, also keep it attatched to the spawn point
@@ -52,7 +54,7 @@ public class FireRocks : MonoBehaviour {
 		}
         //timer += 1.0F * Time.deltaTime;
 
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetButtonUp("Fire2"))
         { //when fire2 is released, turn on the rock's gravity, give it a launch speed, and reset the chargedLaunch variable
             rb.useGravity = true;
             rb.velocity = spawnPoint.forward * chargedLaunch;

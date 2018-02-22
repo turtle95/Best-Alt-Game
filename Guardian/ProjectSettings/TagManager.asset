@@ -7,6 +7,8 @@ TagManager:
   - Rock
   - Fog
   - Destructible
+  - DownLooker
+  - Planet
   layers:
   - Default
   - TransparentFX

@@ -19,5 +19,7 @@ public class EnemyScript : MonoBehaviour {
     void Update()
     {
         fogObject.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime;
+		//new ParticleSystem.MinMaxCurve (1 + 1* Time.deltaTime, 1.1f +1* Time.deltaTime);
+		//fogObject.GetComponent<ParticleSystem> ().main.startSize = ;
     }
 }

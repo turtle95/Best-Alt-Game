@@ -9,7 +9,8 @@ public class DestructibleScript : MonoBehaviour {
     public Color32 currentColor;
     public Color32 foggedColor;
     public bool fogged;
-
+	public GameObject deathFloaty;
+	public Transform floatySpawner;
     // Use this for initialization
     void Start () {
         varTrack = GameObject.Find("variableTracker").GetComponent<variableTracker>();
@@ -47,6 +48,7 @@ public class DestructibleScript : MonoBehaviour {
         if (col.gameObject.tag == "Rock")
         {
             varTrack.ObjectsDestroyed += 1;
+			Instantiate (deathFloaty, floatySpawner.position, floatySpawner.rotation); 
             Destroy(this.gameObject);
         }
     }

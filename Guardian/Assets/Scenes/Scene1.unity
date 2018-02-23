@@ -1634,7 +1634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e4427afd6a8e24bb2925d24ebbbe1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
   healthBar: {fileID: 517745164}
 --- !u!1 &709192545
 GameObject:
@@ -1824,7 +1823,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4896918342993506, guid: 57090d46836ef6b43afc32ad63321d2d, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1038737930890438, guid: 57090d46836ef6b43afc32ad63321d2d, type: 2}
       propertyPath: m_Name
@@ -1994,7 +1993,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4896918342993506, guid: 57090d46836ef6b43afc32ad63321d2d, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1038737930890438, guid: 57090d46836ef6b43afc32ad63321d2d, type: 2}
       propertyPath: m_Name
@@ -2357,7 +2356,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4896918342993506, guid: 57090d46836ef6b43afc32ad63321d2d, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1038737930890438, guid: 57090d46836ef6b43afc32ad63321d2d, type: 2}
       propertyPath: m_Name

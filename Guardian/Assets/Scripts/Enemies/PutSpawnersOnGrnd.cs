@@ -5,7 +5,7 @@ using UnityEngine;
 public class PutSpawnersOnGrnd : MonoBehaviour {
 
 
-	public float distToGrounded = 5f; //the distance from player's origin to the ground when grounded
+	float distToGrounded = 2f; //the distance from player's origin to the ground when grounded
 
 	void Update () 
 	{

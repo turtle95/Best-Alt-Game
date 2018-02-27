@@ -25,25 +25,34 @@ public class variableTracker : MonoBehaviour {
             KilledNumber = GameObject.Find("KilledNumber").GetComponent<Text>();
             KilledNumber.text = EnemiesKilled.ToString();       //Updates UI
         }
-		if (EnemiesKilled >= 10)
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			// if (SceneManager.GetActiveScene().buildIndex == 1)
+			// {
+			SceneManager.LoadScene(1);      //Loads Level 2
+			CurrentStage = 1;
+			// }
+		}
+
+		if (EnemiesKilled >= 10 || Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (SceneManager.GetActiveScene().buildIndex == 1)
-            {
+           // if (SceneManager.GetActiveScene().buildIndex == 1)
+           // {
                 SceneManager.LoadScene(2);      //Loads Level 2
                 CurrentStage = 2;
-            }
+           // }
         }
 
-        if (EnemiesKilled >= 30)
+		if (EnemiesKilled >= 30|| Input.GetKeyDown(KeyCode.Alpha3))
         {
-            if (SceneManager.GetActiveScene().buildIndex == 2)
-            {
+           // if (SceneManager.GetActiveScene().buildIndex == 2)
+           // {
                 SceneManager.LoadScene(3);      //Loads Level 3
                 CurrentStage = 3;
-            }
+          //  }
         }
 
-        if (EnemiesKilled >= 70)
+		if (EnemiesKilled >= 70)
         {
             if (SceneManager.GetActiveScene().buildIndex == 3)
             {

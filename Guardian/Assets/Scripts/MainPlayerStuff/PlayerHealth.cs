@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour {
 	variableTracker varTrack;
 	// Use this for initialization
 	void Start () {
-		//Cursor.lockState = CursorLockMode.Locked;
+		Cursor.lockState = CursorLockMode.Locked;
 		varTrack = GameObject.Find("variableTracker").GetComponent<variableTracker>();
 
 	}

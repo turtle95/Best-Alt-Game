@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{84954CCB-4AB9-7D0B-293D-03486885FBBD}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MainPlayerStuff/PlayerHealth.cs">
+    <Files>
+      <File FileName="Assets/MoveRandomly.cs" Line="24" Column="39" />
+      <File FileName="Assets/Scripts/MainPlayerStuff/PlayerHealth.cs" Line="33" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Guardian PreferredExecutionTarget="Unity.Editor" />
+</Properties>

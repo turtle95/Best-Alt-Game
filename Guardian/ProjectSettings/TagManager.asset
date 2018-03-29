@@ -11,6 +11,7 @@ TagManager:
   - Planet
   - Enemy
   - EnemySpawner
+  - RockLine
   layers:
   - Default
   - TransparentFX

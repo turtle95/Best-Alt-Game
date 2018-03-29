@@ -11,7 +11,7 @@ public class PlayerMovement001 : MonoBehaviour {
 
 	Collider enemCol;
 	bool triggered = false;
-
+	float ySensitivity = 0.5f;
 	GameObject checkground;
 	public CameraController camScript;
 	// Use this for initialization
@@ -32,7 +32,7 @@ public class PlayerMovement001 : MonoBehaviour {
         //creates a Vector3 out of the input Axis's
 		movement = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis("Vertical"));
 		//turns the player with the mouse
-		transform.localRotation = Quaternion.Euler (transform.localRotation.x, camScript.mouseX, transform.localRotation.z);
+		transform.localRotation = Quaternion.Euler (camScript.mouseY * ySensitivity, camScript.mouseX, transform.localRotation.z);
         
 		//moves the player
 		rb.MovePosition (rb.position +transform.TransformDirection(movement * walkSpeed * Time.deltaTime));

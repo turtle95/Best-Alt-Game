@@ -18,7 +18,7 @@ public class Stage3Movement : MonoBehaviour {
 	Collider enemCol;
 	bool triggered = false;
 
-
+	float ySensitivity = 0.5f;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
@@ -44,7 +44,7 @@ public class Stage3Movement : MonoBehaviour {
 
 
 		//rotates the items parented to the main player container based on mouse movement
-		mover.localRotation = Quaternion.Euler (mover.localRotation.x, camScript.mouseX, mover.localRotation.z);
+		mover.localRotation = Quaternion.Euler (camScript.mouseY * ySensitivity, camScript.mouseX, mover.localRotation.z);
 
 	}
 

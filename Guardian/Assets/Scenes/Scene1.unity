@@ -1678,7 +1678,7 @@ GameObject:
   - component: {fileID: 395063852}
   m_Layer: 8
   m_Name: Line
-  m_TagString: Untagged
+  m_TagString: RockLine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1869,6 +1869,7 @@ MonoBehaviour:
   sensitivity: 60
   rangeY: 15
   mouseX: 0
+  mouseY: 0
   playerTrans: {fileID: 706134834}
   invert: 1
   player: {fileID: 0}
@@ -2520,7 +2521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1112841570756172, guid: da5d416426ed2064d8f9263b7f3a3535, type: 2}
-  spawnTime: 3
+  spawnTime: 2
 --- !u!1 &686519136
 GameObject:
   m_ObjectHideFlags: 0
@@ -2722,7 +2723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f39b1a26517db4d9ad3d055801196c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 10
+  walkSpeed: 15
   camScript: {fileID: 442974499}
 --- !u!114 &706134837
 MonoBehaviour:

@@ -6,7 +6,7 @@ public class EnemyScript : MonoBehaviour {
 
     public variableTracker varTrack;
     public GameObject fogObject;
-
+	float upScale = 0.005f;
 	//kills the enemy when a rock hits it
 	void OnCollisionEnter(Collision col){
 		if (col.gameObject.CompareTag ("Rock")) {
@@ -18,7 +18,7 @@ public class EnemyScript : MonoBehaviour {
 
     void Update()
     {
-        fogObject.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime;
+        fogObject.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime * upScale;
 		//new ParticleSystem.MinMaxCurve (1 + 1* Time.deltaTime, 1.1f +1* Time.deltaTime);
 		//fogObject.GetComponent<ParticleSystem> ().main.startSize = ;
     }

@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   varTrack: {fileID: 0}
-  fogObject: {fileID: 0}
+  fogObject: {fileID: 1261727309962408}
 --- !u!135 &135374515527765560
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -3,7 +3,7 @@ guid: 24a759921bedc2541881a0535a7bfcc8
 timeCreated: 1504768173
 licenseType: Store
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Leaves
     100002: Leaves_1
@@ -39,10 +39,28 @@ ModelImporter:
     4300006: Leaves_2
     4300008: Leaves_1
     4300010: Leaves_3
+    6400000: Leaves_1
+    6400002: Leaves_2
+    6400004: Leaves_3
+    6400006: Leaves_4
+    6400008: Leaves_5
+    6400010: Tree_2
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brown.2
+    second: {fileID: 2100000, guid: f7c2deb7be33c61418c105b4da4da2d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Green.11
+    second: {fileID: 2100000, guid: 9bceac9e437c11447a0839f938aaa270, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -55,6 +73,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -68,7 +87,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -79,6 +98,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

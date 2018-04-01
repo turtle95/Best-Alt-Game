@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-	public float sensitivity = 60f; //sensitivity of mouse when moving the camera
+	public float sensitivity = 30f; //sensitivity of mouse when moving the camera
 	public float rangeY = 30f; //movement range for y mouse look
 	public float mouseX =0;
 	public float mouseY = 0; //values for mouse input
@@ -26,11 +26,11 @@ public class CameraController : MonoBehaviour {
 	void LateUpdate () {
 		//Takes input from the mouse and gives it a speed
 		mouseX += Input.GetAxis ("Mouse X") * sensitivity * Time.deltaTime;
-		mouseY += Input.GetAxis ("Mouse Y") * sensitivity * Time.deltaTime;
+		mouseY += Input.GetAxis ("Mouse Y") * -sensitivity * Time.deltaTime;
 			
 
 		//gives the y camera movement a maximum/minimum movement range
-		mouseY = Mathf.Clamp (mouseY, -rangeY, rangeY);
+		//mouseY = Mathf.Clamp (mouseY, -rangeY, rangeY);
 
 
 

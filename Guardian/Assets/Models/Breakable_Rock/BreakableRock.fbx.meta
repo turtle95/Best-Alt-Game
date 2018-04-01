@@ -54,6 +54,15 @@ ModelImporter:
     4300012: Rock5
     4300014: Rock3
     4300016: Rock1
+    6400000: Rock1
+    6400002: Rock2
+    6400004: Rock3
+    6400006: Rock4
+    6400008: Rock5
+    6400010: Rock6
+    6400012: Rock7
+    6400014: Rock8
+    6400016: Rock9
     9500000: //RootNode
   externalObjects:
   - first:
@@ -97,7 +106,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -120,7 +129,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -139,7 +148,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

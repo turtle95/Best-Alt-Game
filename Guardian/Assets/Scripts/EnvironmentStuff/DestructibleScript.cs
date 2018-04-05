@@ -11,36 +11,57 @@ public class DestructibleScript : MonoBehaviour {
     public bool fogged;
 	public GameObject deathFloaty;
 	public Transform floatySpawner;
+	public Material [] mainColorMat;
+	public GameObject objWMats;
+	public Material [] foggedColorMat;
     // Use this for initialization
     void Start () {
         varTrack = GameObject.Find("variableTracker").GetComponent<variableTracker>();
-        objectColor = currentColor = this.GetComponentInChildren<Renderer>().material.color;
+
+			//objectColor = currentColor = mainColorMat[i].color;
+		mainColorMat = objWMats.GetComponent<Renderer>().materials;
         foggedColor = new Color32(0, 0, 0, 255);
         fogged = false;
     }
-	
+
+
+
 	// Update is called once per frame
-	void FixedUpdate () {
+	/*void FixedUpdate () {
         if (!fogged)
         {
             if (this.GetComponentInChildren<Renderer>().material.color != objectColor)
             {
-                Color32 currentColor = this.GetComponentInChildren<Renderer>().material.color;
+				
+				Color32 currentColor = mainColorMat.color;
                 currentColor.b = currentColor.g = currentColor.r += 1;
-                this.GetComponentInChildren<Renderer>().material.color = currentColor;
+				mainColorMat.color = currentColor;
             }
+			
+			
         }
 
         if (fogged)
         {
             if (this.GetComponentInChildren<Renderer>().material.color != foggedColor)
             {
-                Color32 currentColor = this.GetComponentInChildren<Renderer>().material.color;
+				Color32 currentColor = mainColorMat.color;
                 currentColor.b = currentColor.g = currentColor.r -= 1;
-                this.GetComponentInChildren<Renderer>().material.color = currentColor;
+				mainColorMat.color = currentColor;
             }
+		
         }
         fogged = false;
+	}*/
+
+	public void ChangeColor(){
+		//for (int i = 0; i < mainColorMat.Length; i++) {
+			if (fogged)
+			objWMats.GetComponent<Renderer>().materials = foggedColorMat;
+			else
+			objWMats.GetComponent<Renderer>().materials = mainColorMat;
+		//}
+		fogged = false;
 	}
 
     void OnCollisionEnter(Collision col)

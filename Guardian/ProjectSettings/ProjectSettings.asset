@@ -39,7 +39,7 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos: []
-  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: d5eda83057c0f134a910073fb8987646,
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 8cb739841b77bf44892007a7868f9c03,
     type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
@@ -256,13 +256,13 @@ PlayerSettings:
     height: 180
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
-  resolutionDialogBanner: {fileID: 2800000, guid: d5eda83057c0f134a910073fb8987646,
+  resolutionDialogBanner: {fileID: 2800000, guid: 8cb739841b77bf44892007a7868f9c03,
     type: 3}
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: d5eda83057c0f134a910073fb8987646, type: 3}
+      m_Icon: {fileID: 2800000, guid: 8cb739841b77bf44892007a7868f9c03, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

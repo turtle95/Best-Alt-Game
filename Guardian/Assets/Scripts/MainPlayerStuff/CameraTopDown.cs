@@ -2,20 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour {
-
-	public float sensitivity = 0.125f; //sensitivity of mouse when moving the camera
-	 float rangeY = 90f; //movement range for y mouse look
-	public float mouseX =0;
-	public float mouseY = 0; //values for mouse input
-
+public class CameraTopDown : MonoBehaviour {
+	
 	Quaternion localRotPlayer; //quaternion to assign the player's rotation
 	Transform playerTrans; 
 	public int invert = 1; //value to toggle inverse/normal camera movement
 	public GameObject player;
 	Rigidbody playerRB;
 	public float smoothSpeed = 0.125f;
-    public Vector3 offset;
+	public Vector3 offset;
 	float ySensitivity = 0.5f;
 
 	private Vector3 velocity = Vector3.one;
@@ -23,30 +18,17 @@ public class CameraController : MonoBehaviour {
 	public Transform mainCamTrans;
 	// Use this for initialization
 	void Start () {
-        //offset = transform.position - player.transform.position;
+		//offset = transform.position - player.transform.position;
 		playerTrans = player.GetComponent<Transform>();
 		playerRB = player.GetComponent<Rigidbody> ();
 	}
 
 
-	
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		FollowPlayer ();
-		//Takes input from the mouse and gives it a speed
-		mouseX += Input.GetAxis ("Mouse X") * sensitivity * 0.02f;
-		mouseY -= Input.GetAxis ("Mouse Y") * sensitivity * 0.02f;
-			
-		//gives the y camera movement a maximum/minimum movement range
-		mouseY = Mathf.Clamp (mouseY, -rangeY, rangeY);
 
-	
-		transform.rotation = Quaternion.Euler (mouseY,mouseX,0);
-	
-		// allows toggling between inverted/normal camera controls 
-		if (Input.GetButtonDown ("Invert")) {
-			invert = -1*invert;
-		}
 	}
 
 
@@ -54,7 +36,7 @@ public class CameraController : MonoBehaviour {
 	void FollowPlayer(){
 
 		Vector3 desiredPos = playerTrans.position;
-	
+
 		Vector3 smoothedPos = Vector3.SmoothDamp (transform.position, desiredPos, ref velocity, smoothSpeed);
 		transform.position = smoothedPos;
 

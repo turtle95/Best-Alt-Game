@@ -8,13 +8,13 @@ public class Stage3Movement : MonoBehaviour {
 	public Transform planet;
 	public float walkSpeed = 10;
 	public float gravity = -10;
-
+	public float turnSpeed = 0.15f;
 	public CameraController camScript;
 
 	Vector3 movement;
 	private Rigidbody rb;
 
-
+	Vector3 gravityUp;
 	Collider enemCol;
 	bool triggered = false;
 
@@ -27,24 +27,28 @@ public class Stage3Movement : MonoBehaviour {
 		
 
 	void Update () {
-		
+		//rotates the player based on its relation to the planet, applies gravity
+		WorldGravity();
+
+		movement = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis("Vertical"));
+		movement = Camera.main.transform.TransformDirection(movement);
+		movement.y = 0f;
+		if(!(movement.x == 0) && !(movement.z == 0))
+			mover.rotation = Quaternion.Slerp (mover.rotation, Quaternion.LookRotation (new Vector3(movement.x, 0, movement.z)), turnSpeed);
 		if (triggered && !enemCol) {
 			walkSpeed = 10;
 			triggered = false;
 		}
 
-		//rotates the player based on its relation to the planet, applies gravity
-		WorldGravity();
-		
-		//creates a Vector3 out of the input Axis's
-		movement = new Vector3 ( Input.GetAxis ("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+
 
 		//moves the player without directly adjusting its velocity, allows gravity to keep working
 		rb.MovePosition (rb.position + mover.TransformDirection(movement * walkSpeed * Time.deltaTime));
 
 
 		//rotates the items parented to the main player container based on mouse movement
-		mover.localRotation = Quaternion.Euler (camScript.mouseY * ySensitivity, camScript.mouseX, mover.localRotation.z);
+		//mover.localRotation = Quaternion.Euler (camScript.mouseY * ySensitivity, camScript.mouseX, mover.localRotation.z);
 
 	}
 
@@ -67,7 +71,7 @@ public class Stage3Movement : MonoBehaviour {
 	public void WorldGravity()
 	{
 		//gets the distance between player and planet, essentially this is the direction you want to be facing
-		Vector3 gravityUp = (transform.position - planet.position).normalized;
+		gravityUp = (transform.position - planet.position).normalized;
 		//the up direction for the player
 		Vector3 turdsUp = transform.up;
 

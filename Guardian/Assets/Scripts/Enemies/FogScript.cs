@@ -19,6 +19,7 @@ public class FogScript : MonoBehaviour {
         if (collision.gameObject.tag == "Destructible")
         {
             collision.gameObject.GetComponent<DestructibleScript>().fogged = true;
+			collision.gameObject.GetComponent<DestructibleScript> ().ChangeColor ();
         }
     }
 }

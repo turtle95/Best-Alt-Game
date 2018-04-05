@@ -166,3 +166,4 @@ MonoBehaviour:
   deathFloaty: {fileID: 1252853473410166, guid: 8638ce0878e99d7468c9918660f9efb7,
     type: 2}
   floatySpawner: {fileID: 4845066906772728}
+  mainColorMat: {fileID: 23705241633418564}

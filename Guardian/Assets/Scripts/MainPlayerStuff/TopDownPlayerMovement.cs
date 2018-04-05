@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement001 : MonoBehaviour {
+public class TopDownPlayerMovement : MonoBehaviour {
 
 	public float walkSpeed = 10;
 
@@ -16,12 +16,14 @@ public class PlayerMovement001 : MonoBehaviour {
 	public CameraController camScript;
 	public float turnSpeed = 0.15f;
 	public Transform playerModel;
+
+	public Transform uLookHere;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
-		transform.localRotation = Quaternion.Euler (camScript.mouseY * ySensitivity, camScript.mouseX, transform.localRotation.z);
+		//transform.localRotation = Quaternion.Euler (camScript.mouseY * ySensitivity, camScript.mouseX, transform.localRotation.z);
 	}
-	
+
 
 	//// Update is called once per frame
 	void Update () {
@@ -32,15 +34,15 @@ public class PlayerMovement001 : MonoBehaviour {
 			triggered = false;
 		}
 
-        //creates a Vector3 out of the input Axis's
+		//creates a Vector3 out of the input Axis's
 		movement = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis("Vertical"));
-		movement = Camera.main.transform.TransformDirection(movement);
+		movement = uLookHere.TransformDirection(movement);
 		movement.y = 0f;
 		if(!(movement.x == 0) && !(movement.z == 0))
 			transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (new Vector3(movement.x, 0, movement.z)), turnSpeed);
 		//turns the player with the mouse
 		//transform.localRotation = Quaternion.Euler (camScript.mouseY * ySensitivity, camScript.mouseX, transform.localRotation.z);
-        
+
 		//moves the player
 		rb.MovePosition (rb.position +(movement * walkSpeed * Time.deltaTime));
 

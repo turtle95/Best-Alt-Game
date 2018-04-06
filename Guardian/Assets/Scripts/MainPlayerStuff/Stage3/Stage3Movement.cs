@@ -33,10 +33,13 @@ public class Stage3Movement : MonoBehaviour {
 		WorldGravity();
 
 		movement = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+		if(!(movement.x == 0) || !(movement.z == 0))
+			mover.rotation = Quaternion.Slerp (mover.rotation, Quaternion.Euler (movement.x*90, 0,movement.z*90 ) * Camera.main.transform.rotation, turnSpeed);
+			//mover.Rotate ( Camera.main.transform.forward * -movement.x * turnSpeed);
 		movement = Camera.main.transform.TransformDirection(movement);
 		//movement.y = 0f;
-		if(!(movement.x == 0) && !(movement.z == 0))
-			mover.rotation = Quaternion.Slerp (mover.rotation, Quaternion.LookRotation (new Vector3(movement.x, 0, movement.z)), turnSpeed);
+
 		if (triggered && !enemCol) {
 			walkSpeed = 10;
 			triggered = false;
@@ -46,7 +49,7 @@ public class Stage3Movement : MonoBehaviour {
 
 
 		//moves the player without directly adjusting its velocity, allows gravity to keep working
-		rb.MovePosition (rb.position + mover.TransformDirection(movement * walkSpeed * Time.deltaTime));
+		rb.MovePosition (rb.position + movement * walkSpeed * Time.deltaTime);
 
 
 		//rotates the items parented to the main player container based on mouse movement

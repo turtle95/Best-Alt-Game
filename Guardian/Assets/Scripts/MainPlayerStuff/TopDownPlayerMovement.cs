@@ -18,6 +18,12 @@ public class TopDownPlayerMovement : MonoBehaviour {
 	public Transform playerModel;
 
 	public Transform uLookHere;
+
+	public float dashDistance = 10;
+	public ParticleSystem dashParticles;
+	public ParticleSystem dashParticles2;
+
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
@@ -43,10 +49,17 @@ public class TopDownPlayerMovement : MonoBehaviour {
 		//turns the player with the mouse
 		//transform.localRotation = Quaternion.Euler (camScript.mouseY * ySensitivity, camScript.mouseX, transform.localRotation.z);
 
-		//moves the player
-		rb.MovePosition (rb.position +(movement * walkSpeed * Time.deltaTime));
+		if (Input.GetButtonDown ("Jump")) {
+			movement *= dashDistance;
+			dashParticles.Play ();
+			dashParticles2.Play ();
+		}
 
-		//rb.velocity = (movement * walkSpeed);
+
+		//moves the player
+		//rb.MovePosition (rb.position +(movement * walkSpeed * Time.deltaTime));
+
+		rb.velocity = (movement * walkSpeed);
 	}
 
 	void OnTriggerStay(Collider col){

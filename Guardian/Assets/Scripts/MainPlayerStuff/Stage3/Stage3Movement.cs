@@ -19,6 +19,8 @@ public class Stage3Movement : MonoBehaviour {
 	bool triggered = false;
 
 	float ySensitivity = 0.5f;
+
+	public Transform camDown;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
@@ -32,7 +34,7 @@ public class Stage3Movement : MonoBehaviour {
 
 		movement = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis("Vertical"));
 		movement = Camera.main.transform.TransformDirection(movement);
-		movement.y = 0f;
+		//movement.y = 0f;
 		if(!(movement.x == 0) && !(movement.z == 0))
 			mover.rotation = Quaternion.Slerp (mover.rotation, Quaternion.LookRotation (new Vector3(movement.x, 0, movement.z)), turnSpeed);
 		if (triggered && !enemCol) {

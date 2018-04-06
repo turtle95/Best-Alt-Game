@@ -16,6 +16,13 @@ public class PlayerMovement001 : MonoBehaviour {
 	public CameraController camScript;
 	public float turnSpeed = 0.15f;
 	public Transform playerModel;
+
+
+	public float dashDistance = 10;
+	public ParticleSystem dashParticles;
+	public ParticleSystem dashParticles2;
+
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
@@ -38,13 +45,19 @@ public class PlayerMovement001 : MonoBehaviour {
 		movement.y = 0f;
 		if(!(movement.x == 0) && !(movement.z == 0))
 			transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (new Vector3(movement.x, 0, movement.z)), turnSpeed);
-		//turns the player with the mouse
-		//transform.localRotation = Quaternion.Euler (camScript.mouseY * ySensitivity, camScript.mouseX, transform.localRotation.z);
+
+
+
+		if (Input.GetButtonDown ("Jump")) {
+			movement *= dashDistance;
+			dashParticles.Play ();
+			dashParticles2.Play ();
+		}
         
 		//moves the player
-		rb.MovePosition (rb.position +(movement * walkSpeed * Time.deltaTime));
+		//rb.MovePosition (rb.position +(movement * walkSpeed * Time.deltaTime));
 
-		//rb.velocity = (movement * walkSpeed);
+		rb.velocity = (movement * walkSpeed);
 	}
 
 	void OnTriggerStay(Collider col){

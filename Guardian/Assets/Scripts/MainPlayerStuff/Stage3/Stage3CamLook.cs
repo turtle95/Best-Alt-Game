@@ -16,25 +16,35 @@ public class Stage3CamLook : MonoBehaviour {
 	public Transform camDown;
 	public Transform mainCam;
 
+	void Start(){
+		transform.rotation = camDown.rotation;
+
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		
 		//Takes input from the mouse and gives it a speed
 		//mouseX += Input.GetAxis ("Mouse X") * sensitivity;
 		//mouseY -= Input.GetAxis ("Mouse Y") * sensitivity;
-		mouseX = Input.GetAxis ("Mouse X") * sensitivity;
-		mouseY = Input.GetAxis ("Mouse Y") * sensitivity;
+		//mouseX = Input.GetAxis ("Mouse X") * sensitivity;// * camDown.rotation;
+		//mouseY = Input.GetAxis ("Mouse Y") * sensitivity;// * camDown.rotation;
+
+		mouseX += Input.GetAxis ("Mouse X") * sensitivity;// * camDown.rotation;
+		mouseY += Input.GetAxis ("Mouse Y") * sensitivity;// * camDown.rotation;
 
 		Quaternion xQ = Quaternion.AngleAxis (mouseX, camDown.right);
 		Quaternion yQ = Quaternion.AngleAxis (mouseY, camDown.up);
 		Vector3 LookStuffs = new Vector3(mouseY, mouseX, 0);
-		//mouseY = Mathf.Clamp (mouseY, -rangeY, rangeY);
+		// Vector3 LookStuffs = mouseX * camDown.right + mouseY * camDown.up;
+		mouseY = Mathf.Clamp (mouseY, -rangeY, rangeY);
 		//LookStuffs = camDown.InverseTransformPoint (LookStuffs);
 		//gives the y camera movement a maximum/minimum movement range
 
 
 
-		transform.rotation = Quaternion.Euler (LookStuffs);
+		//transform.rotation = Quaternion.Euler (LookStuffs);
+		transform.rotation = camDown.rotation * Quaternion.Euler (mouseY,mouseX,0);
 
 		//transform.localRotation = transform.localRotation * xQ * yQ;
 		//transform.Rotate(Vector3.up, mouseX, Space.Self);

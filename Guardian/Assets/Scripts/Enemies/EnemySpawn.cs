@@ -7,6 +7,7 @@ public class EnemySpawn : MonoBehaviour {
 	GameObject [] points; //array of spawnpoints
 	public GameObject enemy; //enemy prefab to spawn
 	GameObject [] spawnedEnemys; //array to store where all the enemies in the scene are
+    public List<int> Epoints = new List<int>();
 
 	public float spawnTime = 3f;
 
@@ -14,6 +15,10 @@ public class EnemySpawn : MonoBehaviour {
 	{
 		StartCoroutine (SpawnStuffs ());
 		points = GameObject.FindGameObjectsWithTag ("EnemySpawner");
+
+        for (int n = 0; n < points.Length; n++){
+            Epoints.Add(-1);
+        }
 		//used to fill the map with enemies at the start but we probably don't want that to happen right away
 		//for (int i = 0; i < points.Length; i++) {
 		//	Instantiate (enemy, points [i].position, points [i].rotation);
@@ -29,23 +34,32 @@ public class EnemySpawn : MonoBehaviour {
 		if (spawnedEnemys.Length < points.Length) 
 		{
 			int j = Random.Range (0, points.Length);
+            if(Epoints[j] == -1){
 
-			bool doAgain;
-			do {
-				doAgain = false;
-				for (int i = 0; i < spawnedEnemys.Length; i++) {
-					if (Vector3.Distance (points [j].transform.position, spawnedEnemys [i].transform.position) < 1) { 
-						j = Random.Range (0, points.Length);
-						doAgain = true;
-						i = spawnedEnemys.Length;
-					} 
-				}
-			} while(doAgain);
-				
-			Instantiate (enemy, points [j].transform.position, points [j].transform.rotation);
+            //bool doAgain;
+                //do
+                //{
+                //    doAgain = false;
+                //    for (int i = 0; i < spawnedEnemys.Length; i++)
+                //    {
+                //        if (Vector3.Distance(points[j].transform.position, spawnedEnemys[i].transform.position) < 1)
+                //        {
+                            
+                //            j = Random.Range(0, points.Length);
+
+                //            doAgain = true;
+                //            i = spawnedEnemys.Length;
+                //        }
+                //    }
+                //} while (doAgain);
+
+                Instantiate(enemy, points[j].transform.position, points[j].transform.rotation);
+                Epoints[j] = 1;
+            }
+            StartCoroutine(SpawnStuffs());
 		}
 
-		StartCoroutine (SpawnStuffs ());
+		
 	}
 
 

@@ -11,7 +11,7 @@ public class Stage3CamLook : MonoBehaviour {
 
 
  
-	public int invert = 1; //value to toggle inverse/normal camera movement
+	public int invert = 0; //value to toggle inverse/normal camera movement
 
 	public Transform camDown;
 	public Transform mainCam;
@@ -44,7 +44,7 @@ public class Stage3CamLook : MonoBehaviour {
 
 
 		//transform.rotation = Quaternion.Euler (LookStuffs);
-		transform.rotation = camDown.rotation * Quaternion.Euler (mouseY,mouseX,0);
+		transform.rotation = camDown.rotation * Quaternion.Euler (-mouseY,mouseX,0);
 
 		//transform.localRotation = transform.localRotation * xQ * yQ;
 		//transform.Rotate(Vector3.up, mouseX, Space.Self);

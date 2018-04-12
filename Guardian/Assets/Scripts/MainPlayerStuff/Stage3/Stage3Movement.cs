@@ -8,7 +8,7 @@ public class Stage3Movement : MonoBehaviour {
 	public Transform planet;
 	public float walkSpeed = 10;
 	public float gravity = -10;
-	public float turnSpeed = 0.15f;
+	public float turnSpeed = 0.1f;
 	public CameraController camScript;
 
 	Vector3 movement;
@@ -18,7 +18,7 @@ public class Stage3Movement : MonoBehaviour {
 	Collider enemCol;
 	bool triggered = false;
 
-	float ySensitivity = 0.5f;
+	float ySensitivity = 0.9f;
 
 	public Transform camDown;
 	// Use this for initialization
@@ -35,13 +35,15 @@ public class Stage3Movement : MonoBehaviour {
 		movement = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis("Vertical"));
 
 		if(!(movement.x == 0) || !(movement.z == 0))
-			mover.rotation = Quaternion.Slerp (mover.rotation, Quaternion.Euler (movement.x*90, 0,movement.z*90 ) * Camera.main.transform.rotation, turnSpeed);
+			mover.rotation = Quaternion.Slerp (mover.rotation, 
+                                               Quaternion.Euler (movement.x*90, 0,movement.z*90 ) * 
+                                               Camera.main.transform.rotation, turnSpeed);
 			//mover.Rotate ( Camera.main.transform.forward * -movement.x * turnSpeed);
 		movement = Camera.main.transform.TransformDirection(movement);
 		//movement.y = 0f;
 
 		if (triggered && !enemCol) {
-			walkSpeed = 10;
+			walkSpeed = 8;
 			triggered = false;
 		}
 
@@ -84,7 +86,7 @@ public class Stage3Movement : MonoBehaviour {
 		rb.AddForce(turdsUp * gravity);
 
 		//creates a rotation between the gravityUp and the player's current up
-		Quaternion targetRotation = Quaternion.FromToRotation (turdsUp, gravityUp) * transform.rotation;
+		Quaternion targetRotation = Quaternion.FromToRotation(turdsUp, gravityUp) * transform.rotation;
 	
 		//smoothly rotates the player to the target rotation
 		transform.rotation = Quaternion.Slerp (transform.rotation, targetRotation, 50 * Time.deltaTime);

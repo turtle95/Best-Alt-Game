@@ -21,6 +21,8 @@ public class CameraController : MonoBehaviour {
 	private Vector3 velocity = Vector3.one;
 
 	public Transform mainCamTrans;
+
+	public bool lookingDown = false;
 	// Use this for initialization
 	void Start () {
         //offset = transform.position - player.transform.position;
@@ -47,6 +49,11 @@ public class CameraController : MonoBehaviour {
 		if (Input.GetButtonDown ("Invert")) {
 			invert = -1*invert;
 		}
+
+		if (transform.localEulerAngles.x > 45f) {
+			lookingDown = true;
+		} else
+			lookingDown = false;
 	}
 
 

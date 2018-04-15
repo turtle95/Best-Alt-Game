@@ -2053,6 +2053,7 @@ MonoBehaviour:
   smoothSpeed: 0.125
   offset: {x: 0, y: 0, z: 0}
   mainCamTrans: {fileID: 80903883}
+  lookingDown: 0
 --- !u!1001 &447177939
 Prefab:
   m_ObjectHideFlags: 0
@@ -3205,6 +3206,8 @@ MonoBehaviour:
   dashParticles2: {fileID: 1580686144}
   distToGrounded: 1
   distToFall: 7
+  cScript: {fileID: 442974499}
+  maxFlyHeight: 3
 --- !u!114 &706134837
 MonoBehaviour:
   m_ObjectHideFlags: 0

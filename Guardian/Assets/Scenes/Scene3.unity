@@ -831,6 +831,14 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 75.72562
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44c9fb35bfb31f546bdffa54f52d257f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 44c9fb35bfb31f546bdffa54f52d257f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44c9fb35bfb31f546bdffa54f52d257f, type: 3}
   m_IsPrefabParent: 0
@@ -2382,7 +2390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &660026938
 Transform:
   m_ObjectHideFlags: 0
@@ -2446,6 +2454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1667608589318736, guid: 7aae0447cffb2354ab392f78a466a0bb, type: 2}
+  Epoints: 
   spawnTime: 2
 --- !u!1001 &665439320
 Prefab:
@@ -2609,7 +2618,7 @@ Rigidbody:
   m_GameObject: {fileID: 706134830}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -2622,7 +2631,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 706134830}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81e4427afd6a8e24bb2925d24ebbbe1d, type: 3}
   m_Name: 
@@ -2670,10 +2679,15 @@ MonoBehaviour:
   mover: {fileID: 1933842132}
   planet: {fileID: 1013591150}
   walkSpeed: 10
-  gravity: -10
+  gravity: -14
   turnSpeed: 0.15
   camScript: {fileID: 0}
   camDown: {fileID: 123728196}
+  dashDistance: 25
+  dashParticles: {fileID: 1226983577}
+  dashParticles2: {fileID: 1895702018}
+  distToGrounded: 1
+  distToFall: 5
 --- !u!1001 &724500123
 Prefab:
   m_ObjectHideFlags: 0
@@ -4101,7 +4115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1221868345
 Transform:
   m_ObjectHideFlags: 0
@@ -4195,7 +4209,7 @@ Transform:
   m_GameObject: {fileID: 1226983574}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: -0.025601633, y: -0.002042892, z: 0}
-  m_LocalScale: {x: 0.013205591, y: 0.01320557, z: 0.013205588}
+  m_LocalScale: {x: 3.4523494, y: 3.452341, z: 3.4523456}
   m_Children: []
   m_Father: {fileID: 8998892}
   m_RootOrder: 0
@@ -4314,7 +4328,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -818185252
+  randomSeed: 1726046768
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9646,7 +9660,7 @@ Transform:
   m_GameObject: {fileID: 1895702015}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0.035870317, y: -0.0019767997, z: 0}
-  m_LocalScale: {x: 0.013205591, y: 0.01320557, z: 0.013205588}
+  m_LocalScale: {x: 3.4523494, y: 3.452341, z: 3.4523456}
   m_Children: []
   m_Father: {fileID: 8998892}
   m_RootOrder: 1
@@ -9765,7 +9779,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1558634207
+  randomSeed: 1918703897
   InitialModule:
     serializedVersion: 3
     enabled: 1

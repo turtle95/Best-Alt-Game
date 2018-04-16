@@ -8,7 +8,7 @@ public class PlayerMovement001 : MonoBehaviour {
 	public float walkSpeed = 10;
 
 	Vector3 movement;
-	private Rigidbody rb;
+	public Rigidbody rb;
 
 	Collider enemCol;
 	bool triggered = false;

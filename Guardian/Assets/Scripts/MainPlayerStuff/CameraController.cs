@@ -50,7 +50,11 @@ public class CameraController : MonoBehaviour {
 			invert = -1*invert;
 		}
 
-		if (transform.localEulerAngles.x > 45f) {
+		//allows angle to be negative, which stops you from shooting yourself upwards when aiming up
+		float angle = transform.localEulerAngles.x;
+		angle = (angle > 180) ? angle - 360 : angle;
+
+		if (angle > 45f) {
 			lookingDown = true;
 		} else
 			lookingDown = false;

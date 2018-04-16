@@ -16,6 +16,8 @@ public class Stage3CamLook : MonoBehaviour {
 	public Transform camDown;
 	public Transform mainCam;
 
+	public bool lookingDown = false;
+
 	void Start(){
 		transform.rotation = camDown.rotation;
 
@@ -25,10 +27,6 @@ public class Stage3CamLook : MonoBehaviour {
 	void FixedUpdate () {
 		
 		//Takes input from the mouse and gives it a speed
-		//mouseX += Input.GetAxis ("Mouse X") * sensitivity;
-		//mouseY -= Input.GetAxis ("Mouse Y") * sensitivity;
-		//mouseX = Input.GetAxis ("Mouse X") * sensitivity;// * camDown.rotation;
-		//mouseY = Input.GetAxis ("Mouse Y") * sensitivity;// * camDown.rotation;
 
 		mouseX += Input.GetAxis ("Mouse X") * sensitivity;// * camDown.rotation;
 		mouseY += Input.GetAxis ("Mouse Y") * sensitivity;// * camDown.rotation;
@@ -36,9 +34,8 @@ public class Stage3CamLook : MonoBehaviour {
 		Quaternion xQ = Quaternion.AngleAxis (mouseX, camDown.right);
 		Quaternion yQ = Quaternion.AngleAxis (mouseY, camDown.up);
 		Vector3 LookStuffs = new Vector3(mouseY, mouseX, 0);
-		// Vector3 LookStuffs = mouseX * camDown.right + mouseY * camDown.up;
+
 		mouseY = Mathf.Clamp (mouseY, -rangeY, rangeY);
-		//LookStuffs = camDown.InverseTransformPoint (LookStuffs);
 		//gives the y camera movement a maximum/minimum movement range
 
 
@@ -46,11 +43,15 @@ public class Stage3CamLook : MonoBehaviour {
 		//transform.rotation = Quaternion.Euler (LookStuffs);
 		transform.rotation = camDown.rotation * Quaternion.Euler (-mouseY,mouseX,0);
 
-		//transform.localRotation = transform.localRotation * xQ * yQ;
-		//transform.Rotate(Vector3.up, mouseX, Space.Self);
-		//transform.Rotate(Vector3.right, mouseY, Space.Self);
-		//mainCam.RotateAround (camDown.position, camDown.up, mouseX);
-		//mainCam.RotateAround (camDown.position, camDown.right, mouseY);
+		float angle = transform.localEulerAngles.x;
+		angle = (angle > 180) ? angle - 360 : angle;
+
+		if (angle > 45f) {
+			lookingDown = true;
+		} else
+			lookingDown = false;
+
+	
 		// allows toggling between inverted/normal camera controls 
 		if (Input.GetButtonDown ("Invert")) {
 			invert = -1*invert;

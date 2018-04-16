@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 33638846692333134}
   - component: {fileID: 23794810973046244}
   - component: {fileID: 64169567209024142}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rock4
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 33657813507951386}
   - component: {fileID: 23432374784588498}
   - component: {fileID: 64322632479857668}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rock8
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 33566944849310988}
   - component: {fileID: 23813131119639346}
   - component: {fileID: 64978009495474726}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rock9
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 33341416613802056}
   - component: {fileID: 23322959413107744}
   - component: {fileID: 64690854860629910}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rock5
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 33064579685872746}
   - component: {fileID: 23203230413036726}
   - component: {fileID: 64333018196906502}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rock1
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 33345987165999150}
   - component: {fileID: 23479743073722412}
   - component: {fileID: 64230681791304696}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rock3
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4784921310403832}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BreakableRock
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 33330493041728688}
   - component: {fileID: 23561309423033452}
   - component: {fileID: 64212464461046384}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rock6
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 33787456557974364}
   - component: {fileID: 23264700389198748}
   - component: {fileID: 64796131218838952}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rock7
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 33095872383276654}
   - component: {fileID: 23266753655575240}
   - component: {fileID: 64915794062662166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rock2
   m_TagString: Rock
   m_Icon: {fileID: 0}

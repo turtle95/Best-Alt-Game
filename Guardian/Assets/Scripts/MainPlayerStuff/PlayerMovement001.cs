@@ -29,7 +29,7 @@ public class PlayerMovement001 : MonoBehaviour {
 	bool flying = false;
 
 	bool noSlow = false;
-	Coroutine myCoroutine;
+
 	public CameraController cScript;
 
 

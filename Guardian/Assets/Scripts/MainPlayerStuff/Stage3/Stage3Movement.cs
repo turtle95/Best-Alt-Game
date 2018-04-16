@@ -7,6 +7,7 @@ public class Stage3Movement : MonoBehaviour {
 	public Transform mover;
 	public Transform planet;
 	public float walkSpeed = 10;
+	float refWalkSpeed;
 	public float gravity = -10;
 	public float turnSpeed = 0.1f;
 	public CameraController camScript;
@@ -30,9 +31,16 @@ public class Stage3Movement : MonoBehaviour {
 	public float distToGrounded = 1f;
 	public float distToFall = 5f;
 
+
+	public Transform cameraYOnly;
+	public Transform cameraBox;
+
+	public Stage3CamLook cScript;
+	public float maxFlyHeight = 2.5f;
+
 	void Start () {
 		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
-
+		refWalkSpeed = walkSpeed;
 	}
 		
 
@@ -42,41 +50,55 @@ public class Stage3Movement : MonoBehaviour {
 
 		movement = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-		if (!(movement.x == 0) || !(movement.z == 0)) {
-			//mover.rotation = transform.right * movement.x;
-			//mover.Rotate (transform.up * movement.z, Space.World);
-		//	mover.rotation = (transform.up, movement.z, Space.World);
-			mover.localEulerAngles = (new Vector3(0, (movement.x *90) / (movement.z * 180),0));
-			//Vector3 newDir = Vector3.RotateTowards(mover.forward, transform.right, turnSpeed, 0.0f, Space.World);
-			//mover.rotation = Quaternion.LookRotation (newDir);
+
+		//rotates an empty game object so that it matches up with the camera only on the y axis
+		cameraYOnly.localEulerAngles = new Vector3 (cameraYOnly.localEulerAngles.x, cameraBox.localEulerAngles.y, cameraYOnly.localEulerAngles.z);
+
+
+		//supposed to rotate the player model in relation to cameraYonly's forward direction, only along the y axis
+		if (!(movement.x == 0) || !(movement.z == 0)) 
+		{
+		//if pressing forward, set a value to 0 so that you can face forwards
+			float tempZ = movement.z;
+			if (movement.z > 0)
+				tempZ = 0;
+
+			//find an angle to rotate to based on input, two ways of doing it both give same result...diagnal angles don't work
+			//Vector3 newRot = (new Vector3 (0, (movement.x * 90), 0) + new Vector3 (0, (tempZ * 180), 0));
+			Vector3 newDir = Vector3.Slerp (new Vector3 (0, (movement.x *180), 0), new Vector3 (0, (tempZ * 360), 0), 0.5f);
+			mover.localEulerAngles = newDir + cameraYOnly.localEulerAngles;
 		}
-		//if(movement.x ==1)
-			//mover.localRotation = (90, mover.rotation.y, mover.rotation.z);
-		//	mover.rotation = Quaternion.Slerp (mover.rotation, 
-               //                                Quaternion.Euler (movement.x*90, 0,movement.z*90 ) * 
-             //                                  Camera.main.transform.rotation, turnSpeed);
-			//mover.Rotate ( Camera.main.transform.forward * -movement.x * turnSpeed);
-		movement = Camera.main.transform.TransformDirection(movement);
-		//movement.y = 0f;
+
+
+		//sets movement relative to camera
+		//movement = Camera.main.transform.TransformDirection(movement);
+		movement = cameraYOnly.TransformDirection (movement);
 
 		if (triggered && !enemCol) {
-			walkSpeed = 8;
+			walkSpeed = refWalkSpeed;
 			triggered = false;
 		}
+
 
 		if (Input.GetButtonDown ("Jump")) {
 			rb.AddForce(movement *dashDistance, ForceMode.VelocityChange);
 			dashParticles.Play ();
 			dashParticles2.Play ();
 		}
+			
 
 
-		//moves the player without directly adjusting its velocity, allows gravity to keep working
+
+		//if you are looking down at the right angle and you fire and you are not high enough up to be in a fast fall then shoot yourself upwards
+		if (cScript.lookingDown && Input.GetButtonUp ("Fire1") && NotFastFall()) {
+			rb.AddForce (transform.up * maxFlyHeight, ForceMode.VelocityChange);
+		}
+
+	
+
+
+		//moves the player without directly adjusting its velocity, allows unity's gravity to keep working
 		rb.MovePosition (rb.position + movement * walkSpeed * Time.deltaTime);
-
-
-		//rotates the items parented to the main player container based on mouse movement
-		//mover.localRotation = Quaternion.Euler (camScript.mouseY * ySensitivity, camScript.mouseX, mover.localRotation.z);
 
 	}
 
@@ -107,7 +129,7 @@ public class Stage3Movement : MonoBehaviour {
 
 	void OnTriggerExit(Collider col){
 		if (col.CompareTag ("Fog")) {
-			walkSpeed = 10;
+			walkSpeed = refWalkSpeed;
 			triggered = false;
 		}
 	}

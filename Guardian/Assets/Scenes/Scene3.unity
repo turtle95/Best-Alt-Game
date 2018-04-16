@@ -244,6 +244,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4380259270216124, guid: fba76bbe949c1374fa7824e433eb4263,
     type: 2}
   m_PrefabInternal: {fileID: 55689886}
+--- !u!1 &75234056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 75234057}
+  m_Layer: 8
+  m_Name: RockSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &75234057
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 75234056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 706134834}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &79096272
 Prefab:
   m_ObjectHideFlags: 0
@@ -1476,6 +1504,7 @@ MonoBehaviour:
   invert: 1
   camDown: {fileID: 123728196}
   mainCam: {fileID: 80903883}
+  lookingDown: 0
 --- !u!1001 &459989974
 Prefab:
   m_ObjectHideFlags: 0
@@ -2607,6 +2636,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1933842132}
+  - {fileID: 75234057}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 12.339001, z: 0}
@@ -2688,6 +2718,10 @@ MonoBehaviour:
   dashParticles2: {fileID: 1895702018}
   distToGrounded: 1
   distToFall: 5
+  cameraYOnly: {fileID: 75234057}
+  cameraBox: {fileID: 442974498}
+  cScript: {fileID: 442974499}
+  maxFlyHeight: 60
 --- !u!1001 &724500123
 Prefab:
   m_ObjectHideFlags: 0
@@ -2863,6 +2897,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 785349689}
+  - component: {fileID: 785349690}
   m_Layer: 8
   m_Name: RockSpawner
   m_TagString: Untagged
@@ -2885,6 +2920,18 @@ Transform:
   m_Father: {fileID: 442974498}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -10.746, y: 0, z: 0}
+--- !u!114 &785349690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 785349688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4455860f44d8eff4e849aeffd4b44a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTrans: {fileID: 75234057}
 --- !u!1 &790645497
 GameObject:
   m_ObjectHideFlags: 0

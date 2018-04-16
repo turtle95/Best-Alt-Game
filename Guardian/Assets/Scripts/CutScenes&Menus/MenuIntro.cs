@@ -28,12 +28,20 @@ public class MenuIntro : MonoBehaviour {
 				turnOff [j].SetActive (false);
 			}
 			cScript.enabled = true;
-			pScript.enabled = true;
-			Destroy (this.gameObject);
+			cScript.useMouse = false;
+			cScript.mouseX = -90;
+			cScript.mouseY = 30;
+			StartCoroutine (CameraZoomIn ());
 			//rScript.enabled = true;
 			//RenderSettings.fogDensity = 0.017f;
 		}
+	}
 
-
+	IEnumerator CameraZoomIn(){
+		yield return new WaitForSeconds (1.5f);
+		cScript.useMouse = true;
+		cScript.smoothSpeed = 0.125f;
+		pScript.enabled = true;
+		Destroy (this.gameObject);
 	}
 }

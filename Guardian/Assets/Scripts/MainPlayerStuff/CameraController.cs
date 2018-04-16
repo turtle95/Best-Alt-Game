@@ -23,6 +23,7 @@ public class CameraController : MonoBehaviour {
 	public Transform mainCamTrans;
 
 	public bool lookingDown = false;
+	public bool useMouse = true;
 	// Use this for initialization
 	void Start () {
         //offset = transform.position - player.transform.position;
@@ -35,14 +36,16 @@ public class CameraController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		FollowPlayer ();
-		//Takes input from the mouse and gives it a speed
-		mouseX += Input.GetAxis ("Mouse X") * sensitivity * 0.02f;
-		mouseY -= Input.GetAxis ("Mouse Y") * sensitivity * 0.02f;
-			
-		//gives the y camera movement a maximum/minimum movement range
-		mouseY = Mathf.Clamp (mouseY, -rangeY, rangeY);
 
-	
+		if (useMouse) {
+			//Takes input from the mouse and gives it a speed
+			mouseX += Input.GetAxis ("Mouse X") * sensitivity * 0.02f;
+			mouseY -= Input.GetAxis ("Mouse Y") * sensitivity * 0.02f;
+			
+			//gives the y camera movement a maximum/minimum movement range
+			mouseY = Mathf.Clamp (mouseY, -rangeY, rangeY);
+
+		}
 		transform.rotation = Quaternion.Euler (mouseY,mouseX,0);
 	
 		// allows toggling between inverted/normal camera controls 

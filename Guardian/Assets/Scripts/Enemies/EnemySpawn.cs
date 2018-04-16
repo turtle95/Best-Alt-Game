@@ -8,7 +8,7 @@ public class EnemySpawn : MonoBehaviour {
 	public GameObject enemy; //enemy prefab to spawn
 	GameObject [] spawnedEnemys; //array to store where all the enemies in the scene are
     public List<int> Epoints = new List<int>();
-
+	public int enemyCap = 10;
 	public float spawnTime = 3f;
 
 	void Start () //starts the spawn coroutine 
@@ -31,7 +31,7 @@ public class EnemySpawn : MonoBehaviour {
 		yield return new WaitForSeconds (spawnTime);
 		spawnedEnemys = GameObject.FindGameObjectsWithTag ("Enemy");
 
-		if (spawnedEnemys.Length < points.Length) 
+		if (spawnedEnemys.Length < enemyCap) 
 		{
 			int j = Random.Range (0, points.Length);
             if(Epoints[j] == -1){

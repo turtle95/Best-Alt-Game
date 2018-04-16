@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: c5c162681b4b8e547b98535f8e84c306
+  m_OcclusionCullingData: {fileID: 36300000, guid: 3ab8add566271134b94340828ebecf92,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -2608,6 +2609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 1635265855582588, guid: cb1c0dc7db878d5458609ba9d4c38db9, type: 2}
   Epoints: 
+  enemyCap: 10
   spawnTime: 2
 --- !u!1 &663600209
 GameObject:
@@ -3199,6 +3201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 20
+  rb: {fileID: 0}
   camScript: {fileID: 442974499}
   turnSpeed: 0.15
   playerModel: {fileID: 830945998}

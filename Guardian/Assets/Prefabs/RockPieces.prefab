@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54617503754420736}
   m_Layer: 0
   m_Name: Rock4
-  m_TagString: Rock
+  m_TagString: RockPieces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 54963906071904130}
   m_Layer: 0
   m_Name: Rock2
-  m_TagString: Rock
+  m_TagString: RockPieces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 54942488800686880}
   m_Layer: 0
   m_Name: Rock9
-  m_TagString: Rock
+  m_TagString: RockPieces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 54161287939023276}
   m_Layer: 0
   m_Name: Rock7
-  m_TagString: Rock
+  m_TagString: RockPieces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 54918386391114686}
   m_Layer: 0
   m_Name: Rock8
-  m_TagString: Rock
+  m_TagString: RockPieces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 114985948192091200}
   m_Layer: 0
   m_Name: RockPieces
-  m_TagString: Rock
+  m_TagString: RockPieces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 54075499463450958}
   m_Layer: 0
   m_Name: Rock1
-  m_TagString: Rock
+  m_TagString: RockPieces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 54556880229152286}
   m_Layer: 0
   m_Name: Rock3
-  m_TagString: Rock
+  m_TagString: RockPieces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 54775678743216758}
   m_Layer: 0
   m_Name: Rock6
-  m_TagString: Rock
+  m_TagString: RockPieces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 54500046770190230}
   m_Layer: 0
   m_Name: Rock5
-  m_TagString: Rock
+  m_TagString: RockPieces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

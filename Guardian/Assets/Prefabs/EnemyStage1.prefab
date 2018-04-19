@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 64695097088097028}
   m_Layer: 0
   m_Name: polySurface98
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1617,7 +1617,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1112841570756172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.063709, y: -0.57152486, z: -1.0742106}
+  m_LocalPosition: {x: 2.114619, y: 67.41573, z: -138.29588}
   m_LocalScale: {x: 111.72359, y: 111.72351, z: 111.72351}
   m_Children:
   - {fileID: 4447460731392060}
@@ -1829,6 +1829,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   varTrack: {fileID: 0}
   fogObject: {fileID: 1261727309962408}
+  upScale: 0.005
+  maxFogSize: 0.05
 --- !u!135 &135374515527765560
 SphereCollider:
   m_ObjectHideFlags: 1

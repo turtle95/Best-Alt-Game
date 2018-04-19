@@ -91,7 +91,7 @@ public class PlayerMovement001 : MonoBehaviour {
 				movement.y = 1;
 			if (movement.y > maxFlyHeight)
 				movement.y = maxFlyHeight;
-			Debug.Log (movement.y);
+			//Debug.Log (movement.y);
 			flying = true;
 		}
 

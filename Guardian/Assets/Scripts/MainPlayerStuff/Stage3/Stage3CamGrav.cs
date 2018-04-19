@@ -11,15 +11,16 @@ public class Stage3CamGrav : MonoBehaviour {
 
 
 	Quaternion localRotPlayer; //quaternion to assign the player's rotation
-	Transform playerTrans; 
+	//public Transform playerTrans; 
 	public int invert = 1; //value to toggle inverse/normal camera movement
 	public GameObject player;
 	Rigidbody playerRB;
 	public float smoothSpeed = 0.125f;
 
-
+	public Transform cam;
 	private Vector3 velocity = Vector3.one;
-
+	Transform playerCenter;
+	public Vector3 offSet;
 	//public Transform mainCamTrans;
 	//PlanetGravity pScript;
 
@@ -31,7 +32,7 @@ public class Stage3CamGrav : MonoBehaviour {
 		Vector3 gravityUp = (transform.position - planet.transform.position).normalized;
 
 		transform.rotation = Quaternion.FromToRotation (transform.up, gravityUp) * transform.rotation;
-		playerTrans = player.GetComponent<Transform>();
+		playerCenter = player.GetComponent<Transform>();
 		playerRB = player.GetComponent<Rigidbody> ();
 	}
 
@@ -71,12 +72,15 @@ public class Stage3CamGrav : MonoBehaviour {
 
 
 
-	void FollowPlayer(){
-
-		Vector3 desiredPos = playerTrans.position;
+	void FollowPlayer()
+	{
+		Vector3 desiredPos = playerCenter.position;
 
 		Vector3 smoothedPos = Vector3.SmoothDamp (transform.position, desiredPos, ref velocity, smoothSpeed);
+
 		transform.position = smoothedPos;
+
+		//cam.position = playerTrans.position + offSet;
 
 	}
 

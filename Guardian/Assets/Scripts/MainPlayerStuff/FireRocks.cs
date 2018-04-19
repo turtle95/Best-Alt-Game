@@ -7,7 +7,7 @@ public class FireRocks : MonoBehaviour {
 	public GameObject rock; //rock prefab to spawn
     GameObject rockUsedHere; //gameobject to hold the rock that is created
 	public Transform spawnPoint; //spot that the rock is spawned from
-	
+	public float rockSize =1;
     //public float timer;
 	GameObject lineDraw;
 	Rigidbody rb; 
@@ -31,7 +31,11 @@ public class FireRocks : MonoBehaviour {
 
         if (Input.GetButtonUp ("Fire1")) { //If someone presses Fire1 then spawn a rock at the spawn point and give it a launch speed
 			rockUsedHere = Instantiate (rock, spawnPoint.position, spawnPoint.rotation);
+			rockUsedHere.transform.localScale *= rockSize;
+			rockUsedHere.GetComponent<RockBreakController> ().rockSize = rockSize;
 			rb = rockUsedHere.GetComponent<Rigidbody> ();
+		//	rb.mass = rockSize;
+		//	rb.angularDrag *= rockSize;
 			rb.velocity = spawnPoint.forward * launchSpeed;
 			lineDraw.SetActive (false);
 		} 

@@ -11,25 +11,26 @@ public class variableTracker : MonoBehaviour {
     public int CurrentStage = 1;
     public int ObjectsDestroyed = 0;
     public float PlayerHP = 100;
-    public Text KilledNumber;
-
+  
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(this); //So that variableTracker will always be able to track variables (stays inbetween scenes)
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (SceneManager.GetActiveScene().buildIndex != 0)
+     /*   if (SceneManager.GetActiveScene().buildIndex != 0)
         {
-            KilledNumber = GameObject.Find("KilledNumber").GetComponent<Text>();
-            KilledNumber.text = EnemiesKilled.ToString();       //Updates UI
-        }
+			
+			killedUi = GameObject.Find("EnemyCounterFill").GetComponent<Image>();
+			killedUi.fillAmount = EnemiesKilled / (enemyCap);       //Updates UI
+        }*/
 		if (Input.GetKeyDown(KeyCode.Alpha1))
 		{
 			 if (SceneManager.GetActiveScene().buildIndex == 1)
 			 {
-			SceneManager.LoadScene(1);      //Loads Level 2
+			SceneManager.LoadScene(1);      //Loads Level 1
 			CurrentStage = 1;
 			 }
 		}

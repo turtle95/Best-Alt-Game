@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - EnemySpawner
   - RockLine
+  - RockPieces
   layers:
   - Default
   - TransparentFX

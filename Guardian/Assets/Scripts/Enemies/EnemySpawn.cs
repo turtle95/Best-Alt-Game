@@ -1,18 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawn : MonoBehaviour {
 
 	GameObject [] points; //array of spawnpoints
 	public GameObject enemy; //enemy prefab to spawn
-	GameObject [] spawnedEnemys; //array to store where all the enemies in the scene are
+	// GameObject [] spawnedEnemys; //array to store where all the enemies in the scene are
     public List<int> Epoints = new List<int>();
 	public int enemyCap = 10;
-	public float spawnTime = 3f;
+	float spawnTime = 4f;
+	public variableTracker varTrack;
+	public int[] lowerSpawnTime;
+	float growthRate = 0.002f;
+	GameObject enemySpawnedNow;
+	public int prevEnCap = 0;
+
+	public Image killedUi;
+
 
 	void Start () //starts the spawn coroutine 
 	{
+		varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
 		StartCoroutine (SpawnStuffs ());
 		points = GameObject.FindGameObjectsWithTag ("EnemySpawner");
 
@@ -24,36 +34,44 @@ public class EnemySpawn : MonoBehaviour {
 		//	Instantiate (enemy, points [i].position, points [i].rotation);
 		//}
 	}
+
+	void Update(){
+
+		//increases the enemy spawn rate based on how many enemies have been killed
+		if (varTrack.EnemiesKilled > lowerSpawnTime [0]) 
+		{
+			growthRate = 0.004f;
+			spawnTime = 2f;
+			if (varTrack.EnemiesKilled > lowerSpawnTime [1]) 
+			{
+				growthRate = 0.007f;
+				spawnTime = 1f;
+				if (varTrack.EnemiesKilled > lowerSpawnTime [2])
+				{
+					growthRate = 0.012f;
+					spawnTime = 0.5f;
+				}
+			}
+		}
+
+		float enemiesKilledUi = varTrack.EnemiesKilled - prevEnCap;
+		killedUi.fillAmount = enemiesKilledUi / (enemyCap - prevEnCap);  
+	}
 	
 	//waits a second, then chooses a random spawnpoint and spawns an enemy there, after that it calls itself again
 	IEnumerator SpawnStuffs()
 	{
 		yield return new WaitForSeconds (spawnTime);
-		spawnedEnemys = GameObject.FindGameObjectsWithTag ("Enemy");
+
+		GameObject [] spawnedEnemys = GameObject.FindGameObjectsWithTag ("Enemy");
 
 		if (spawnedEnemys.Length < enemyCap) 
 		{
 			int j = Random.Range (0, points.Length);
-            if(Epoints[j] == -1){
+			if(Epoints[j] == -1){
 
-            //bool doAgain;
-                //do
-                //{
-                //    doAgain = false;
-                //    for (int i = 0; i < spawnedEnemys.Length; i++)
-                //    {
-                //        if (Vector3.Distance(points[j].transform.position, spawnedEnemys[i].transform.position) < 1)
-                //        {
-                            
-                //            j = Random.Range(0, points.Length);
-
-                //            doAgain = true;
-                //            i = spawnedEnemys.Length;
-                //        }
-                //    }
-                //} while (doAgain);
-
-                Instantiate(enemy, points[j].transform.position, points[j].transform.rotation);
+				enemySpawnedNow = Instantiate(enemy, points[j].transform.position, points[j].transform.rotation);
+				enemySpawnedNow.GetComponent<EnemyScript> ().upScale = growthRate;
                 Epoints[j] = 1;
             }
             StartCoroutine(SpawnStuffs());

@@ -6,12 +6,20 @@ public class EnemyScript : MonoBehaviour {
 
     public variableTracker varTrack;
     public GameObject fogObject;
-	float upScale = 0.005f;
+	public float upScale = 0.005f;
 	public float maxFogSize = 0.05f;
+	PlayerGrowth gScript;
+
+	void Start(){
+		gScript = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerGrowth> ();
+		varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
+	}
 	//kills the enemy when a rock hits it
 	void OnCollisionEnter(Collision col){
 		if (col.gameObject.CompareTag ("Rock")) {
-			varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
+			Debug.Log ("Hit!");
+			gScript.testVar += 1;
+			gScript.Grow ();
 			varTrack.EnemiesKilled += 1;
 			Destroy (this.gameObject);
 		}

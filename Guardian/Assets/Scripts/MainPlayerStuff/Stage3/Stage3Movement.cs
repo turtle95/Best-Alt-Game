@@ -55,8 +55,8 @@ public class Stage3Movement : MonoBehaviour {
 		cameraYOnly.localEulerAngles = new Vector3 (cameraYOnly.localEulerAngles.x, cameraBox.localEulerAngles.y, cameraYOnly.localEulerAngles.z);
 
 
-		//supposed to rotate the player model in relation to cameraYonly's forward direction, only along the y axis
-		if (!(movement.x == 0) || !(movement.z == 0)) 
+		//supposed to rotate the player model in relation to cameraYonly's forward direction, only along the y axis ...Out of Comission
+		/*if (!(movement.x == 0) || !(movement.z == 0)) 
 		{
 		//if pressing forward, set a value to 0 so that you can face forwards
 			float tempZ = movement.z;
@@ -67,6 +67,25 @@ public class Stage3Movement : MonoBehaviour {
 			//Vector3 newRot = (new Vector3 (0, (movement.x * 90), 0) + new Vector3 (0, (tempZ * 180), 0));
 			Vector3 newDir = Vector3.Slerp (new Vector3 (0, (movement.x *180), 0), new Vector3 (0, (tempZ * 360), 0), 0.5f);
 			mover.localEulerAngles = newDir + cameraYOnly.localEulerAngles;
+		}*/
+
+
+
+		if (!(movement.x == 0 && movement.z == 0)) {
+			//normalize the vector so we can use trigonometry
+			Vector3 rotVec = new Vector3(movement.z, movement.x, 0).normalized;
+
+			//just for the z rotation
+			float rotDegree = (Mathf.Acos(rotVec.x/1)) * 180f/Mathf.PI;
+
+			//if movement.x < 0 then multiply the degree angle by -1
+			rotDegree *= (movement.x <0 ? -1 : 1);
+
+			//rotate the degree around the y axis
+			Quaternion rot = Quaternion.Euler(0,rotDegree,0);
+
+			//rotations are done with multiply...this rotates the player model the right way!
+			mover.rotation = Quaternion.Slerp(mover.rotation, cameraYOnly.rotation * rot, 0.5f);
 		}
 
 

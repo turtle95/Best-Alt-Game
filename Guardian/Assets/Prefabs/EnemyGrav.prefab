@@ -42,9 +42,9 @@ GameObject:
   - component: {fileID: 23575747781721002}
   - component: {fileID: 64338840295619712}
   - component: {fileID: 95155176419637232}
-  - component: {fileID: 114535351807245358}
   - component: {fileID: 114901799903660956}
   - component: {fileID: 54840359810119862}
+  - component: {fileID: 114452079206761300}
   m_Layer: 0
   m_Name: EnemyGrav
   m_TagString: Enemy
@@ -198,7 +198,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114535351807245358
+--- !u!114 &114452079206761300
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -206,11 +206,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1667608589318736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3214406a1488f34ab0c00041c3417f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f4344b7b009ebb40b1baff130b61c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   varTrack: {fileID: 0}
   fogObject: {fileID: 1522927710203106}
+  upScale: 0.005
+  maxFogSize: 0.05
 --- !u!114 &114763651443750652
 MonoBehaviour:
   m_ObjectHideFlags: 1

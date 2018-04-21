@@ -41,6 +41,7 @@ public class Stage3Movement : MonoBehaviour {
 	void Start () {
 		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
 		refWalkSpeed = walkSpeed;
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 		
 

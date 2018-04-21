@@ -71,7 +71,10 @@ public class EnemySpawn : MonoBehaviour {
 			if(Epoints[j] == -1){
 
 				enemySpawnedNow = Instantiate(enemy, points[j].transform.position, points[j].transform.rotation);
-				enemySpawnedNow.GetComponent<EnemyScript> ().upScale = growthRate;
+				if(!(varTrack.CurrentStage == 3))
+					enemySpawnedNow.GetComponent<EnemyScript> ().upScale = growthRate;
+				else
+					enemySpawnedNow.GetComponent<EnemyScriptStage3> ().upScale = growthRate;
                 Epoints[j] = 1;
             }
             StartCoroutine(SpawnStuffs());

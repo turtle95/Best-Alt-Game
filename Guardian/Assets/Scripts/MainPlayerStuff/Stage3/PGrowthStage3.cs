@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGrowth : MonoBehaviour {
-
+public class PGrowthStage3 : MonoBehaviour {
+	
 	//public variableTracker varTrack;
-	public PlayerMovement001 pScript;
+	public Stage3Movement pScript;
 	public FireRocks rScript;
 	public float upScale = 0.05f;
 	public int testVar =1;
@@ -17,23 +17,17 @@ public class PlayerGrowth : MonoBehaviour {
 	float fallTemp;
 	float rockTemp;
 	float launchSpTemp;
-
+	float grav;
 	// Use this for initialization
 	void Start () {
-	//	varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
+		//	varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
 		walkTemp = pScript.walkSpeed;
 		dashTemp = pScript.dashDistance;
 		grndTemp = pScript.distToGrounded;
 		fallTemp = pScript.distToFall;
 		rockTemp = rScript.rockSize;
 		launchSpTemp = rScript.launchSpeed;
-	}
-
-	void Update(){
-		//if(Input.GetButtonDown("Jump")){
-			//testVar += 1;
-		//	Grow();
-	//	}
+		grav = pScript.gravity;
 	}
 
 	// Update is called once per frame
@@ -46,7 +40,7 @@ public class PlayerGrowth : MonoBehaviour {
 		pScript.distToFall +=fallTemp * testVar * upScale;
 		rScript.rockSize +=rockTemp * testVar * upScale;
 		rScript.launchSpeed += launchSpTemp * testVar * upScale;
-
+		pScript.gravity += grav * testVar * upScale/2;
 
 	}
 }

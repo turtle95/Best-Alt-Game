@@ -34,8 +34,8 @@ public class FireRocks : MonoBehaviour {
 			rockUsedHere.transform.localScale *= rockSize;
 			rockUsedHere.GetComponent<RockBreakController> ().rockSize = rockSize;
 			rb = rockUsedHere.GetComponent<Rigidbody> ();
-		//	rb.mass = rockSize;
-		//	rb.angularDrag *= rockSize;
+			rb.mass /= rockSize;
+			rb.angularDrag /= rockSize * 0.5f;
 			rb.velocity = spawnPoint.forward * launchSpeed;
 			lineDraw.SetActive (false);
 		} 

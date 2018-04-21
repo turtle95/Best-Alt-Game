@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour {
+public class EnemyScriptStage3 : MonoBehaviour {
 
-    public variableTracker varTrack;
-    public GameObject fogObject;
+	public variableTracker varTrack;
+	public GameObject fogObject;
 	public float upScale = 0.005f;
 	public float maxFogSize = 0.05f;
-	PlayerGrowth gScript;
+	PGrowthStage3 gScript;
 
 	void Start(){
-		gScript = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerGrowth> ();
+		gScript = GameObject.FindGameObjectWithTag ("Player").GetComponent<PGrowthStage3> ();
 		varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
 	}
 	//kills the enemy when a rock hits it
@@ -25,11 +25,11 @@ public class EnemyScript : MonoBehaviour {
 		}
 	}
 
-    void Update()
-    {
+	void Update()
+	{
 		if(fogObject.transform.localScale.x < maxFogSize)
-        	fogObject.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime * upScale;
+			fogObject.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime * upScale;
 		//new ParticleSystem.MinMaxCurve (1 + 1* Time.deltaTime, 1.1f +1* Time.deltaTime);
 		//fogObject.GetComponent<ParticleSystem> ().main.startSize = ;
-    }
+	}
 }

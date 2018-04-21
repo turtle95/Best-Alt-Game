@@ -42,8 +42,6 @@ public class FireRocks : MonoBehaviour {
 			
 
 
-
-
 		//Stuff for Goku Rock, probably will delete at some point
 
 		/*if (Input.GetButtonDown ("Fire2")) { //if someone presses fire2 then spawn a rock, disable its gravity, and start charging up speed

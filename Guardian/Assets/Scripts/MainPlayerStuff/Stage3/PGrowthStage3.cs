@@ -41,6 +41,6 @@ public class PGrowthStage3 : MonoBehaviour {
 		rScript.rockSize +=rockTemp * testVar * upScale;
 		rScript.launchSpeed += launchSpTemp * testVar * upScale;
 		pScript.gravity += grav * testVar * upScale/2;
-
+		pScript.refWalkSpeed += walkTemp * testVar * upScale;
 	}
 }

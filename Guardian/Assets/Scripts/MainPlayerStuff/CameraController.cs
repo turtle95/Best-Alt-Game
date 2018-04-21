@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 
 	public float sensitivity = 0.125f; //sensitivity of mouse when moving the camera
-	 float rangeY = 90f; //movement range for y mouse look
+	public float rangeY = 90f; //movement range for y mouse look
 	public float mouseX =0;
 	public float mouseY = 0; //values for mouse input
 

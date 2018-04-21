@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement001 : MonoBehaviour {
 
-	float refWalkSpeed = 10;
+	public float refWalkSpeed = 10;
 	public float walkSpeed = 10;
 
 	Vector3 movement;
@@ -34,6 +34,14 @@ public class PlayerMovement001 : MonoBehaviour {
 
 
 	public float maxFlyHeight = 2.5f;
+
+	public Transform cameraYOnly;
+	public Transform cameraBox;
+
+
+	public int fallingThroughGround = -10;
+	public int grndHeight = 0;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
@@ -51,10 +59,15 @@ public class PlayerMovement001 : MonoBehaviour {
 			triggered = false;
 		}
 
+		//rotates an empty game object so that it matches up with the camera only on the y axis
+		cameraYOnly.localEulerAngles = new Vector3 (cameraYOnly.localEulerAngles.x, cameraBox.localEulerAngles.y, cameraYOnly.localEulerAngles.z);
+
         //creates a Vector3 out of the input Axis's, also stores a temp version of movement y so that y won't effect the model's rotation
 		float tempY = movement.y;
 		movement = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
-		movement = Camera.main.transform.TransformDirection (movement);
+		//movement = Camera.main.transform.TransformDirection (movement);
+		movement = cameraYOnly.TransformDirection (movement);
+
 
 		//rotates the model
 		if(!(movement.x == 0) && !(movement.z == 0))
@@ -102,6 +115,12 @@ public class PlayerMovement001 : MonoBehaviour {
 
 		//moves the player by directly setting its velocity
 		rb.velocity = (movement * walkSpeed);
+
+
+
+		if (transform.position.y < fallingThroughGround)
+			transform.position = new Vector3 (transform.position.x, grndHeight, transform.position.z);
+
 	}
 
 

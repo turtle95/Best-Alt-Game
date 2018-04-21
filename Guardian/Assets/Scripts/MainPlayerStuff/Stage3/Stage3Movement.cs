@@ -7,7 +7,7 @@ public class Stage3Movement : MonoBehaviour {
 	public Transform mover;
 	public Transform planet;
 	public float walkSpeed = 10;
-	float refWalkSpeed;
+	public float refWalkSpeed;
 	public float gravity = -10;
 	public float turnSpeed = 0.1f;
 	public CameraController camScript;

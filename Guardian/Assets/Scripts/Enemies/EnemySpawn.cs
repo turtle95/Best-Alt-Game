@@ -56,6 +56,7 @@ public class EnemySpawn : MonoBehaviour {
 
 		float enemiesKilledUi = varTrack.EnemiesKilled - prevEnCap;
 		killedUi.fillAmount = enemiesKilledUi / (enemyCap - prevEnCap);  
+		Debug.Log (enemiesKilledUi / (enemyCap - prevEnCap));
 	}
 	
 	//waits a second, then chooses a random spawnpoint and spawns an enemy there, after that it calls itself again

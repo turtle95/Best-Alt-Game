@@ -17,7 +17,7 @@ public class PlayerGrowth : MonoBehaviour {
 	float fallTemp;
 	float rockTemp;
 	float launchSpTemp;
-
+	Vector3 startSize;
 	// Use this for initialization
 	void Start () {
 	//	varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
@@ -27,6 +27,7 @@ public class PlayerGrowth : MonoBehaviour {
 		fallTemp = pScript.distToFall;
 		rockTemp = rScript.rockSize;
 		launchSpTemp = rScript.launchSpeed;
+		startSize = gameObject.transform.localScale;
 	}
 
 	void Update(){
@@ -38,15 +39,15 @@ public class PlayerGrowth : MonoBehaviour {
 
 	// Update is called once per frame
 	public void Grow () {
-		gameObject.transform.localScale += new Vector3 (1, 1, 1) * testVar * upScale;
-		camBox.transform.localScale += new Vector3 (1, 1, 1) * testVar * upScale;
+		gameObject.transform.localScale += startSize * testVar * upScale;
+		camBox.transform.localScale += startSize * testVar * upScale;
 		pScript.walkSpeed +=walkTemp * testVar * upScale;
 		pScript.dashDistance +=dashTemp * testVar * upScale;
 		pScript.distToGrounded +=grndTemp * testVar * upScale;
 		pScript.distToFall +=fallTemp * testVar * upScale;
 		rScript.rockSize +=rockTemp * testVar * upScale;
 		rScript.launchSpeed += launchSpTemp * testVar * upScale;
-
+		pScript.refWalkSpeed += walkTemp * testVar * upScale;
 
 	}
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Stage3CamLook : MonoBehaviour {
 
 	public float sensitivity = 0.125f; //sensitivity of mouse when moving the camera
-	public float rangeY = 120f; //movement range for y mouse look
+	public float rangeY = 100f; //movement range for y mouse look
 	public float mouseX =0;
 	public float mouseY = 0; //values for mouse input
 

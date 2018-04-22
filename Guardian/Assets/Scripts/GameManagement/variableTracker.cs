@@ -13,6 +13,7 @@ public class variableTracker : MonoBehaviour {
     public float PlayerHP = 100;
     public Text resultText;
     public bool randomResult;
+    public bool transStart;
   
 	// Use this for initialization
 	void Start () {
@@ -40,8 +41,12 @@ public class variableTracker : MonoBehaviour {
         {
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
-                SceneManager.LoadScene(2);      //Loads Level 2
-                CurrentStage = 2;
+                transStart = true;
+                if (transStart == false)
+                {
+                    SceneManager.LoadScene(2);      //Loads Level 2
+                    CurrentStage = 2;
+                }
             }
         }
 
@@ -49,8 +54,12 @@ public class variableTracker : MonoBehaviour {
         {
            if (SceneManager.GetActiveScene().buildIndex == 2)
             {
-                SceneManager.LoadScene(3);      //Loads Level 3
-                CurrentStage = 3;
+                transStart = true;
+                if (transStart == false)
+                {
+                    SceneManager.LoadScene(3);      //Loads Level 2
+                    CurrentStage = 3;
+                }
             }
         }
 
@@ -58,8 +67,12 @@ public class variableTracker : MonoBehaviour {
         {
             if (SceneManager.GetActiveScene().buildIndex == 3)
             {
-                SceneManager.LoadScene(4);    //Loads credits/end
-                CurrentStage = 4;
+                transStart = true;
+                if (transStart == false)
+                {
+                    SceneManager.LoadScene(4);      //Loads Level 2
+                    CurrentStage = 4;
+                }
             }
         }
 

@@ -7,6 +7,8 @@ public class MinimapPlayerFollow : MonoBehaviour {
 	public Transform playerTrans;
 
 
+
+
 	
 	// Update is called once per frame
 	void Update () {

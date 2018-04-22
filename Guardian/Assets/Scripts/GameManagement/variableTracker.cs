@@ -11,11 +11,12 @@ public class variableTracker : MonoBehaviour {
     public int CurrentStage = 1;
     public int ObjectsDestroyed = 0;
     public float PlayerHP = 100;
+    public Text resultText;
+    public bool randomResult;
   
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(this); //So that variableTracker will always be able to track variables (stays inbetween scenes)
-
 	}
 	
 	// Update is called once per frame
@@ -53,12 +54,44 @@ public class variableTracker : MonoBehaviour {
             }
         }
 
-		if (EnemiesKilled >= 70)
+		if (EnemiesKilled >= 70|| Input.GetKeyDown(KeyCode.Alpha4))
         {
             if (SceneManager.GetActiveScene().buildIndex == 3)
             {
                 SceneManager.LoadScene(4);    //Loads credits/end
                 CurrentStage = 4;
+            }
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            EnemiesKilled = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            EnemiesKilled = 10;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            EnemiesKilled = 30;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            EnemiesKilled = 70;
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            resultText = GameObject.Find("resultnum").GetComponent<Text>();
+            if (randomResult == false)
+            {
+                resultText.text = (ObjectsDestroyed * 10).ToString() + " Lives";
+            }
+            else
+            {
+                var randomNum = Random.Range(20, 100000);
+                resultText.text = randomNum.ToString() + " Lives";
             }
         }
     }
@@ -69,5 +102,6 @@ public class variableTracker : MonoBehaviour {
 		EnemiesKilled = 0;
 		ObjectsDestroyed = 0;
 		PlayerHP = 100;
+        resultText.text = "";
 	}
 }

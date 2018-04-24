@@ -8,10 +8,10 @@ public class CameraTopDown : MonoBehaviour {
 	Transform playerTrans; 
 	public int invert = 1; //value to toggle inverse/normal camera movement
 	public GameObject player;
-	Rigidbody playerRB;
+//	Rigidbody playerRB;
 	public float smoothSpeed = 0.125f;
 	public Vector3 offset;
-	float ySensitivity = 0.5f;
+//	float ySensitivity = 0.5f;
 
 	private Vector3 velocity = Vector3.one;
 
@@ -20,7 +20,7 @@ public class CameraTopDown : MonoBehaviour {
 	void Start () {
 		//offset = transform.position - player.transform.position;
 		playerTrans = player.GetComponent<Transform>();
-		playerRB = player.GetComponent<Rigidbody> ();
+		//playerRB = player.GetComponent<Rigidbody> ();
 	}
 
 

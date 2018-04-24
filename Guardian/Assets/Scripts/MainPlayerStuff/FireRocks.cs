@@ -14,11 +14,11 @@ public class FireRocks : MonoBehaviour {
 	public float launchSpeed = 100; //launch speed for normal rocks
 	public float initialCharge = 100; //initial speed for charge-up rocks  
 	public float chargeSpeed = 100; //speed that charge-up rocks gain speed
-	float chargedLaunch = 0;
+//	float chargedLaunch = 0;
     public float rockDisappearTime = 10;
 	// Use this for initialization
 	void Start () {
-		chargedLaunch = initialCharge;
+//		chargedLaunch = initialCharge;
 		lineDraw = GameObject.FindGameObjectWithTag ("RockLine");
 		lineDraw.SetActive (false);
 	}

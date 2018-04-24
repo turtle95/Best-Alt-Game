@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LoadOnStart : MonoBehaviour {
-
+	public variableTracker vScript;
 	public Text textss;
 
 	// Use this for initialization
-	void Start () {
+	void Start (){
 		StartCoroutine (SplashScreen());
 	}
 	
@@ -17,6 +17,7 @@ public class LoadOnStart : MonoBehaviour {
 		yield return new WaitForSeconds (2);
 		textss.text = "You Should be Doing Something.";
 		yield return new WaitForSeconds (3);
+		vScript.CurrentStage = 1;
 		SceneManager.LoadScene(1);
 	}
 }

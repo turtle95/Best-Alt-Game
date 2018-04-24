@@ -11,7 +11,7 @@ public class TopDownPlayerMovement : MonoBehaviour {
 
 	Collider enemCol;
 	bool triggered = false;
-	float ySensitivity = 0.5f;
+//	float ySensitivity = 0.5f;
 	GameObject checkground;
 	public CameraController camScript;
 	public float turnSpeed = 0.15f;

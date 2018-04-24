@@ -31,9 +31,9 @@ public class Stage3CamLook : MonoBehaviour {
 		mouseX += Input.GetAxis ("Mouse X") * sensitivity;// * camDown.rotation;
 		mouseY += Input.GetAxis ("Mouse Y") * sensitivity;// * camDown.rotation;
 
-		Quaternion xQ = Quaternion.AngleAxis (mouseX, camDown.right);
-		Quaternion yQ = Quaternion.AngleAxis (mouseY, camDown.up);
-		Vector3 LookStuffs = new Vector3(mouseY, mouseX, 0);
+//		Quaternion xQ = Quaternion.AngleAxis (mouseX, camDown.right);
+//		Quaternion yQ = Quaternion.AngleAxis (mouseY, camDown.up);
+//		Vector3 LookStuffs = new Vector3(mouseY, mouseX, 0);
 
 		mouseY = Mathf.Clamp (mouseY, -rangeY, rangeY);
 		//gives the y camera movement a maximum/minimum movement range

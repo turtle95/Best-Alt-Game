@@ -19,7 +19,7 @@ public class Stage3Movement : MonoBehaviour {
 	Collider enemCol;
 	bool triggered = false;
 
-	float ySensitivity = 0.9f;
+	//float ySensitivity = 0.9f;
 
 	public Transform camDown;
 

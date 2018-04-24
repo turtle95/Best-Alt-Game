@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemyKillTest : MonoBehaviour {
 
 
-	PlayerGrowth gScript;
+//	PlayerGrowth gScript;
 
-	void Start(){
+	/*void Start(){
 		gScript = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerGrowth> ();
-	}
+	}*/
 
 	void OnCollisionEnter(Collision col){
 		if (col.gameObject.CompareTag ("Rock")) {

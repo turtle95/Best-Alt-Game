@@ -14,7 +14,8 @@ public class variableTracker : MonoBehaviour {
     public Text resultText;
     public bool randomResult;
     public bool transStart;
-  
+	GameObject endFader;
+	cameraTransition cTScript;
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(this); //So that variableTracker will always be able to track variables (stays inbetween scenes)
@@ -22,58 +23,29 @@ public class variableTracker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-     /*   if (SceneManager.GetActiveScene().buildIndex != 0)
-        {
-			
-			killedUi = GameObject.Find("EnemyCounterFill").GetComponent<Image>();
-			killedUi.fillAmount = EnemiesKilled / (enemyCap);       //Updates UI
-        }*/
-		if (Input.GetKeyDown(KeyCode.Alpha1))
+     
+		if (EnemiesKilled < 10)
 		{
-			 if (SceneManager.GetActiveScene().buildIndex == 1)
-			 {
-			SceneManager.LoadScene(1);      //Loads Level 1
-			CurrentStage = 1;
-			 }
+			if (!(CurrentStage == 1) && !(CurrentStage == 0))
+				ChangeScenes (1);  //Loads Level 1
 		}
 
-		if (EnemiesKilled >= 10 || Input.GetKeyDown(KeyCode.Alpha2))
+		if (EnemiesKilled >= 10 && EnemiesKilled < 30)
         {
-            if (SceneManager.GetActiveScene().buildIndex == 1)
-            {
-                transStart = true;
-                if (transStart == false)
-                {
-                    SceneManager.LoadScene(2);      //Loads Level 2
-                    CurrentStage = 2;
-                }
-            }
+			if (!(CurrentStage == 2))
+				ChangeScenes (2);     //Loads Level 2
         }
 
-		if (EnemiesKilled >= 30|| Input.GetKeyDown(KeyCode.Alpha3))
+		if (EnemiesKilled >= 30 && EnemiesKilled < 70)
         {
-           if (SceneManager.GetActiveScene().buildIndex == 2)
-            {
-                transStart = true;
-                if (transStart == false)
-                {
-                    SceneManager.LoadScene(3);      //Loads Level 2
-                    CurrentStage = 3;
-                }
-            }
+			if (!(CurrentStage == 3))
+				ChangeScenes (3);      //Loads Level 3
         }
 
-		if (EnemiesKilled >= 70|| Input.GetKeyDown(KeyCode.Alpha4))
+		if (EnemiesKilled >= 70)
         {
-            if (SceneManager.GetActiveScene().buildIndex == 3)
-            {
-                transStart = true;
-                if (transStart == false)
-                {
-                    SceneManager.LoadScene(4);      //Loads Level 2
-                    CurrentStage = 4;
-                }
-            }
+			if (!(CurrentStage == 4)) 
+				ChangeScenes (4);       //Loads Ending
         }
 
 
@@ -116,5 +88,31 @@ public class variableTracker : MonoBehaviour {
 		ObjectsDestroyed = 0;
 		PlayerHP = 100;
         resultText.text = "";
+	}
+
+
+	public void ChangeScenes(int goToLevel){
+
+		cTScript = GameObject.Find ("CameraTransition").GetComponent<cameraTransition>();
+		switch(goToLevel){
+		case 1:
+			StartCoroutine (cTScript.PlayTransition (1, 3f));
+			CurrentStage = 1;
+			break;
+		case 2:
+			StartCoroutine (cTScript.PlayTransition (2, 3f));
+			CurrentStage = 2;
+			break;
+		case 3:
+			StartCoroutine (cTScript.PlayTransition (3, 3f));
+			CurrentStage = 3;
+			break;
+		case 4:
+			StartCoroutine (cTScript.PlayTransition (4, 10f));
+			CurrentStage = 4;
+			break;
+		default:
+			break;
+		}
 	}
 }

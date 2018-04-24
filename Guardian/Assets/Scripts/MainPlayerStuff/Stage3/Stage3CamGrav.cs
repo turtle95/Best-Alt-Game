@@ -14,7 +14,7 @@ public class Stage3CamGrav : MonoBehaviour {
 	//public Transform playerTrans; 
 	public int invert = 1; //value to toggle inverse/normal camera movement
 	public GameObject player;
-	Rigidbody playerRB;
+//	Rigidbody playerRB;
 	public float smoothSpeed = 0.125f;
 
 	public Transform cam;
@@ -33,7 +33,7 @@ public class Stage3CamGrav : MonoBehaviour {
 
 		transform.rotation = Quaternion.FromToRotation (transform.up, gravityUp) * transform.rotation;
 		playerCenter = player.GetComponent<Transform>();
-		playerRB = player.GetComponent<Rigidbody> ();
+		//playerRB = player.GetComponent<Rigidbody> ();
 	}
 
 	void Update(){

@@ -246,20 +246,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   varTrack: {fileID: 0}
-  objectColor:
-    serializedVersion: 2
-    rgba: 0
-  currentColor:
-    serializedVersion: 2
-    rgba: 0
-  foggedColor:
-    serializedVersion: 2
-    rgba: 0
   fogged: 0
   deathFloaty: {fileID: 1252853473410166, guid: 8638ce0878e99d7468c9918660f9efb7,
     type: 2}
   floatySpawner: {fileID: 4845066906772728}
-  mainColorMat:
-  - {fileID: 0}
-  objWMats: {fileID: 0}
-  foggedColorMat: []
+  bugNoFog: {fileID: 0}
+  bugFoged: {fileID: 0}
+  audManager: {fileID: 0}
+  destDeath: {fileID: 8300000, guid: f0dd2985d08e282489c834c17da224b0, type: 3}

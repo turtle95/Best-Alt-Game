@@ -38,6 +38,9 @@ public class Stage3Movement : MonoBehaviour {
 	public Stage3CamLook cScript;
 	public float maxFlyHeight = 2.5f;
 
+    public AudioSource audManager;
+    public AudioClip dashSound;
+
 	void Start () {
 		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
 		refWalkSpeed = walkSpeed;
@@ -101,6 +104,7 @@ public class Stage3Movement : MonoBehaviour {
 
 
 		if (Input.GetButtonDown ("Jump")) {
+            audManager.PlayOneShot(dashSound);
 			rb.AddForce(movement *dashDistance, ForceMode.VelocityChange);
 			dashParticles.Play ();
 			dashParticles2.Play ();

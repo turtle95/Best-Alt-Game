@@ -14,6 +14,8 @@ public class FireRocks : MonoBehaviour {
 	public float launchSpeed = 100; //launch speed for normal rocks
 	public float initialCharge = 100; //initial speed for charge-up rocks  
 	public float chargeSpeed = 100; //speed that charge-up rocks gain speed
+    public AudioSource audManager;
+    public AudioClip shootSound;
 //	float chargedLaunch = 0;
     public float rockDisappearTime = 10;
 	// Use this for initialization
@@ -30,6 +32,7 @@ public class FireRocks : MonoBehaviour {
 			lineDraw.SetActive (true);
 
         if (Input.GetButtonUp ("Fire1")) { //If someone presses Fire1 then spawn a rock at the spawn point and give it a launch speed
+            audManager.PlayOneShot(shootSound);
 			rockUsedHere = Instantiate (rock, spawnPoint.position, spawnPoint.rotation);
 			rockUsedHere.transform.localScale *= rockSize;
 			rockUsedHere.GetComponent<RockBreakController> ().rockSize = rockSize;

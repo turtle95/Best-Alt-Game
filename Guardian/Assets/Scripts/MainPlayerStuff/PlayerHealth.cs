@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour {
 
 
 	public Image healthBar;
+    public AudioSource audManager;
+    public AudioClip playerDeath;
 
 	public variableTracker varTrack;
 	// Use this for initialization
@@ -24,6 +26,7 @@ public class PlayerHealth : MonoBehaviour {
 		healthBar.fillAmount = varTrack.PlayerHP / 100;
 
 		if (varTrack.PlayerHP <= 0) {
+            audManager.PlayOneShot(playerDeath);
 			varTrack.ResetVars ();
 			SceneManager.LoadScene (0);
 		}

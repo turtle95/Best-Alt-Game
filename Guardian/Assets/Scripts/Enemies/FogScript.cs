@@ -8,9 +8,14 @@ public class FogScript : MonoBehaviour {
     //public variableTracker varTrack;
     // Use this for initialization
     public Scene scene;
+    public AudioSource audManager;
+    public AudioClip fogAmbience;
+
 	void Start () {
         //varTrack = GameObject.Find("variableTracker").GetComponent<variableTracker>();
         scene = SceneManager.GetActiveScene();
+        audManager.loop = true;
+        audManager.PlayOneShot(fogAmbience);
 	}
 	
 	// Update is called once per frame

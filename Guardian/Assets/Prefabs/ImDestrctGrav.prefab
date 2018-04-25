@@ -59,6 +59,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1914753799473480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4347416233464912}
+  - component: {fileID: 82776497464717720}
+  m_Layer: 0
+  m_Name: destSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1929516717487592
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +109,19 @@ Transform:
   m_Father: {fileID: 4380259270216124}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -57.061, y: 0, z: 0}
+--- !u!4 &4347416233464912
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914753799473480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4380259270216124}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4380259270216124
 Transform:
   m_ObjectHideFlags: 1
@@ -100,12 +129,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929516717487592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -134.7, y: -29.93, z: -104.06}
+  m_LocalPosition: {x: 579.878, y: 263.52087, z: -425.13428}
   m_LocalScale: {x: 1.1719018, y: 1.171901, z: 1.171901}
   m_Children:
   - {fileID: 4112381551129192}
   - {fileID: 4655750472649570}
   - {fileID: 4449670884625510}
+  - {fileID: 4347416233464912}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -252,6 +282,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.116516, y: 0.6813965, z: 3.3556862}
   m_Center: {x: 0.04788208, y: -0.15930176, z: -0.055387497}
+--- !u!82 &82776497464717720
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914753799473480}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95655217648996460
 Animator:
   serializedVersion: 3
@@ -281,23 +391,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   varTrack: {fileID: 0}
-  objectColor:
-    serializedVersion: 2
-    rgba: 0
-  currentColor:
-    serializedVersion: 2
-    rgba: 0
-  foggedColor:
-    serializedVersion: 2
-    rgba: 0
   fogged: 0
   deathFloaty: {fileID: 1252853473410166, guid: 8638ce0878e99d7468c9918660f9efb7,
     type: 2}
   floatySpawner: {fileID: 4655750472649570}
-  mainColorMat:
-  - {fileID: 0}
-  objWMats: {fileID: 0}
-  foggedColorMat: []
+  bugNoFog: {fileID: 0}
+  bugFoged: {fileID: 0}
+  audManager: {fileID: 82776497464717720}
+  destDeath: {fileID: 8300000, guid: f0dd2985d08e282489c834c17da224b0, type: 3}
+  peopleDeath: {fileID: 8300000, guid: a6f469ec21b72a842adfeb5b844e4317, type: 3}
 --- !u!114 &114619123273228656
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -9,6 +9,8 @@ public class EnemyScriptStage3 : MonoBehaviour {
 	public float upScale = 0.005f;
 	public float maxFogSize = 0.05f;
 	PGrowthStage3 gScript;
+    public AudioSource audManager;
+    public AudioClip spiritDeath;
 
 	void Start(){
 		gScript = GameObject.FindGameObjectWithTag ("Player").GetComponent<PGrowthStage3> ();
@@ -20,6 +22,7 @@ public class EnemyScriptStage3 : MonoBehaviour {
 			//Debug.Log ("Hit!");
 			gScript.testVar += 1;
 			gScript.Grow ();
+            audManager.PlayOneShot(spiritDeath);
 			varTrack.EnemiesKilled += 1;
 			Destroy (this.gameObject);
 		}

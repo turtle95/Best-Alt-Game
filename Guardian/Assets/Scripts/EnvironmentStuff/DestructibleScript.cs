@@ -14,6 +14,9 @@ public class DestructibleScript : MonoBehaviour {
 	//public Material [] mainColorMat;
 	public GameObject bugNoFog;
     public GameObject bugFoged;
+    public AudioSource audManager;
+    public AudioClip destDeath;
+    public AudioClip peopleDeath;
 
 
 
@@ -84,7 +87,12 @@ public class DestructibleScript : MonoBehaviour {
         if (col.gameObject.tag == "Rock")
         {
             varTrack.ObjectsDestroyed += 1;
-			Instantiate (deathFloaty, floatySpawner.position, floatySpawner.rotation); 
+			Instantiate (deathFloaty, floatySpawner.position, floatySpawner.rotation);
+            audManager.PlayOneShot(destDeath);
+            if (peopleDeath)
+            {
+                audManager.PlayOneShot(peopleDeath);
+            }
             Destroy(this.gameObject);
         }
     }

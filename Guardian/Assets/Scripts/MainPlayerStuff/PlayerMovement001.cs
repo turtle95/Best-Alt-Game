@@ -42,6 +42,9 @@ public class PlayerMovement001 : MonoBehaviour {
 	public int fallingThroughGround = -10;
 	public int grndHeight = 0;
 
+    public AudioSource audManager;
+    public AudioClip dashSound;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
@@ -78,6 +81,7 @@ public class PlayerMovement001 : MonoBehaviour {
 
 		//lets you dash, doesn't effect y movement value though
 		if (Input.GetButtonDown ("Jump")) {
+            audManager.PlayOneShot(dashSound);
 			movement = new Vector3 (movement.x * dashDistance, movement.y, movement.z * dashDistance);
 			dashParticles.Play ();
 			dashParticles2.Play ();

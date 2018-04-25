@@ -65,7 +65,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1870309450197532
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,25 +359,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   varTrack: {fileID: 0}
-  objectColor:
-    serializedVersion: 2
-    rgba: 0
-  currentColor:
-    serializedVersion: 2
-    rgba: 0
-  foggedColor:
-    serializedVersion: 2
-    rgba: 0
   fogged: 0
   deathFloaty: {fileID: 1252853473410166, guid: 8638ce0878e99d7468c9918660f9efb7,
     type: 2}
   floatySpawner: {fileID: 4044764303724084}
-  mainColorMat: []
-  objWMats: {fileID: 1870309450197532}
-  foggedColorMat:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  bugNoFog: {fileID: 1870309450197532}
+  bugFoged: {fileID: 1617696887977916}
 --- !u!195 &195251714695227084
 NavMeshAgent:
   m_ObjectHideFlags: 1

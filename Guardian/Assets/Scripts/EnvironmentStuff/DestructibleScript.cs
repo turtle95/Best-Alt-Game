@@ -5,22 +5,28 @@ using UnityEngine;
 public class DestructibleScript : MonoBehaviour {
 
     public variableTracker varTrack;
-    public Color32 objectColor;
-    public Color32 currentColor;
-    public Color32 foggedColor;
+    //public Color32 objectColor;
+    //public Color32 currentColor;
+    //public Color32 foggedColor;
     public bool fogged;
 	public GameObject deathFloaty;
 	public Transform floatySpawner;
-	public Material [] mainColorMat;
-	public GameObject objWMats;
-	public Material [] foggedColorMat;
+	//public Material [] mainColorMat;
+	public GameObject bugNoFog;
+    public GameObject bugFoged;
+
+
+
+	//public Material [] foggedColorMat;
     // Use this for initialization
     void Start () {
         varTrack = GameObject.Find("variableTracker").GetComponent<variableTracker>();
+        bugFoged.SetActive(false);
+        bugNoFog.SetActive(true);
 
 			//objectColor = currentColor = mainColorMat[i].color;
-		mainColorMat = objWMats.GetComponent<Renderer>().materials;
-        foggedColor = new Color32(0, 0, 0, 255);
+		//mainColorMat = objWMats.GetComponent<Renderer>().materials;
+        //foggedColor = new Color32(0, 0, 0, 255);
         fogged = false;
     }
 
@@ -56,12 +62,20 @@ public class DestructibleScript : MonoBehaviour {
 
 	public void ChangeColor(){
 		//for (int i = 0; i < mainColorMat.Length; i++) {
-			if (fogged)
-			objWMats.GetComponent<Renderer>().materials = foggedColorMat;
-			else
-			objWMats.GetComponent<Renderer>().materials = mainColorMat;
+		if (fogged)
+        {
+            bugNoFog.SetActive(false);
+            bugFoged.SetActive(true);
+        }
+			//objWMats.GetComponent<Renderer>().materials = foggedColorMat;
+		else
+        {
+            //objs[1].SetActive(true);
+            //objs[2].SetActive(false);
+        }
+			//objWMats.GetComponent<Renderer>().materials = mainColorMat;
 		//}
-		fogged = false;
+		//fogged = false;
 	}
 
     void OnCollisionEnter(Collision col)

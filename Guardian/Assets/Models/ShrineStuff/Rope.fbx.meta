@@ -1,50 +1,24 @@
 fileFormatVersion: 2
-guid: b3a373e9b106a764b958d4e44a46903b
-timeCreated: 1523903453
+guid: 7ad14de5b4b62dd44a720087be6448f0
+timeCreated: 1524634332
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: group
-    100002: group1
-    100004: group2
-    100006: //RootNode
-    100008: pasted__group
-    100010: pasted__pCylinder1
-    100012: pasted__polySurface1
-    100014: polySurface1
-    100016: transform1
-    100018: transform2
-    100020: transform3
-    100022: transform4
-    400000: group
-    400002: group1
-    400004: group2
-    400006: //RootNode
-    400008: pasted__group
-    400010: pasted__pCylinder1
-    400012: pasted__polySurface1
-    400014: polySurface1
-    400016: transform1
-    400018: transform2
-    400020: transform3
-    400022: transform4
-    2100000: blinn1
-    2100002: phong3
-    2100004: pasted__phong3
-    2300000: pasted__pCylinder1
-    2300002: pasted__polySurface1
-    2300004: polySurface1
-    3300000: pasted__pCylinder1
-    3300002: pasted__polySurface1
-    3300004: polySurface1
-    4300000: pasted__pCylinder1
-    4300002: polySurface1
-    4300004: pasted__polySurface1
-    9500000: //RootNode
+    100000: Mesh
+    100002: //RootNode
+    100004: Texture Group
+    400000: Mesh
+    400002: //RootNode
+    400004: Texture Group
+    2100000: Rope
+    2100002: Paper
+    2300000: Mesh
+    3300000: Mesh
+    4300000: Mesh
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -97,7 +71,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -116,7 +90,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

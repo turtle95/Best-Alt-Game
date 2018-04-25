@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class EnemySpawn : MonoBehaviour {
 
@@ -19,6 +21,7 @@ public class EnemySpawn : MonoBehaviour {
 
 	public Image killedUi;
 
+	public int amountOfEnemies = 0;
 
 	void Start () //starts the spawn coroutine 
 	{
@@ -36,12 +39,12 @@ public class EnemySpawn : MonoBehaviour {
 	}
 
 	void Update(){
-
+		Debug.Log (amountOfEnemies);
 		//increases the enemy spawn rate based on how many enemies have been killed
 		if (varTrack.EnemiesKilled > lowerSpawnTime [0]) 
 		{
 			growthRate = 0.004f;
-			spawnTime = 2f;
+			spawnTime = 0.01f;
 			if (varTrack.EnemiesKilled > lowerSpawnTime [1]) 
 			{
 				growthRate = 0.007f;
@@ -49,7 +52,7 @@ public class EnemySpawn : MonoBehaviour {
 				if (varTrack.EnemiesKilled > lowerSpawnTime [2])
 				{
 					growthRate = 0.012f;
-					spawnTime = 0.5f;
+					spawnTime = 0.3f;
 				}
 			}
 		}
@@ -64,14 +67,16 @@ public class EnemySpawn : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (spawnTime);
 
-		GameObject [] spawnedEnemys = GameObject.FindGameObjectsWithTag ("Enemy");
 
-		if (spawnedEnemys.Length < enemyCap) 
+
+
+		if (amountOfEnemies < enemyCap) 
 		{
-			int j = Random.Range (0, points.Length);
+			int j = UnityEngine.Random.Range (0, points.Length);
 			if(Epoints[j] == -1){
 
 				enemySpawnedNow = Instantiate(enemy, points[j].transform.position, points[j].transform.rotation);
+				amountOfEnemies += 1;
 				if(!(varTrack.CurrentStage == 3))
 					enemySpawnedNow.GetComponent<EnemyScript> ().upScale = growthRate;
 				else

@@ -1,10 +1,14 @@
 ﻿<Properties StartupConfiguration="{84954CCB-4AB9-7D0B-293D-03486885FBBD}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManagement/variableTracker.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemies/EnemyScriptStage3.cs">
     <Files>
-      <File FileName="Assets/Scripts/EnvironmentStuff/DestructibleScript.cs" Line="70" Column="10" />
-      <File FileName="Assets/Scripts/Enemies/FogScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameManagement/variableTracker.cs" Line="4" Column="1" />
+      <File FileName="Assets/Scripts/MainPlayerStuff/PlayerHealth.cs" Line="18" Column="3" />
+      <File FileName="Assets/Scripts/GameManagement/CloseGame.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Enemies/EnemyScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameManagement/variableTracker.cs" Line="90" Column="1" />
+      <File FileName="Assets/Scripts/EnvironmentStuff/DestructibleScript.cs" Line="25" Column="1" />
+      <File FileName="Assets/Scripts/Enemies/FogScript.cs" Line="9" Column="35" />
+      <File FileName="Assets/Scripts/CutScenes&amp;Menus/MenuIntro.cs" Line="25" Column="1" />
+      <File FileName="Assets/Scripts/Enemies/EnemyScriptStage3.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

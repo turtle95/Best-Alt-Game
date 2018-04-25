@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FogScript : MonoBehaviour {
 
-	// Use this for initialization
+    //public variableTracker varTrack;
+    // Use this for initialization
+    public Scene scene;
 	void Start () {
-		
+        //varTrack = GameObject.Find("variableTracker").GetComponent<variableTracker>();
+        scene = SceneManager.GetActiveScene();
 	}
 	
 	// Update is called once per frame
@@ -16,10 +20,13 @@ public class FogScript : MonoBehaviour {
 
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.gameObject.tag == "Destructible")
+        if (scene.name == "Scene1")
         {
-            collision.gameObject.GetComponent<DestructibleScript>().fogged = true;
-			collision.gameObject.GetComponent<DestructibleScript> ().ChangeColor ();
+            if (collision.gameObject.tag == "Destructible")
+            {
+                collision.gameObject.GetComponent<DestructibleScript>().fogged = true;
+                collision.gameObject.GetComponent<DestructibleScript>().ChangeColor();
+            }
         }
     }
 }

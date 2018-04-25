@@ -87,7 +87,7 @@ public class variableTracker : MonoBehaviour {
 		EnemiesKilled = 0;
 		ObjectsDestroyed = 0;
 		PlayerHP = 100;
-        resultText.text = "";
+        //resultText.text = "";
 	}
 
 

@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	public Image healthBar;
 
-	variableTracker varTrack;
+	public variableTracker varTrack;
 	// Use this for initialization
 	void Start () {
 		

@@ -21,6 +21,7 @@ public class DestructibleScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         varTrack = GameObject.Find("variableTracker").GetComponent<variableTracker>();
+
         bugFoged.SetActive(false);
         bugNoFog.SetActive(true);
 

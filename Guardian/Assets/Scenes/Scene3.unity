@@ -15029,7 +15029,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 228585300}
-  m_LocalRotation: {x: -0.60555375, y: -0.3533936, z: -0.3593744, w: 0.61584723}
+  m_LocalRotation: {x: -0.6055537, y: -0.35339358, z: -0.35937437, w: 0.6158472}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.005021, y: 1.005021, z: 1.005021}
   m_Children:
@@ -32962,7 +32962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetTrans: {fileID: 1865451612}
-  speed: 60
+  speed: 40
   expload: {fileID: 814658249}
   health: 10
   damageAnim: {fileID: 936390180}
@@ -65710,7 +65710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetTrans: {fileID: 1865451612}
-  speed: 60
+  speed: 40
   expload: {fileID: 1945139448}
   health: 10
   damageAnim: {fileID: 622659333}
@@ -65861,7 +65861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetTrans: {fileID: 1865451612}
-  speed: 60
+  speed: 40
   expload: {fileID: 1135506904}
   health: 10
   damageAnim: {fileID: 1868722575}
@@ -87818,7 +87818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetTrans: {fileID: 1865451612}
-  speed: 60
+  speed: 40
   expload: {fileID: 1153173110}
   health: 10
   damageAnim: {fileID: 327844471}
@@ -117917,7 +117917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetTrans: {fileID: 1865451612}
-  speed: 60
+  speed: 40
   expload: {fileID: 538461189}
   health: 10
   damageAnim: {fileID: 1857605730}
@@ -132180,7 +132180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetTrans: {fileID: 1865451612}
-  speed: 60
+  speed: 40
   expload: {fileID: 1071028055}
   health: 10
   damageAnim: {fileID: 1062823819}
@@ -151240,7 +151240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetTrans: {fileID: 1865451612}
-  speed: 60
+  speed: 40
   expload: {fileID: 587543903}
   health: 10
   damageAnim: {fileID: 1849992518}

@@ -2511,8 +2511,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 1635265855582588, guid: cb1c0dc7db878d5458609ba9d4c38db9, type: 2}
   Epoints: 
-  enemyCap: 30
-  enemiesToProgress: 70
+  enemyCap: 10
+  enemiesToProgress: 30
   varTrack: {fileID: 0}
   lowerSpawnTime: 0d0000001100000014000000
   prevEnCap: 10

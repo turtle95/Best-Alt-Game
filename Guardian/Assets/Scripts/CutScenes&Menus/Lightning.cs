@@ -6,7 +6,7 @@ public class Lightning : MonoBehaviour {
 
 
 	public Transform playerTrans;
-	float speed = 20f;
+	float speed = 30f;
 	float turnSpeed = 300f;
 	public GameObject expload;
 	// Update is called once per frame

@@ -41,7 +41,7 @@ public class EnemySpawn : MonoBehaviour {
 	}
 
 	void Update(){
-		Debug.Log (amountOfEnemies);
+		//Debug.Log (amountOfEnemies);
 		//increases the enemy spawn rate based on how many enemies have been killed
 		if (varTrack.EnemiesKilled > lowerSpawnTime [0]) 
 		{
@@ -73,7 +73,7 @@ public class EnemySpawn : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (spawnTime);
 
-		Debug.Log ("In Enumerator " + amountOfEnemies);
+//		Debug.Log ("In Enumerator " + amountOfEnemies);
 
 
 		if (spawnedEnemies < enemyCap) 

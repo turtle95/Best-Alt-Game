@@ -36,7 +36,7 @@ public class variableTracker : MonoBehaviour {
 				ChangeScenes (2);     //Loads Level 2
         }
 
-		if (EnemiesKilled >= 30 && EnemiesKilled < 70)
+		if (EnemiesKilled >= 30 && EnemiesKilled < 68)
         {
 			if (!(CurrentStage == 3))
 				ChangeScenes (3);      //Loads Level 3
@@ -66,7 +66,7 @@ public class variableTracker : MonoBehaviour {
             EnemiesKilled = 68;
         }
 
-        if (SceneManager.GetActiveScene().buildIndex == 4)
+		if (CurrentStage == 4)
         {
             resultText = GameObject.Find("resultnum").GetComponent<Text>();
             if (randomResult == false)

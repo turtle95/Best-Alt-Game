@@ -9,7 +9,7 @@ public class PlayerIconFollow : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		//transform.position = new Vector3 (playerTrans.position.x, transform.position.y, playerTrans.position.z);
-		transform.rotation = Quaternion.Euler (transform.rotation.x, transform.rotation.y, playerTrans.rotation.z);
+		transform.rotation = Quaternion.Euler(new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, playerTrans.eulerAngles.y));
+		 // new Vector3 (transform.localEulerAngles.x, transform.localEulerAngles.y, playerTrans.localEulerAngles.y);
 	}
 }

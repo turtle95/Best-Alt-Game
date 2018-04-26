@@ -18,6 +18,8 @@ public class PlayerGrowth : MonoBehaviour {
 	float rockTemp;
 	float launchSpTemp;
 	Vector3 startSize;
+	public Vector3 shrinkSize =new Vector3(1,1,1);
+
 	// Use this for initialization
 	void Start () {
 	//	varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
@@ -48,6 +50,7 @@ public class PlayerGrowth : MonoBehaviour {
 		rScript.rockSize +=rockTemp * testVar * upScale;
 		rScript.launchSpeed += launchSpTemp * testVar * upScale;
 		pScript.refWalkSpeed += walkTemp * testVar * upScale;
-
+		float tempSize = 1/transform.localScale.x;
+		shrinkSize = new Vector3(tempSize, tempSize, tempSize);
 	}
 }

@@ -10268,7 +10268,7 @@ Prefab:
     - target: {fileID: 137612154427830350, guid: 312cf19e596452340b2a160fd407f5c1,
         type: 2}
       propertyPath: m_AABB.m_Center.x
-      value: -0.3347168
+      value: -0.33483887
       objectReference: {fileID: 0}
     - target: {fileID: 137612154427830350, guid: 312cf19e596452340b2a160fd407f5c1,
         type: 2}
@@ -10278,12 +10278,12 @@ Prefab:
     - target: {fileID: 137612154427830350, guid: 312cf19e596452340b2a160fd407f5c1,
         type: 2}
       propertyPath: m_AABB.m_Center.z
-      value: -0.052368164
+      value: -0.052490234
       objectReference: {fileID: 0}
     - target: {fileID: 137612154427830350, guid: 312cf19e596452340b2a160fd407f5c1,
         type: 2}
       propertyPath: m_AABB.m_Extent.x
-      value: 8.102171
+      value: 8.10217
       objectReference: {fileID: 0}
     - target: {fileID: 137612154427830350, guid: 312cf19e596452340b2a160fd407f5c1,
         type: 2}
@@ -10293,7 +10293,7 @@ Prefab:
     - target: {fileID: 137612154427830350, guid: 312cf19e596452340b2a160fd407f5c1,
         type: 2}
       propertyPath: m_AABB.m_Extent.z
-      value: 3.83162
+      value: 3.8316202
       objectReference: {fileID: 0}
     - target: {fileID: 4037927774977024, guid: 312cf19e596452340b2a160fd407f5c1, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -25534,7 +25534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pScript: {fileID: 1869092780}
   rScript: {fileID: 1869092779}
-  upScale: 0.025
+  upScale: 0.05
   testVar: 1
   camBox: {fileID: 967102213}
   shrinkSize: {x: 1, y: 1, z: 1}

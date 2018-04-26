@@ -9,14 +9,19 @@ public class RockBreakController : MonoBehaviour {
 	public float rockSize = 1;
     public AudioSource audManager;
     public AudioClip rockCollision;
+    public AudioClip rockExplode;
 
 	void OnCollisionEnter(Collision col){
-        audManager.PlayOneShot(rockCollision);
 		if (col.gameObject.CompareTag ("Destructible") || col.gameObject.CompareTag ("Enemy")) {
+            audManager.PlayOneShot(rockExplode);
 			rockPiecesSized = Instantiate (rockPieces, transform.position, transform.rotation);
 			rockPiecesSized.transform.localScale *= rockSize;
 			Destroy (this.gameObject);
 		}
+        else
+        {
+            audManager.PlayOneShot(rockCollision);
+        }
 
 	}
 }

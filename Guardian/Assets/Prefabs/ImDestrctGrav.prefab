@@ -146,9 +146,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929516717487592}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1869.473, y: 1582.7705, z: 2732.157}
-  m_LocalScale: {x: 0.7975463, y: 0.7975458, z: 0.7975458}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -82.9736, y: 6.5298014, z: -0.009400585}
+  m_LocalScale: {x: 0.55092055, y: 0.5509202, z: 0.5509202}
   m_Children:
   - {fileID: 4112381551129192}
   - {fileID: 4655750472649570}
@@ -493,8 +493,8 @@ MonoBehaviour:
   deathFloaty: {fileID: 1252853473410166, guid: 8638ce0878e99d7468c9918660f9efb7,
     type: 2}
   floatySpawner: {fileID: 4655750472649570}
-  bugNoFog: {fileID: 1926443778757306}
-  bugFoged: {fileID: 1890704123143696}
+  ObjNoFog: {fileID: 1926443778757306}
+  ObjFoged: {fileID: 1890704123143696}
   audManager: {fileID: 82776497464717720}
   destDeath: {fileID: 8300000, guid: f0dd2985d08e282489c834c17da224b0, type: 3}
   peopleDeath: {fileID: 8300000, guid: a6f469ec21b72a842adfeb5b844e4317, type: 3}

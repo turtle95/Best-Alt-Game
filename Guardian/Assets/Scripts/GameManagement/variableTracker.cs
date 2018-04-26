@@ -81,6 +81,14 @@ public class variableTracker : MonoBehaviour {
         }
     }
 
+    public void ResetToLvl1(){
+        PlayerHP = 100;
+        CurrentStage = 1;
+        EnemiesKilled = 0;
+        ObjectsDestroyed = 0;
+        ChangeScenes(1);
+    }
+
 	//Resets all the variables for when the game restarts
 	public void ResetVars(){
 		//CurrentStage = 1;

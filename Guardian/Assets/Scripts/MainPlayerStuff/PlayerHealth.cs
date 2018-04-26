@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour {
 		if (varTrack.PlayerHP <= 0) {
             audManager.PlayOneShot(playerDeath);
 			varTrack.ResetVars ();
-			SceneManager.LoadScene (0);
+			//SceneManager.LoadScene (0);
 		}
 	}
 

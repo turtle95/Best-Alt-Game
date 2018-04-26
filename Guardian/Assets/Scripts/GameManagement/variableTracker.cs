@@ -83,10 +83,39 @@ public class variableTracker : MonoBehaviour {
 
 	//Resets all the variables for when the game restarts
 	public void ResetVars(){
-		CurrentStage = 1;
-		EnemiesKilled = 0;
-		ObjectsDestroyed = 0;
+		//CurrentStage = 1;
+		//EnemiesKilled = 0;
+		//ObjectsDestroyed = 0;
 		PlayerHP = 100;
+        if (EnemiesKilled < 10)
+        {
+            if (CurrentStage == 1)
+            {
+                EnemiesKilled = 0;
+                ChangeScenes(1);  //Loads Level 1
+            }
+        }
+
+        if (EnemiesKilled >= 10 && EnemiesKilled < 30)
+        {
+            if (CurrentStage == 2)
+            {
+                EnemiesKilled = 10;
+                ChangeScenes(2);     //Loads Level 2
+            }
+        }
+
+        if (EnemiesKilled >= 30 && EnemiesKilled < 68)
+        {
+            { 
+            EnemiesKilled = 30;
+            if (CurrentStage == 3)
+                ChangeScenes(3);      //Loads Level 3
+            }
+        }
+
+
+
         //resultText.text = "";
 	}
 

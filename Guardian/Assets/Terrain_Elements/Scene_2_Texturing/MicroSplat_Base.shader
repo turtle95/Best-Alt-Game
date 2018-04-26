@@ -8,7 +8,7 @@
 //   Platform : WindowsEditor
 //////////////////////////////////////////////////////
 
-Shader "Hidden/MicroSplat/MicroSplat_Base2105773593" {
+Shader "Hidden/MicroSplat/MicroSplat_Base1588210418" {
    Properties {
       [HideInInspector] _Control0 ("Control0", 2D) = "red" {}
       [HideInInspector] _Control1 ("Control1", 2D) = "black" {}
@@ -44,6 +44,7 @@ Shader "Hidden/MicroSplat/MicroSplat_Base2105773593" {
 
       #define _MICROSPLAT 1
       #define _PERTEXNORMSTR 1
+      #define _PERTEXSMOOTHSTR 1
       #define _PERTEXUVSCALEOFFSET 1
 
 

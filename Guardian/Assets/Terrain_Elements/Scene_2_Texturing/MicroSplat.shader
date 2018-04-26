@@ -44,6 +44,7 @@ Shader "MicroSplat/MicroSplat" {
 
       #define _MICROSPLAT 1
       #define _PERTEXNORMSTR 1
+      #define _PERTEXSMOOTHSTR 1
       #define _PERTEXUVSCALEOFFSET 1
 
 
@@ -1095,7 +1096,7 @@ ENDCG
 
    }
    Dependency "AddPassShader" = "Hidden/MicroSplat/AddPass"
-   Dependency "BaseMapShader" = "Hidden/MicroSplat/MicroSplat_Base2105773593"
+   Dependency "BaseMapShader" = "Hidden/MicroSplat/MicroSplat_Base1588210418"
    CustomEditor "MicroSplatShaderGUI"
    Fallback "Nature/Terrain/Diffuse"
 }

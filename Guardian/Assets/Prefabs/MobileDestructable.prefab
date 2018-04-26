@@ -457,8 +457,8 @@ MonoBehaviour:
   deathFloaty: {fileID: 1252853473410166, guid: 8638ce0878e99d7468c9918660f9efb7,
     type: 2}
   floatySpawner: {fileID: 4107127212960192}
-  bugNoFog: {fileID: 1715116375685084}
-  bugFoged: {fileID: 1248528911721226}
+  ObjNoFog: {fileID: 1715116375685084}
+  ObjFoged: {fileID: 1248528911721226}
   audManager: {fileID: 82420254834625074}
   destDeath: {fileID: 8300000, guid: 9488c916e8961654cb4b2eface7cab85, type: 3}
   peopleDeath: {fileID: 0}

@@ -25,13 +25,13 @@ public class FogScript : MonoBehaviour {
 
     private void OnTriggerStay(Collider collision)
     {
-        if (scene.name == "Scene1")
-        {
+        //if (scene.name == "Scene1")
+        //{
             if (collision.gameObject.tag == "Destructible")
             {
                 collision.gameObject.GetComponent<DestructibleScript>().fogged = true;
                 collision.gameObject.GetComponent<DestructibleScript>().ChangeColor();
             }
-        }
+        //}
     }
 }

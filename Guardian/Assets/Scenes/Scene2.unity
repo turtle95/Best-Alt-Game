@@ -2995,6 +2995,8 @@ MonoBehaviour:
   grndHeight: 200
   audManager: {fileID: 2021190151}
   dashSound: {fileID: 0}
+  infectedFog: {fileID: 1877802917352226, guid: 53f535ac0924c4e539b5a820c5679ced,
+    type: 2}
 --- !u!114 &706134837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4629,8 +4631,8 @@ MonoBehaviour:
   deathFloaty: {fileID: 1252853473410166, guid: 8638ce0878e99d7468c9918660f9efb7,
     type: 2}
   floatySpawner: {fileID: 1406076719}
-  bugNoFog: {fileID: 0}
-  bugFoged: {fileID: 0}
+  ObjNoFog: {fileID: 0}
+  ObjFoged: {fileID: 0}
   audManager: {fileID: 0}
   destDeath: {fileID: 0}
   peopleDeath: {fileID: 0}
@@ -13829,7 +13831,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -17.3, y: -15.5}
+  m_AnchoredPosition: {x: -17.300049, y: -15.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1630425288

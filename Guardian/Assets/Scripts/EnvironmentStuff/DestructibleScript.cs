@@ -12,8 +12,8 @@ public class DestructibleScript : MonoBehaviour {
 	public GameObject deathFloaty;
 	public Transform floatySpawner;
 	//public Material [] mainColorMat;
-	public GameObject bugNoFog;
-    public GameObject bugFoged;
+	public GameObject ObjNoFog;
+    public GameObject ObjFoged;
     public AudioSource audManager;
     public AudioClip destDeath;
     public AudioClip peopleDeath;
@@ -25,8 +25,8 @@ public class DestructibleScript : MonoBehaviour {
     void Start () {
         varTrack = GameObject.Find("variableTracker").GetComponent<variableTracker>();
 
-        bugFoged.SetActive(false);
-        bugNoFog.SetActive(true);
+        ObjFoged.SetActive(false);
+        ObjNoFog.SetActive(true);
 
 			//objectColor = currentColor = mainColorMat[i].color;
 		//mainColorMat = objWMats.GetComponent<Renderer>().materials;
@@ -68,8 +68,8 @@ public class DestructibleScript : MonoBehaviour {
 		//for (int i = 0; i < mainColorMat.Length; i++) {
 		if (fogged)
         {
-            bugNoFog.SetActive(false);
-            bugFoged.SetActive(true);
+            ObjNoFog.SetActive(false);
+            ObjFoged.SetActive(true);
         }
 			//objWMats.GetComponent<Renderer>().materials = foggedColorMat;
 		else

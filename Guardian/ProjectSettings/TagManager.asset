@@ -13,6 +13,7 @@ TagManager:
   - EnemySpawner
   - RockLine
   - RockPieces
+  - World
   layers:
   - Default
   - TransparentFX

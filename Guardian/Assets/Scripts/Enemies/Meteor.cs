@@ -13,9 +13,10 @@ public class Meteor : MonoBehaviour {
 	public Animator damageAnim;
 
 	public GameObject warning;
+	public Animator worldAnim;
 
 	void Start(){
-		warning = GameObject.FindGameObjectWithTag ("MeteorWarning");
+		//warning = GameObject.FindGameObjectWithTag ("MeteorWarning");
 	}
 
 	// Update is called once per frame
@@ -47,6 +48,10 @@ public class Meteor : MonoBehaviour {
 
 		if (col.gameObject.CompareTag ("Destructible")) {
 			Destroy (col.gameObject);
+		}
+
+		if(col.gameObject.CompareTag("World")){
+			worldAnim.SetTrigger("TakeDamage");
 		}
 	}
 }

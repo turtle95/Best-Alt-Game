@@ -1046,6 +1046,7 @@ MonoBehaviour:
   rockSize: 1
   audManager: {fileID: 82619639900995236}
   rockCollision: {fileID: 8300000, guid: e7ffc802d799bc145a0e60ed71f71189, type: 3}
+  rockExplode: {fileID: 8300000, guid: 005946ed8a73611428245bc07a2bf620, type: 3}
 --- !u!135 &135282821229444816
 SphereCollider:
   m_ObjectHideFlags: 1

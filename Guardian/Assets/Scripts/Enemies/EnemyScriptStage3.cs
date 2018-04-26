@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyScriptStage3 : MonoBehaviour {
 
+	public EnemySpawn sScript;
 	public variableTracker varTrack;
 	public GameObject fogObject;
 	public float upScale = 0.005f;
@@ -13,6 +14,7 @@ public class EnemyScriptStage3 : MonoBehaviour {
     public AudioClip spiritDeath;
 
 	void Start(){
+		sScript = GameObject.Find ("Enemy Spawner").GetComponent<EnemySpawn>();
 		gScript = GameObject.FindGameObjectWithTag ("Player").GetComponent<PGrowthStage3> ();
 		varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
 	}
@@ -20,6 +22,8 @@ public class EnemyScriptStage3 : MonoBehaviour {
 	void OnCollisionEnter(Collision col){
 		if (col.gameObject.CompareTag ("Rock")) {
 			//Debug.Log ("Hit!");
+			sScript.amountOfEnemies -= 1;
+			//Debug.Log (sScript.amountOfEnemies);
 			gScript.testVar += 1;
 			gScript.Grow ();
             audManager.PlayOneShot(spiritDeath);

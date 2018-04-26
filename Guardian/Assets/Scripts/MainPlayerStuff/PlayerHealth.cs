@@ -35,7 +35,6 @@ public class PlayerHealth : MonoBehaviour {
 	void OnTriggerStay(Collider col){
 		if (col.CompareTag ("Fog")) {
 			varTrack.PlayerHP -= 4f * Time.deltaTime;
-			Debug.Log (varTrack.PlayerHP);
 		}
 	}
 }

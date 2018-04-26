@@ -42,7 +42,7 @@ public class variableTracker : MonoBehaviour {
 				ChangeScenes (3);      //Loads Level 3
         }
 
-		if (EnemiesKilled >= 70)
+		if (EnemiesKilled >= 68)
         {
 			if (!(CurrentStage == 4)) 
 				ChangeScenes (4);       //Loads Ending
@@ -63,7 +63,7 @@ public class variableTracker : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            EnemiesKilled = 70;
+            EnemiesKilled = 68;
         }
 
         if (SceneManager.GetActiveScene().buildIndex == 4)

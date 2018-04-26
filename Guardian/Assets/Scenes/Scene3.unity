@@ -2436,11 +2436,13 @@ MonoBehaviour:
   enemy: {fileID: 1667608589318736, guid: 7aae0447cffb2354ab392f78a466a0bb, type: 2}
   Epoints: 
   enemyCap: 10
+  enemiesToProgress: 70
   varTrack: {fileID: 0}
   lowerSpawnTime: 210000002400000028000000
   prevEnCap: 30
   killedUi: {fileID: 1350754933}
   amountOfEnemies: 0
+  spawn: 1
 --- !u!1001 &665439320
 Prefab:
   m_ObjectHideFlags: 0
@@ -2732,6 +2734,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1003569916}
+  audManager: {fileID: 0}
+  playerDeath: {fileID: 0}
   varTrack: {fileID: 0}
 --- !u!114 &706134837
 MonoBehaviour:
@@ -2750,6 +2754,8 @@ MonoBehaviour:
   launchSpeed: 25
   initialCharge: 10
   chargeSpeed: 50
+  audManager: {fileID: 0}
+  shootSound: {fileID: 0}
   rockDisappearTime: 10
 --- !u!114 &706134838
 MonoBehaviour:
@@ -2790,6 +2796,8 @@ MonoBehaviour:
   cameraBox: {fileID: 442974498}
   cScript: {fileID: 442974499}
   maxFlyHeight: 60
+  audManager: {fileID: 0}
+  dashSound: {fileID: 0}
 --- !u!114 &706134840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3012,6 +3020,10 @@ Prefab:
         type: 2}
       propertyPath: EnemiesKilled
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238798768328584, guid: 0ec6a78928bb34e47b835c6824d270af, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ec6a78928bb34e47b835c6824d270af, type: 2}

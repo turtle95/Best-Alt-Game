@@ -12,6 +12,7 @@ public class EnemySpawn : MonoBehaviour {
 	// GameObject [] spawnedEnemys; //array to store where all the enemies in the scene are
     public List<int> Epoints = new List<int>();
 	public int enemyCap = 10;
+	public int enemiesToProgress = 70;
 	float spawnTime = 4f;
 	public variableTracker varTrack;
 	public int[] lowerSpawnTime;
@@ -23,10 +24,11 @@ public class EnemySpawn : MonoBehaviour {
 
 	public int amountOfEnemies = 0;
 
+	public bool spawn = true;
 	void Start () //starts the spawn coroutine 
 	{
 		varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
-		StartCoroutine (SpawnStuffs ());
+		//StartCoroutine (SpawnStuffs (amountOfEnemies));
 		points = GameObject.FindGameObjectsWithTag ("EnemySpawner");
 
         for (int n = 0; n < points.Length; n++){
@@ -44,7 +46,7 @@ public class EnemySpawn : MonoBehaviour {
 		if (varTrack.EnemiesKilled > lowerSpawnTime [0]) 
 		{
 			growthRate = 0.004f;
-			spawnTime = 0.01f;
+			spawnTime = 2f;
 			if (varTrack.EnemiesKilled > lowerSpawnTime [1]) 
 			{
 				growthRate = 0.007f;
@@ -58,19 +60,23 @@ public class EnemySpawn : MonoBehaviour {
 		}
 
 		float enemiesKilledUi = varTrack.EnemiesKilled - prevEnCap;
-		killedUi.fillAmount = enemiesKilledUi / (enemyCap - prevEnCap);  
+		killedUi.fillAmount = enemiesKilledUi / (enemiesToProgress - prevEnCap);  
+		if (spawn) {
+			spawn = false;
+			StartCoroutine (SpawnStuffs (amountOfEnemies));
+		}
 	//	Debug.Log (enemiesKilledUi / (enemyCap - prevEnCap));
 	}
 	
 	//waits a second, then chooses a random spawnpoint and spawns an enemy there, after that it calls itself again
-	IEnumerator SpawnStuffs()
+	IEnumerator SpawnStuffs(int spawnedEnemies)
 	{
 		yield return new WaitForSeconds (spawnTime);
 
+		Debug.Log ("In Enumerator " + amountOfEnemies);
 
 
-
-		if (amountOfEnemies < enemyCap) 
+		if (spawnedEnemies < enemyCap) 
 		{
 			int j = UnityEngine.Random.Range (0, points.Length);
 			if(Epoints[j] == -1){
@@ -83,9 +89,9 @@ public class EnemySpawn : MonoBehaviour {
 					enemySpawnedNow.GetComponent<EnemyScriptStage3> ().upScale = growthRate;
                 Epoints[j] = 1;
             }
-            StartCoroutine(SpawnStuffs());
-		}
 
+		}
+		spawn = true;
 		
 	}
 

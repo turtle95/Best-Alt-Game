@@ -5,9 +5,9 @@ using UnityEngine;
 public class AttackingEnemy : MonoBehaviour {
 
 	public variableTracker varTrack;
-	public GameObject fogObject;
+	//public GameObject fogObject;
 	float upScale = 0.005f;
-	public PlayerMovement001 pScript;
+	//public PlayerMovement001 pScript;
 	public GameObject eSpawn;
 	public GameObject cutSceneStuffs;
 	//kills the enemy when a rock hits it
@@ -15,7 +15,7 @@ public class AttackingEnemy : MonoBehaviour {
 		if (col.gameObject.CompareTag ("Rock")) {
 			varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
 			varTrack.EnemiesKilled += 1;
-			pScript.enabled = true;
+			//pScript.enabled = true;
 			eSpawn.SetActive (true);
 			Destroy (cutSceneStuffs);
 		}
@@ -23,6 +23,6 @@ public class AttackingEnemy : MonoBehaviour {
 
 	void Update()
 	{
-		fogObject.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime * upScale;
+		//fogObject.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime * upScale;
 	}
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PassTimeTrigger : MonoBehaviour {
 
-	public GameObject fader;
 	public GameObject[] turnOn;
 	public GameObject[] turnOff;
 	public GameObject[] turnOn2;
@@ -22,8 +21,6 @@ public class PassTimeTrigger : MonoBehaviour {
 
 	IEnumerator WaitForFade()
 	{
-		fader.SetActive (true);
-		yield return new WaitForSeconds (2);
 		for (int i = 0; i < turnOn.Length; i++) {
 			turnOn [i].SetActive (true);
 		}
@@ -31,9 +28,10 @@ public class PassTimeTrigger : MonoBehaviour {
 			turnOff [j].SetActive (false);
 		}
 		pScript.rb.velocity = Vector3.zero;
-		pScript.enabled = false;
+		//pScript.enabled = false;
 
-		yield return new WaitForSeconds (2);
+		yield return new WaitForSeconds (1.5f);
+		//pScript.enabled = true;
 		for (int i = 0; i < turnOn2.Length; i++) {
 			turnOn2 [i].SetActive (true);
 		}

@@ -17,6 +17,6 @@ public class ShrinkMinimapUi : MonoBehaviour {
 		if(varTrack.CurrentStage == 3)
 			transform.localScale = gScript.shrinkSize;
 		else
-			transform.localScale = pScript.shrinkSize;
+			transform.localScale = pScript.shrinkSize/2f;
 	}
 }

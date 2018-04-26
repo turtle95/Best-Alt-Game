@@ -45,6 +45,9 @@ public class PlayerMovement001 : MonoBehaviour {
     public AudioSource audManager;
     public AudioClip dashSound;
 
+
+
+	public GameObject infectedFog;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
@@ -56,9 +59,10 @@ public class PlayerMovement001 : MonoBehaviour {
 	//// Update is called once per frame
 	void Update () {
 
-		//...??
+		//resets walk speed/infected fog when not colliding with enemy
 		if (triggered && !enemCol) {
 			walkSpeed = refWalkSpeed;
+			infectedFog.SetActive (false);
 			triggered = false;
 		}
 
@@ -151,6 +155,7 @@ public class PlayerMovement001 : MonoBehaviour {
 
 	void OnTriggerStay(Collider col){
 		if (col.CompareTag ("Fog")) {
+			infectedFog.SetActive (true);
 			walkSpeed = 3;
 			enemCol = col;
 			triggered = true;
@@ -161,6 +166,7 @@ public class PlayerMovement001 : MonoBehaviour {
 
 	void OnTriggerExit(Collider col){
 		if (col.CompareTag ("Fog")) {
+			infectedFog.SetActive (false);
 			walkSpeed = refWalkSpeed;
 			triggered = false;
 		}

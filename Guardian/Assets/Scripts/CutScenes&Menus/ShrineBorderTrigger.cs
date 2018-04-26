@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class ShrineBorderTrigger : MonoBehaviour {
 
-	public MeshRenderer sheild;
+	public GameObject [] turnON;
+	public GameObject [] turnOff;
 
 	void OnTriggerEnter(Collider col){
 		if (col.CompareTag ("Player")) {
-			sheild.enabled = true;
+			for (int i = 0; i < turnON.Length; i++) {
+				turnON [i].SetActive (true);
+			}
+			for (int j = 0; j < turnOff.Length; j++) {
+				turnOff [j].SetActive (false);
+			}
 			Destroy (this.gameObject);
 		}
 

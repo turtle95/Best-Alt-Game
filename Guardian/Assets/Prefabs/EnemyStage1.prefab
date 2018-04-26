@@ -1741,7 +1741,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1112841570756172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 376.82953, y: 88.92055, z: 575.5325}
+  m_LocalPosition: {x: 4.4196777, y: 1.8110399, z: -0.10549927}
   m_LocalScale: {x: 111.72359, y: 111.72351, z: 111.72351}
   m_Children:
   - {fileID: 4447460731392060}
@@ -2182,7 +2182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   varTrack: {fileID: 0}
   fogObject: {fileID: 1261727309962408}
-  upScale: 0.005
+  upScale: 0.03
   maxFogSize: 0.05
   audManager: {fileID: 82375031618289136}
   spiritDeath: {fileID: 8300000, guid: 8f25716259e659d4aa55a94b5f1e6e42, type: 3}

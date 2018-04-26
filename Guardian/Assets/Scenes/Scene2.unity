@@ -10268,7 +10268,7 @@ Prefab:
     - target: {fileID: 137612154427830350, guid: 312cf19e596452340b2a160fd407f5c1,
         type: 2}
       propertyPath: m_AABB.m_Center.x
-      value: -0.33483887
+      value: -0.3347168
       objectReference: {fileID: 0}
     - target: {fileID: 137612154427830350, guid: 312cf19e596452340b2a160fd407f5c1,
         type: 2}
@@ -10278,12 +10278,12 @@ Prefab:
     - target: {fileID: 137612154427830350, guid: 312cf19e596452340b2a160fd407f5c1,
         type: 2}
       propertyPath: m_AABB.m_Center.z
-      value: -0.052490234
+      value: -0.052368164
       objectReference: {fileID: 0}
     - target: {fileID: 137612154427830350, guid: 312cf19e596452340b2a160fd407f5c1,
         type: 2}
       propertyPath: m_AABB.m_Extent.x
-      value: 8.10217
+      value: 8.102171
       objectReference: {fileID: 0}
     - target: {fileID: 137612154427830350, guid: 312cf19e596452340b2a160fd407f5c1,
         type: 2}
@@ -10293,7 +10293,7 @@ Prefab:
     - target: {fileID: 137612154427830350, guid: 312cf19e596452340b2a160fd407f5c1,
         type: 2}
       propertyPath: m_AABB.m_Extent.z
-      value: 3.8316202
+      value: 3.83162
       objectReference: {fileID: 0}
     - target: {fileID: 4037927774977024, guid: 312cf19e596452340b2a160fd407f5c1, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -18307,6 +18307,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 33.096
       objectReference: {fileID: 0}
+    - target: {fileID: 82500867558158994, guid: 1dfad95273864084abe769a6a20d5e4b,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1dfad95273864084abe769a6a20d5e4b, type: 2}
   m_IsPrefabParent: 0
@@ -21827,6 +21832,11 @@ Prefab:
     - target: {fileID: 4282790952433808, guid: e74633fc6c2002241bf99de6e51f2104, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 15.253
+      objectReference: {fileID: 0}
+    - target: {fileID: 82953084897001272, guid: e74633fc6c2002241bf99de6e51f2104,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e74633fc6c2002241bf99de6e51f2104, type: 2}
@@ -25577,7 +25587,7 @@ MonoBehaviour:
   fallingThroughGround: 80
   grndHeight: 200
   audManager: {fileID: 1527775384}
-  dashSound: {fileID: 0}
+  dashSound: {fileID: 8300000, guid: a64ec9f25b6f7cc4280575eddee407fd, type: 3}
   infectedFog: {fileID: 1877802917352226, guid: 53f535ac0924c4e539b5a820c5679ced,
     type: 2}
 --- !u!114 &1869092781
@@ -25604,7 +25614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 813357856}
   audManager: {fileID: 1527775384}
-  playerDeath: {fileID: 0}
+  playerDeath: {fileID: 8300000, guid: ad3d734e88ed5004ab1b49a6421be858, type: 3}
   varTrack: {fileID: 0}
 --- !u!54 &1869092783
 Rigidbody:
@@ -31109,19 +31119,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4798912179553364, guid: ebe38e2a17c4b564f9faa1ceaee912c3, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.0077906447
+      value: 0.0077906437
       objectReference: {fileID: 0}
     - target: {fileID: 4798912179553364, guid: ebe38e2a17c4b564f9faa1ceaee912c3, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.62264377
+      value: -0.6226437
       objectReference: {fileID: 0}
     - target: {fileID: 4798912179553364, guid: ebe38e2a17c4b564f9faa1ceaee912c3, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.27764308
+      value: -0.27764305
       objectReference: {fileID: 0}
     - target: {fileID: 4798912179553364, guid: ebe38e2a17c4b564f9faa1ceaee912c3, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7315521
+      value: 0.73155206
       objectReference: {fileID: 0}
     - target: {fileID: 4798912179553364, guid: ebe38e2a17c4b564f9faa1ceaee912c3, type: 2}
       propertyPath: m_RootOrder

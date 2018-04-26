@@ -29944,7 +29944,7 @@ MonoBehaviour:
   fallingThroughGround: -10
   grndHeight: 10
   audManager: {fileID: 559545330}
-  dashSound: {fileID: 0}
+  dashSound: {fileID: 8300000, guid: a64ec9f25b6f7cc4280575eddee407fd, type: 3}
   infectedFog: {fileID: 750894606}
 --- !u!114 &706134837
 MonoBehaviour:
@@ -29990,7 +29990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 517745164}
   audManager: {fileID: 559545330}
-  playerDeath: {fileID: 0}
+  playerDeath: {fileID: 8300000, guid: ad3d734e88ed5004ab1b49a6421be858, type: 3}
   varTrack: {fileID: 0}
 --- !u!114 &706134840
 MonoBehaviour:

@@ -497,7 +497,7 @@ MonoBehaviour:
   ObjFoged: {fileID: 1890704123143696}
   audManager: {fileID: 82776497464717720}
   destDeath: {fileID: 8300000, guid: f0dd2985d08e282489c834c17da224b0, type: 3}
-  peopleDeath: {fileID: 8300000, guid: a6f469ec21b72a842adfeb5b844e4317, type: 3}
+  peopleDeath: {fileID: 8300000, guid: 68880980ead97034fba70f04669cd2cf, type: 3}
 --- !u!114 &114619123273228656
 MonoBehaviour:
   m_ObjectHideFlags: 1

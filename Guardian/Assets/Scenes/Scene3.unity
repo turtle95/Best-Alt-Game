@@ -15029,7 +15029,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 228585300}
-  m_LocalRotation: {x: -0.6055537, y: -0.35339358, z: -0.35937437, w: 0.6158472}
+  m_LocalRotation: {x: -0.60555375, y: -0.3533936, z: -0.3593744, w: 0.61584723}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.005021, y: 1.005021, z: 1.005021}
   m_Children:
@@ -61981,6 +61981,7 @@ Transform:
   - {fileID: 847677248}
   - {fileID: 1933842132}
   - {fileID: 1775537097}
+  - {fileID: 1404657622}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 12.339001, z: 0}
@@ -62011,8 +62012,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1003569916}
-  audManager: {fileID: 0}
-  playerDeath: {fileID: 0}
+  audManager: {fileID: 1404657623}
+  playerDeath: {fileID: 8300000, guid: ad3d734e88ed5004ab1b49a6421be858, type: 3}
   varTrack: {fileID: 0}
 --- !u!114 &706134837
 MonoBehaviour:
@@ -62031,8 +62032,8 @@ MonoBehaviour:
   launchSpeed: 25
   initialCharge: 10
   chargeSpeed: 50
-  audManager: {fileID: 0}
-  shootSound: {fileID: 0}
+  audManager: {fileID: 1404657623}
+  shootSound: {fileID: 8300000, guid: 447964cbf4992af4b9b6a292199a0a72, type: 3}
   rockDisappearTime: 10
 --- !u!114 &706134838
 MonoBehaviour:
@@ -62073,8 +62074,8 @@ MonoBehaviour:
   cameraBox: {fileID: 442974498}
   cScript: {fileID: 442974499}
   maxFlyHeight: 60
-  audManager: {fileID: 0}
-  dashSound: {fileID: 0}
+  audManager: {fileID: 1404657623}
+  dashSound: {fileID: 8300000, guid: a64ec9f25b6f7cc4280575eddee407fd, type: 3}
 --- !u!114 &706134840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109505,6 +109506,115 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1393996253}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1404657621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1404657622}
+  - component: {fileID: 1404657623}
+  m_Layer: 8
+  m_Name: playerSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1404657622
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1404657621}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 706134834}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1404657623
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1404657621}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1409594776
 GameObject:
   m_ObjectHideFlags: 0

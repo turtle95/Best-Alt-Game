@@ -27,6 +27,7 @@ public class MenuIntro : MonoBehaviour {
 			for (int j = 0; j < turnOff.Length; j++) {
 				turnOff [j].SetActive (false);
 			}
+			RenderSettings.fogDensity = 0.065f;
 			cScript.enabled = true;
 			cScript.useMouse = false;
 			cScript.mouseX = -90;

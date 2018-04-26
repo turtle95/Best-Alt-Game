@@ -1082,8 +1082,8 @@ Camera:
   m_GameObject: {fileID: 80903879}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.6068339, g: 0.6339148, b: 0.6764706, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -15786,7 +15786,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 400538517}
-  m_LocalRotation: {x: -0.3569758, y: -0.6020045, z: -0.6264941, w: 0.34302172}
+  m_LocalRotation: {x: -0.35697582, y: -0.6020046, z: -0.62649417, w: 0.34302175}
   m_LocalPosition: {x: -120, y: -4.56, z: -2.12}
   m_LocalScale: {x: 8.380129, y: 8.38012, z: 8.380119}
   m_Children:
@@ -19604,7 +19604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &442974498
 Transform:
   m_ObjectHideFlags: 0

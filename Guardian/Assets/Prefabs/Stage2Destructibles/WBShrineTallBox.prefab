@@ -56,6 +56,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4886271826418764}
   - component: {fileID: 114930638617421126}
+  - component: {fileID: 82546069748807580}
+  - component: {fileID: 65561619719456410}
   m_Layer: 0
   m_Name: WBShrineTallBox
   m_TagString: Destructible
@@ -239,8 +241,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1390487234317248}
   m_LocalRotation: {x: -0, y: 0.05456041, z: -0, w: 0.9985105}
-  m_LocalPosition: {x: -137.25543, y: 69.11, z: 474.12076}
-  m_LocalScale: {x: 1.5434477, y: 1.5434471, z: 1.5434474}
+  m_LocalPosition: {x: 518.74, y: 138.24, z: 880.23}
+  m_LocalScale: {x: 1.260988, y: 1.2609875, z: 1.2609878}
   m_Children:
   - {fileID: 4713652694993366}
   - {fileID: 4438123914746132}
@@ -523,7 +525,7 @@ MeshCollider:
   m_GameObject: {fileID: 1844385189609576}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -537,7 +539,7 @@ MeshCollider:
   m_GameObject: {fileID: 1996833353749870}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -551,7 +553,7 @@ MeshCollider:
   m_GameObject: {fileID: 1977221840608774}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -565,7 +567,7 @@ MeshCollider:
   m_GameObject: {fileID: 1344718012273416}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -579,7 +581,7 @@ MeshCollider:
   m_GameObject: {fileID: 1544183890574164}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -593,12 +595,104 @@ MeshCollider:
   m_GameObject: {fileID: 1312443657355084}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300016, guid: a03c493243d837244a5223b0376285ed, type: 3}
+--- !u!65 &65561619719456410
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1390487234317248}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1070762, y: 6.541692, z: 2.4524007}
+  m_Center: {x: -0.12749653, y: -1.3018142, z: -0.72620136}
+--- !u!82 &82546069748807580
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1390487234317248}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 33111819edc60524099c65db83609dfe, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114930638617421126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -615,8 +709,8 @@ MonoBehaviour:
   deathFloaty: {fileID: 1252853473410166, guid: 8638ce0878e99d7468c9918660f9efb7,
     type: 2}
   floatySpawner: {fileID: 4484794047253784}
-  bugNoFog: {fileID: 1344718012273416}
-  bugFoged: {fileID: 1544183890574164}
-  audManager: {fileID: 0}
-  destDeath: {fileID: 0}
-  peopleDeath: {fileID: 0}
+  ObjNoFog: {fileID: 1344718012273416}
+  ObjFoged: {fileID: 1544183890574164}
+  audManager: {fileID: 82546069748807580}
+  destDeath: {fileID: 8300000, guid: f0dd2985d08e282489c834c17da224b0, type: 3}
+  peopleDeath: {fileID: 8300000, guid: 33111819edc60524099c65db83609dfe, type: 3}

@@ -93,7 +93,14 @@ public class DestructibleScript : MonoBehaviour {
             {
                 audManager.PlayOneShot(peopleDeath);
             }
-            Destroy(this.gameObject);
+			ObjFoged.SetActive(false);
+			ObjNoFog.SetActive(false);
+			StartCoroutine (waitForSound ());
         }
     }
+
+	IEnumerator waitForSound(){
+		yield return new WaitForSeconds (3);
+		Destroy(this.gameObject);
+	}
 }

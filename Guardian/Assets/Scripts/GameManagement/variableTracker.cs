@@ -16,6 +16,7 @@ public class variableTracker : MonoBehaviour {
     public bool transStart;
 	GameObject endFader;
 	cameraTransition cTScript;
+	public bool controller = false;
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(this); //So that variableTracker will always be able to track variables (stays inbetween scenes)
@@ -23,6 +24,14 @@ public class variableTracker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Input.GetButtonDown("Join")){
+			controller = true;
+		}
+
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			controller = false;
+		}
      
 		if (EnemiesKilled < 10)
 		{

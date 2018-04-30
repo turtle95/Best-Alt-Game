@@ -21,26 +21,32 @@ public class CameraController : MonoBehaviour {
 	private Vector3 velocity = Vector3.one;
 
 	public Transform mainCamTrans;
-
+	public variableTracker varTrack;
 	public bool lookingDown = false;
 	public bool useMouse = true;
 	// Use this for initialization
 	void Start () {
         //offset = transform.position - player.transform.position;
 		playerTrans = player.GetComponent<Transform>();
-	//	playerRB = player.GetComponent<Rigidbody> ();
+		varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
 	}
 
 
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		if (varTrack.controller)
+			sensitivity = 7;
+		else
+			sensitivity = 1;
+
 		FollowPlayer ();
 
 		if (useMouse) {
 			//Takes input from the mouse and gives it a speed
-			mouseX += Input.GetAxis ("Mouse X") * sensitivity * 0.02f;
-			mouseY -= Input.GetAxis ("Mouse Y") * sensitivity * 0.02f;
+			mouseX += Input.GetAxis ("Mouse X") * sensitivity; //* 0.02f;
+			mouseY -= Input.GetAxis ("Mouse Y") * sensitivity; //* 0.02f;
 			
 			//gives the y camera movement a maximum/minimum movement range
 			mouseY = Mathf.Clamp (mouseY, -rangeY, rangeY);

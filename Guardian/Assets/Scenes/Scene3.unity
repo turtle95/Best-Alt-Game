@@ -40023,6 +40023,7 @@ MonoBehaviour:
   camDown: {fileID: 123728196}
   mainCam: {fileID: 80903883}
   lookingDown: 0
+  varTrack: {fileID: 0}
 --- !u!1 &452118844
 GameObject:
   m_ObjectHideFlags: 0

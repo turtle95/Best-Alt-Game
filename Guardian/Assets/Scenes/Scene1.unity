@@ -19643,6 +19643,7 @@ MonoBehaviour:
   smoothSpeed: 0.7
   offset: {x: 0, y: 1, z: -2}
   mainCamTrans: {fileID: 80903883}
+  varTrack: {fileID: 0}
   lookingDown: 0
   useMouse: 1
 --- !u!1 &443985413
@@ -29583,7 +29584,7 @@ GameObject:
   - component: {fileID: 660026938}
   - component: {fileID: 660026939}
   m_Layer: 0
-  m_Name: EnemySpawner
+  m_Name: Enemy Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61763,58 +61764,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52aaee1516f52bf4fb8bcc173164dcc5, type: 3}
-  m_IsPrefabParent: 0
---- !u!1001 &1649947141
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4583249842703568, guid: 0ec6a78928bb34e47b835c6824d270af, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 392.4705
-      objectReference: {fileID: 0}
-    - target: {fileID: 4583249842703568, guid: 0ec6a78928bb34e47b835c6824d270af, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 148.4884
-      objectReference: {fileID: 0}
-    - target: {fileID: 4583249842703568, guid: 0ec6a78928bb34e47b835c6824d270af, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 348.72205
-      objectReference: {fileID: 0}
-    - target: {fileID: 4583249842703568, guid: 0ec6a78928bb34e47b835c6824d270af, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4583249842703568, guid: 0ec6a78928bb34e47b835c6824d270af, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4583249842703568, guid: 0ec6a78928bb34e47b835c6824d270af, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4583249842703568, guid: 0ec6a78928bb34e47b835c6824d270af, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4583249842703568, guid: 0ec6a78928bb34e47b835c6824d270af, type: 2}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114361473230573042, guid: 0ec6a78928bb34e47b835c6824d270af,
-        type: 2}
-      propertyPath: CurrentStage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114361473230573042, guid: 0ec6a78928bb34e47b835c6824d270af,
-        type: 2}
-      propertyPath: PlayerHP
-      value: 100
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 0ec6a78928bb34e47b835c6824d270af, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1654045147
 Prefab:

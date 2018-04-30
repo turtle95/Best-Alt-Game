@@ -17,15 +17,23 @@ public class Stage3CamLook : MonoBehaviour {
 	public Transform mainCam;
 
 	public bool lookingDown = false;
+	public variableTracker varTrack;
 
 	void Start(){
 		transform.rotation = camDown.rotation;
-
+		varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		if (varTrack.controller)
+			sensitivity = 7;
+		else
+			sensitivity = 1;
 		
+
+
 		//Takes input from the mouse and gives it a speed
 
 		mouseX += Input.GetAxis ("Mouse X") * sensitivity;// * camDown.rotation;

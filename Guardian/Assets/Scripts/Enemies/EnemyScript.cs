@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour {
 
+	public EnemySpawn sScript;
     public variableTracker varTrack;
     public GameObject fogObject;
 	public float upScale = 0.005f;
@@ -15,11 +16,13 @@ public class EnemyScript : MonoBehaviour {
 	void Start(){
 		gScript = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerGrowth> ();
 		varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
+		sScript = GameObject.Find ("Enemy Spawner").GetComponent<EnemySpawn>();
 	}
 	//kills the enemy when a rock hits it
 	void OnCollisionEnter(Collision col){
 		if (col.gameObject.CompareTag ("Rock")) {
 			//Debug.Log ("Hit!");
+			sScript.amountOfEnemies -= 1;
 			gScript.testVar += 1;
 			gScript.Grow ();
             audManager.PlayOneShot(spiritDeath);

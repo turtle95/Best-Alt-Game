@@ -5,12 +5,12 @@ using UnityEngine;
 public class PutSpawnersOnGrnd : MonoBehaviour {
 
 
-	float distToGrounded = 2f; //the distance from player's origin to the ground when grounded
+	float distToGrounded = 10f; //the distance from player's origin to the ground when grounded
 
 	void Update () 
 	{
 		if (!Grounded ())
-			transform.Translate (new Vector3(0,-1, 0));
+			transform.Translate (new Vector3(0,-0.5f, 0));
 	}
 
 	bool Grounded(){

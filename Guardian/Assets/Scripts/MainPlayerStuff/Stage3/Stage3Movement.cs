@@ -41,6 +41,8 @@ public class Stage3Movement : MonoBehaviour {
     public AudioSource audManager;
     public AudioClip dashSound;
 
+	public GameObject infectedFog;
+
 	void Start () {
 		rb = GetComponent<Rigidbody> (); //assigns rb to the player's rigidbody
 		refWalkSpeed = walkSpeed;
@@ -99,6 +101,7 @@ public class Stage3Movement : MonoBehaviour {
 
 		if (triggered && !enemCol) {
 			walkSpeed = refWalkSpeed;
+			infectedFog.SetActive (false);
 			triggered = false;
 		}
 
@@ -145,6 +148,7 @@ public class Stage3Movement : MonoBehaviour {
 
 	void OnTriggerStay(Collider col){
 		if (col.CompareTag ("Fog")) {
+			infectedFog.SetActive (true);
 			walkSpeed = 3;
 			enemCol = col;
 			triggered = true;
@@ -153,6 +157,7 @@ public class Stage3Movement : MonoBehaviour {
 
 	void OnTriggerExit(Collider col){
 		if (col.CompareTag ("Fog")) {
+			infectedFog.SetActive (false);
 			walkSpeed = refWalkSpeed;
 			triggered = false;
 		}

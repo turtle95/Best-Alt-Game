@@ -28,7 +28,10 @@ public class EnemyScriptStage3 : MonoBehaviour {
 			gScript.Grow ();
             audManager.PlayOneShot(spiritDeath);
 			varTrack.EnemiesKilled += 1;
-			Destroy (this.gameObject);
+			gameObject.GetComponent<MeshCollider> ().enabled = false;
+			gameObject.GetComponent<MeshRenderer> ().enabled = false;
+			Destroy (fogObject);
+			StartCoroutine (waitForSound ());
 		}
 	}
 
@@ -38,5 +41,10 @@ public class EnemyScriptStage3 : MonoBehaviour {
 			fogObject.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime * upScale;
 		//new ParticleSystem.MinMaxCurve (1 + 1* Time.deltaTime, 1.1f +1* Time.deltaTime);
 		//fogObject.GetComponent<ParticleSystem> ().main.startSize = ;
+	}
+
+	IEnumerator waitForSound(){
+		yield return new WaitForSeconds (3);
+		Destroy(this.gameObject);
 	}
 }

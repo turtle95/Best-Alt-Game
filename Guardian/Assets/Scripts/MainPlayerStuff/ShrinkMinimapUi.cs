@@ -7,6 +7,7 @@ public class ShrinkMinimapUi : MonoBehaviour {
 	public variableTracker varTrack;
 	public PlayerGrowth pScript;
 	public PGrowthStage3 gScript;
+	public float scaleDiv = 2f;
 	// Use this for initialization
 	void Start () {
 		varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
@@ -17,6 +18,6 @@ public class ShrinkMinimapUi : MonoBehaviour {
 		if(varTrack.CurrentStage == 3)
 			transform.localScale = gScript.shrinkSize;
 		else
-			transform.localScale = pScript.shrinkSize/2f;
+			transform.localScale = pScript.shrinkSize/scaleDiv;
 	}
 }

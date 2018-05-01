@@ -194,7 +194,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1635265855582588}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 72.530876, y: 171.03546, z: -43.565445}
+  m_LocalPosition: {x: 661.0899, y: 127.5139, z: 795.34454}
   m_LocalScale: {x: 3090.3904, y: 3090.3909, z: 3090.3909}
   m_Children:
   - {fileID: 4309622687743168}
@@ -376,7 +376,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 22.353638
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -448,6 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3214406a1488f34ab0c00041c3417f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sScript: {fileID: 0}
   varTrack: {fileID: 0}
   fogObject: {fileID: 1956698996243020}
   upScale: 0.002

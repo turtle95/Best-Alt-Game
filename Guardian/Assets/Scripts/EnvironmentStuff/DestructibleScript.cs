@@ -36,34 +36,6 @@ public class DestructibleScript : MonoBehaviour {
 
 
 
-	// Update is called once per frame
-	/*void FixedUpdate () {
-        if (!fogged)
-        {
-            if (this.GetComponentInChildren<Renderer>().material.color != objectColor)
-            {
-				
-				Color32 currentColor = mainColorMat.color;
-                currentColor.b = currentColor.g = currentColor.r += 1;
-				mainColorMat.color = currentColor;
-            }
-			
-			
-        }
-
-        if (fogged)
-        {
-            if (this.GetComponentInChildren<Renderer>().material.color != foggedColor)
-            {
-				Color32 currentColor = mainColorMat.color;
-                currentColor.b = currentColor.g = currentColor.r -= 1;
-				mainColorMat.color = currentColor;
-            }
-		
-        }
-        fogged = false;
-	}*/
-
 	public void ChangeColor(){
 		//for (int i = 0; i < mainColorMat.Length; i++) {
 		if (fogged)
@@ -72,11 +44,11 @@ public class DestructibleScript : MonoBehaviour {
             ObjFoged.SetActive(true);
         }
 			//objWMats.GetComponent<Renderer>().materials = foggedColorMat;
-		else
-        {
+		//else
+      //  {
             //objs[1].SetActive(true);
             //objs[2].SetActive(false);
-        }
+       // }
 			//objWMats.GetComponent<Renderer>().materials = mainColorMat;
 		//}
 		//fogged = false;
@@ -95,6 +67,10 @@ public class DestructibleScript : MonoBehaviour {
             }
 			ObjFoged.SetActive(false);
 			ObjNoFog.SetActive(false);
+			BoxCollider boxCol = gameObject.GetComponent<BoxCollider> ();
+			if (!(boxCol == null)) {
+				boxCol.enabled = false;
+			}
 			StartCoroutine (waitForSound ());
         }
     }

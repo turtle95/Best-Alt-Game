@@ -1,5 +1,9 @@
 ﻿<Properties StartupConfiguration="{84954CCB-4AB9-7D0B-293D-03486885FBBD}|">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemies/EnemyScript.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Enemies/EnemyScript.cs" Line="20" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

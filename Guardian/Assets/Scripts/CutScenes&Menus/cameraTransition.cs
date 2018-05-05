@@ -12,6 +12,7 @@ public class cameraTransition : MonoBehaviour {
 	public GameObject fader;
 	public bool shaking = false;
 	public CameraShake shakeScript;
+    public variableTracker varTrack;
 
 	void Awake(){
 		shaking = false;
@@ -34,6 +35,10 @@ public class cameraTransition : MonoBehaviour {
 		yield return new WaitForSeconds (duration);
 		shaking = false;
 		SceneManager.LoadScene (sceneToLoad);
+        varTrack = GameObject.Find("variableTracker").GetComponent<variableTracker>();
+        varTrack.PlayerHP = 100;
+
+
 	}
 		
 }

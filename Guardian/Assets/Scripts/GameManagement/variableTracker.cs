@@ -91,11 +91,11 @@ public class variableTracker : MonoBehaviour {
     }
 
     public void ResetToLvl1(){
-        PlayerHP = 100;
         CurrentStage = 1;
         EnemiesKilled = 0;
         ObjectsDestroyed = 0;
         ChangeScenes(1);
+        //PlayerHP = 100;
     }
 
 	//Resets all the variables for when the game restarts
@@ -103,7 +103,7 @@ public class variableTracker : MonoBehaviour {
 		//CurrentStage = 1;
 		//EnemiesKilled = 0;
 		//ObjectsDestroyed = 0;
-		PlayerHP = 100;
+		
         if (EnemiesKilled < 10)
         {
             if (CurrentStage == 1)
@@ -130,7 +130,7 @@ public class variableTracker : MonoBehaviour {
                 ChangeScenes(3);      //Loads Level 3
             }
         }
-
+        //PlayerHP = 100;
 
 
         //resultText.text = "";

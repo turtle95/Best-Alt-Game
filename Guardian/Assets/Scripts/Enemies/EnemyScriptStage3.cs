@@ -12,6 +12,7 @@ public class EnemyScriptStage3 : MonoBehaviour {
 	PGrowthStage3 gScript;
     public AudioSource audManager;
     public AudioClip spiritDeath;
+	public SkinnedMeshRenderer spiritVisisbility;
 
 	void Start(){
 		sScript = GameObject.Find ("Enemy Spawner").GetComponent<EnemySpawn>();
@@ -29,7 +30,7 @@ public class EnemyScriptStage3 : MonoBehaviour {
             audManager.PlayOneShot(spiritDeath);
 			varTrack.EnemiesKilled += 1;
 			gameObject.GetComponent<MeshCollider> ().enabled = false;
-			gameObject.GetComponent<MeshRenderer> ().enabled = false;
+			spiritVisisbility.enabled = false;
 			Destroy (fogObject);
 			StartCoroutine (waitForSound ());
 		}

@@ -6,7 +6,7 @@ public class AttackingEnemy : MonoBehaviour {
 	public Color fColor;
 	public variableTracker varTrack;
 	//public GameObject fogObject;
-	float upScale = 0.005f;
+//	float upScale = 0.005f;
 	//public PlayerMovement001 pScript;
 	public GameObject eSpawn;
 	public GameObject cutSceneStuffs;

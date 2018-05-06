@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{84954CCB-4AB9-7D0B-293D-03486885FBBD}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemies/EnemyScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ChangeSpawnGroup.cs">
     <Files>
       <File FileName="Assets/Scripts/Enemies/EnemyScript.cs" Line="20" Column="1" />
+      <File FileName="Assets/ChangeSpawnGroup.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

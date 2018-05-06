@@ -15,7 +15,7 @@ MonoBehaviour:
   emisMetalArray: 0
   textureMode: 1
   clusterMode: 0
-  hash: 1309909416
+  hash: 0
   diffuseArray: {fileID: 18700000, guid: afce0f72c40e1ef43ba1cd39a44a6073, type: 2}
   normalSAOArray: {fileID: 18700000, guid: 9a068972fce8f7b418a0c13cf055f9af, type: 2}
   diffuseArray2: {fileID: 0}

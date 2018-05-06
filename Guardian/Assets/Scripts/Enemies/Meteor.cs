@@ -35,11 +35,11 @@ public class Meteor : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col){
-		if (col.gameObject.CompareTag ("Player")) {
-			damageAnim.SetTrigger ("TakeDamage");
-			health = 0;
+		//if (col.gameObject.CompareTag ("Player")) {
+		//	damageAnim.SetTrigger ("TakeDamage");
+		//	health = 0;
 
-		}
+		//}
 
 		if (col.gameObject.CompareTag ("Rock")) {
 			damageAnim.SetTrigger ("TakeDamage");

@@ -6,58 +6,37 @@ public class MeteorController : MonoBehaviour {
 
 	variableTracker varTrack;
 
-	public GameObject [] meteors;
+	public Transform [] spawnPoints;
 	public GameObject warning;
 	public CameraShake shakeScript;
 
+	public GameObject meteor;
 
-	bool m1 = false;
-	bool m2 = false;
-	bool m3 = false;
-	bool m4 = false;
-	bool m5 = false;
-	bool m6 = false;
-	bool m7 = false;
 	// Use this for initialization
 	void Start () {
 		varTrack = GameObject.Find("variableTracker").GetComponent<variableTracker>();
+		StartCoroutine (SpawnMeteor ());
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if (varTrack.EnemiesKilled == 42 && !(m1)) {
-			SendMeteor (0);
-			m1 = true;
-		}
-		if (varTrack.EnemiesKilled == 48 && !(m2)) {
-			SendMeteor (1);
-			m2 = true;
-		}
-		if (varTrack.EnemiesKilled == 53 && !(m3)) {
-			SendMeteor (2);
-			m3 = true;
-		}
-		if (varTrack.EnemiesKilled == 54 && !(m4)) {
-			SendMeteor (3);
-			m4 = true;
-		}
-		if (varTrack.EnemiesKilled == 58 && !(m5)) {
-			SendMeteor (4);
-			m5 = true;
-		}
-		if (varTrack.EnemiesKilled == 60 && !(m6)) {
-			SendMeteor (5);
-			m6 = true;
-		}
-		if (varTrack.EnemiesKilled == 65 && !(m7)) {
-			SendMeteor (6);
-			m7 = true;
-		}
+
+
+	IEnumerator SpawnMeteor(){
+		float timeTillSpawn = Random.Range (10, 30);
+		yield return new WaitForSeconds (timeTillSpawn);
+		SendMeteor ();
+
 	}
 
-	void SendMeteor(int meteorToSend){
-		meteors [meteorToSend].SetActive (true);
+	void SendMeteor(){
+		int chosenSpot = Random.Range(0, spawnPoints.Length);
+		GameObject currentMeteor = Instantiate (meteor, spawnPoints [chosenSpot].position, spawnPoints [chosenSpot].rotation);
+		int sizeScale = Random.Range (10, 100);
+		if (varTrack.EnemiesKilled > 64)
+			sizeScale = 300;
+		currentMeteor.transform.localScale = new Vector3 (sizeScale, sizeScale, sizeScale);
+		currentMeteor.GetComponent<Meteor> ().health = sizeScale / 20;
 		warning.SetActive (true);
 		StartCoroutine (shakeScript.Shake (2,0.2f));
+		StartCoroutine (SpawnMeteor ());
 	}
 }

@@ -301,7 +301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &818025227
 Transform:
   m_ObjectHideFlags: 0
@@ -429,7 +429,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1400721580
+  randomSeed: 1926511921
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4120,7 +4120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.012110727, g: 0.14173724, b: 0.20588237, a: 0.734}
+  m_Color: {r: 0.008109862, g: 0.07646758, b: 0.1102941, a: 0.734}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

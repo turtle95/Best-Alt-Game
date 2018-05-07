@@ -46,7 +46,7 @@ public class PassTimeTrigger : MonoBehaviour {
 		for (int j = 0; j < turnOff2.Length; j++) {
 			turnOff2 [j].SetActive (false);
 		}
-		yield return new WaitForSeconds (4f);
+		yield return new WaitForSeconds (1.5f);
 		pScript.enabled = true;
 		for (int i = 0; i < turnOn3.Length; i++) {
 			turnOn3 [i].SetActive (true);

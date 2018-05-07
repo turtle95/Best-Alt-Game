@@ -19,6 +19,8 @@ public class PGrowthStage3 : MonoBehaviour {
 	float launchSpTemp;
 	float grav;
 	public Vector3 shrinkSize =new Vector3(1,1,1);
+
+	public LineRenderer rockAimer;
 	// Use this for initialization
 	void Start () {
 		//	varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
@@ -35,6 +37,7 @@ public class PGrowthStage3 : MonoBehaviour {
 	public void Grow () {
 		gameObject.transform.localScale += new Vector3 (1, 1, 1) * testVar * upScale;
 		camBox.transform.localScale += new Vector3 (1, 1, 1) * testVar * upScale;
+		rockAimer.widthMultiplier = testVar * upScale;
 		pScript.walkSpeed +=walkTemp * testVar * upScale;
 		pScript.dashDistance +=dashTemp * testVar * upScale;
 		pScript.distToGrounded +=grndTemp * testVar * upScale;

@@ -16,7 +16,9 @@ public class Meteor : MonoBehaviour {
 	public Animator worldAnim;
 
 	void Start(){
-		//warning = GameObject.FindGameObjectWithTag ("MeteorWarning");
+		warning = GameObject.Find ("MeteorWarning");
+		worldAnim = GameObject.Find ("PlanetShards").GetComponent<Animator>();
+		planetTrans = GameObject.Find ("PlanetShards").GetComponent<Transform>();
 	}
 
 	// Update is called once per frame
@@ -27,9 +29,11 @@ public class Meteor : MonoBehaviour {
 		transform.Translate (Vector3.forward * Time.deltaTime * speed);
 	
 		if (health <= 0) {
-			expload.SetActive (true);
-			expload.transform.position = transform.position;
-			warning.SetActive (false);
+			Instantiate (expload, transform.position, transform.rotation);
+			//expload.SetActive (true);
+			//expload.transform.position = transform.position;
+			if(warning = GameObject.Find ("MeteorWarning"))
+				warning.SetActive (false);
 			Destroy (this.gameObject);
 		}
 	}

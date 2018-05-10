@@ -17,10 +17,22 @@ public class ChangeSpawnGroup : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (varTrack.EnemiesKilled == 15)
+        if (varTrack.EnemiesKilled == 12)
         {
             group1.SetActive(false);
             group2.SetActive(true);
         }
+
+		if (varTrack.EnemiesKilled == 18) {
+			group1.SetActive (true);
+		}
+
+		if (varTrack.EnemiesKilled == 23) {
+			group1.SetActive (false);
+		}
+
+		if (varTrack.EnemiesKilled == 26) {
+			group1.SetActive (true);
+		}
 	}
 }

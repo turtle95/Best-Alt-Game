@@ -13,11 +13,14 @@ public class EnemyScriptStage3 : MonoBehaviour {
     public AudioSource audManager;
     public AudioClip spiritDeath;
 	public SkinnedMeshRenderer spiritVisisbility;
+	ParticleSystem growPart;
+
 
 	void Start(){
 		sScript = GameObject.Find ("Enemy Spawner").GetComponent<EnemySpawn>();
 		gScript = GameObject.FindGameObjectWithTag ("Player").GetComponent<PGrowthStage3> ();
 		varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
+		growPart = GameObject.Find ("GrowParticles").GetComponent<ParticleSystem> ();
 	}
 	//kills the enemy when a rock hits it
 	void OnCollisionEnter(Collision col){
@@ -31,6 +34,7 @@ public class EnemyScriptStage3 : MonoBehaviour {
 			varTrack.EnemiesKilled += 1;
 			gameObject.GetComponent<MeshCollider> ().enabled = false;
 			spiritVisisbility.enabled = false;
+			growPart.Play ();
 			Destroy (fogObject);
 			StartCoroutine (waitForSound ());
 		}

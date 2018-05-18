@@ -691,6 +691,8 @@ GameObject:
   - component: {fileID: 33803696092189528}
   - component: {fileID: 23512997033596552}
   - component: {fileID: 64402287451187154}
+  - component: {fileID: 82835868605997780}
+  - component: {fileID: 114047643834428824}
   m_Layer: 0
   m_Name: pCube10
   m_TagString: Untagged
@@ -766,9 +768,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1615044602782312}
-  m_LocalRotation: {x: -0, y: -0.122877404, z: -0, w: 0.99242187}
-  m_LocalPosition: {x: 555.31757, y: 136.00998, z: 840.7699}
-  m_LocalScale: {x: 67.01711, y: 67.0172, z: 67.0172}
+  m_LocalRotation: {x: -0, y: -0.22972512, z: -0, w: 0.9732556}
+  m_LocalPosition: {x: -128.35547, y: 61.706207, z: 474.96072}
+  m_LocalScale: {x: 67.01712, y: 67.0172, z: 67.0172}
   m_Children:
   - {fileID: 4681032963372242}
   - {fileID: 4537441969286644}
@@ -786,7 +788,7 @@ Transform:
   - {fileID: 4174380722336698}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -14.116001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -26.562002, z: 0}
 --- !u!4 &4065192636065130
 Transform:
   m_ObjectHideFlags: 1
@@ -1402,7 +1404,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 06bc719cefbcad04f9cb5fb449968fc2, type: 3}
+  - {fileID: 2100000, guid: e3a6ff655102aa2409ba6d06dd9d8be9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1436,7 +1438,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 06bc719cefbcad04f9cb5fb449968fc2, type: 3}
+  - {fileID: 2100000, guid: e3a6ff655102aa2409ba6d06dd9d8be9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1504,7 +1506,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 06bc719cefbcad04f9cb5fb449968fc2, type: 3}
+  - {fileID: 2100000, guid: e3a6ff655102aa2409ba6d06dd9d8be9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1615,6 +1617,102 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 06bc719cefbcad04f9cb5fb449968fc2, type: 3}
+--- !u!82 &82835868605997780
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1916407871928996}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 005946ed8a73611428245bc07a2bf620, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0.7
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &114047643834428824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1916407871928996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e68482a4a543c41b68d73de7502e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  varTrack: {fileID: 0}
+  deathFloaty: {fileID: 1612086127524988, guid: ddf968f515f3ab345a00cd76a2f90342,
+    type: 2}
+  RopeDest: {fileID: 1273339119197870}
+  destDeath: {fileID: 8300000, guid: 005946ed8a73611428245bc07a2bf620, type: 3}
 --- !u!137 &137612154427830350
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1659,8 +1757,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -1.1519775, y: -2.9269714, z: -0.17993164}
-    m_Extent: {x: 27.948524, y: 7.9434485, z: 14.6271515}
+    m_Center: {x: -0.33483887, y: -0.85069275, z: -0.052490234}
+    m_Extent: {x: 8.280583, y: 2.4142315, z: 6.8411384}
   m_DirtyAABB: 0
 --- !u!183 &183801593620784508
 Cloth:

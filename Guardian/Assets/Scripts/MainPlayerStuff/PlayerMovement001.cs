@@ -156,7 +156,7 @@ public class PlayerMovement001 : MonoBehaviour {
 	void OnTriggerStay(Collider col){
 		if (col.CompareTag ("Fog")) {
 			infectedFog.SetActive (true);
-			walkSpeed = 3;
+			walkSpeed = 6;
 			enemCol = col;
 			triggered = true;
 		}

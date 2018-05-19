@@ -16,6 +16,7 @@ public class EnemySpawn : MonoBehaviour {
 	float spawnTime = 4f;
 	public variableTracker varTrack;
 	public int[] lowerSpawnTime;
+	public float [] growthRates;
 	float growthRate = 0.002f;
 	GameObject enemySpawnedNow;
 	public int prevEnCap = 0;
@@ -45,15 +46,15 @@ public class EnemySpawn : MonoBehaviour {
 		//increases the enemy spawn rate based on how many enemies have been killed
 		if (varTrack.EnemiesKilled > lowerSpawnTime [0]) 
 		{
-			growthRate = 0.004f;
+			growthRate = growthRates[0];
 			spawnTime = 2f;
 			if (varTrack.EnemiesKilled > lowerSpawnTime [1]) 
 			{
-				growthRate = 0.007f;
+				growthRate = growthRates[1];
 				spawnTime = 1f;
 				if (varTrack.EnemiesKilled > lowerSpawnTime [2])
 				{
-					growthRate = 0.012f;
+					growthRate = growthRates[2];
 					spawnTime = 0.3f;
 				}
 			}

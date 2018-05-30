@@ -15,11 +15,19 @@ public class Meteor : MonoBehaviour {
 	public GameObject warning;
 	public Animator worldAnim;
 
-	void Start(){
+
+    PGrowthStage3 gScript;
+    variableTracker varTrack;
+    ParticleSystem growPart;
+
+    void Start(){
 		warning = GameObject.Find ("MeteorWarning");
 		worldAnim = GameObject.Find ("PlanetShards").GetComponent<Animator>();
 		planetTrans = GameObject.Find ("PlanetShards").GetComponent<Transform>();
-	}
+        gScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PGrowthStage3>();
+        varTrack = GameObject.Find("variableTracker").GetComponent<variableTracker>();
+        growPart = GameObject.Find("GrowParticles").GetComponent<ParticleSystem>();
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -29,7 +37,11 @@ public class Meteor : MonoBehaviour {
 		transform.Translate (Vector3.forward * Time.deltaTime * speed);
 	
 		if (health <= 0) {
-			Instantiate (expload, transform.position, transform.rotation);
+            gScript.testVar += 1;
+            gScript.Grow();
+            varTrack.EnemiesKilled += 1;
+            growPart.Play();
+            Instantiate (expload, transform.position, transform.rotation);
 			//expload.SetActive (true);
 			//expload.transform.position = transform.position;
 			if(warning = GameObject.Find ("MeteorWarning"))

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33308191173487262}
   - component: {fileID: 23466419209276042}
   - component: {fileID: 64367256022885454}
+  - component: {fileID: 208328382282688576}
   m_Layer: 0
   m_Name: Rock9
   m_TagString: Untagged
@@ -35,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1957211235753708}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.2808483, y: 0, z: 7.9577746}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.0964541, y: 0.3287468, z: -0.027763776, w: 0.9390694}
+  m_LocalPosition: {x: -2.9824, y: -0.22566, z: 28.62}
+  m_LocalScale: {x: 0.0059582135, y: 0.0059582125, z: 0.0059582125}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -9.375, y: 39.140003, z: -6.7260003}
 --- !u!23 &23466419209276042
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -56,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3934479bed9a7ce4690974fe90ae8c81, type: 2}
+  - {fileID: 2100000, guid: d314c3be8c17cf8488e827d2f601d3fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,7 +83,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1957211235753708}
-  m_Mesh: {fileID: 4300016, guid: 306fb6d4202d7044ea58295670d5cdea, type: 3}
+  m_Mesh: {fileID: 4300000, guid: c1bc57268d540c24aaf4d3f3276e485d, type: 3}
 --- !u!64 &64367256022885454
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -96,4 +97,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300016, guid: 306fb6d4202d7044ea58295670d5cdea, type: 3}
+  m_Mesh: {fileID: 4300000, guid: c1bc57268d540c24aaf4d3f3276e485d, type: 3}
+--- !u!208 &208328382282688576
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957211235753708}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 137.45, y: 208.77, z: 256.65}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 9.3, y: 189.73, z: -17.2}
+  m_TimeToStationary: 0.5

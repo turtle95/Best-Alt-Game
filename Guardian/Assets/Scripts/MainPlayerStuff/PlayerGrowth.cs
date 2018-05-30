@@ -45,7 +45,7 @@ public class PlayerGrowth : MonoBehaviour {
 		gameObject.transform.localScale += startSize * testVar * upScale;
 		camBox.transform.localScale += startSize * testVar * upScale;
 		pScript.walkSpeed +=walkTemp * testVar * upScale;
-		pScript.distToGrounded +=grndTemp * testVar * upScale;
+		pScript.distToGrounded +=grndTemp * testVar * upScale *2f;
 		pScript.distToFall +=fallTemp * testVar * upScale;
 		rScript.rockSize +=rockTemp * testVar * upScale;
 		rScript.launchSpeed += launchSpTemp * testVar * upScale;

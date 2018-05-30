@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33050929745622680}
   - component: {fileID: 23358450938073886}
   - component: {fileID: 64005300668657744}
+  - component: {fileID: 208715590866090882}
   m_Layer: 0
   m_Name: Rock10
   m_TagString: Untagged
@@ -36,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1720702765021222}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.121431, y: 0.0037724455, z: 6.6146975}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.47, y: -0.43, z: 4.49}
+  m_LocalScale: {x: 0.012755026, y: 0.012755036, z: 0.012755036}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3934479bed9a7ce4690974fe90ae8c81, type: 2}
+  - {fileID: 2100000, guid: 0616bcfd589b2b84a9441e0df3747fc3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,7 +83,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1720702765021222}
-  m_Mesh: {fileID: 4300018, guid: 306fb6d4202d7044ea58295670d5cdea, type: 3}
+  m_Mesh: {fileID: 4300000, guid: ca8ef210bf6699d4fb121b306a717c05, type: 3}
 --- !u!64 &64005300668657744
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -96,4 +97,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300018, guid: 306fb6d4202d7044ea58295670d5cdea, type: 3}
+  m_Mesh: {fileID: 4300000, guid: ca8ef210bf6699d4fb121b306a717c05, type: 3}
+--- !u!208 &208715590866090882
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1720702765021222}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 111.6, y: 167.9, z: 266.7}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 8, y: 157.1, z: -49.48}
+  m_TimeToStationary: 0.5

@@ -818,7 +818,7 @@ MonoBehaviour:
   sScript: {fileID: 0}
   varTrack: {fileID: 0}
   fogObject: {fileID: 1956698996243020}
-  upScale: 0.0005
+  upScale: 0.005
   maxFogSize: 0.05
   audManager: {fileID: 82634459216975706}
   spiritDeath: {fileID: 8300000, guid: 8f25716259e659d4aa55a94b5f1e6e42, type: 3}

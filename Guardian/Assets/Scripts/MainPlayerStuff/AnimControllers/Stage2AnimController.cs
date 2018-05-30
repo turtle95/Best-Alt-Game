@@ -5,11 +5,11 @@ using UnityEngine;
 public class Stage2AnimController : MonoBehaviour {
 
 	public Animator playerAnim;
-	variableTracker varTrack;
+//	variableTracker varTrack;
 
-	void Start(){
-		varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
-	}
+	//void Start(){
+		//varTrack = GameObject.Find ("variableTracker").GetComponent<variableTracker> ();
+	//}
 
 
 	// Update is called once per frame
@@ -19,7 +19,7 @@ public class Stage2AnimController : MonoBehaviour {
 		else
 			playerAnim.SetBool ("Running", true);
 
-		if(Input.GetButtonDown("Jump") && varTrack.CurrentStage == 1)
+		if(Input.GetButtonDown("Jump"))
 			playerAnim.SetTrigger("Dash");
 	}
 }

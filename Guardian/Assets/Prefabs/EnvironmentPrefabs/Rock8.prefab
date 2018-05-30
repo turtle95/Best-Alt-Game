@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33127970694103782}
   - component: {fileID: 23698285991442822}
   - component: {fileID: 64351512853470076}
+  - component: {fileID: 208510145412159294}
   m_Layer: 0
   m_Name: Rock8
   m_TagString: Untagged
@@ -35,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1037073324058354}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.76, y: 0, z: 6.55}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.05744498, y: 0.007636927, z: 0.13156226, w: 0.98961264}
+  m_LocalPosition: {x: -10.825, y: -0.68, z: 18.759}
+  m_LocalScale: {x: 0.0060220654, y: 0.0060220635, z: 0.0060220635}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.413, y: 1.743, z: 15.243001}
 --- !u!23 &23698285991442822
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -56,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3934479bed9a7ce4690974fe90ae8c81, type: 2}
+  - {fileID: 2100000, guid: 19ba425fe0e875140aa7f6d409eaabc2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,7 +83,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1037073324058354}
-  m_Mesh: {fileID: 4300014, guid: 306fb6d4202d7044ea58295670d5cdea, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 2256fd76bf1cc3d4f88ea9265a71e4c5, type: 3}
 --- !u!64 &64351512853470076
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -96,4 +97,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300014, guid: 306fb6d4202d7044ea58295670d5cdea, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 2256fd76bf1cc3d4f88ea9265a71e4c5, type: 3}
+--- !u!208 &208510145412159294
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1037073324058354}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 404.5, y: 165.55, z: 790.53}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 121, y: 124.2, z: 113.1}
+  m_TimeToStationary: 0.5

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33690668076516372}
   - component: {fileID: 23762618290722798}
   - component: {fileID: 64393813189636218}
+  - component: {fileID: 208758686211691644}
   m_Layer: 0
   m_Name: Rock14
   m_TagString: Untagged
@@ -35,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1265747369998830}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.10918939, y: -0.8317966, z: 0.063906685, w: 0.5404703}
+  m_LocalPosition: {x: -11.162, y: -3.54, z: -2.01}
+  m_LocalScale: {x: 0.010919479, y: 0.010919474, z: 0.010919474}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 12.964001, y: -114.726006, z: -6.6330004}
 --- !u!23 &23762618290722798
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -56,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 07f030ace18d6f444b765b59aa515d12, type: 2}
+  - {fileID: 2100000, guid: f36c2220bfcba03428aa4107813344fe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,7 +83,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1265747369998830}
-  m_Mesh: {fileID: 4300026, guid: 306fb6d4202d7044ea58295670d5cdea, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 881891f8c108eb744930f1bed450fe67, type: 3}
 --- !u!64 &64393813189636218
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -96,4 +97,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300026, guid: 306fb6d4202d7044ea58295670d5cdea, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 881891f8c108eb744930f1bed450fe67, type: 3}
+--- !u!208 &208758686211691644
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265747369998830}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 394, y: 786, z: 409.2}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.0050000004, y: 659.4, z: -13.9}
+  m_TimeToStationary: 0.5

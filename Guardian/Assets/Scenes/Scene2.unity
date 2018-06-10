@@ -53690,6 +53690,36 @@ Prefab:
       propertyPath: ShapeModule.radiusThickness
       value: 1.0000
       objectReference: {fileID: 0}
+    - target: {fileID: 198708696619391924, guid: 53f535ac0924c4e539b5a820c5679ced,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198543748452594994, guid: 53f535ac0924c4e539b5a820c5679ced,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198708696619391924, guid: 53f535ac0924c4e539b5a820c5679ced,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198543748452594994, guid: 53f535ac0924c4e539b5a820c5679ced,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198708696619391924, guid: 53f535ac0924c4e539b5a820c5679ced,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198543748452594994, guid: 53f535ac0924c4e539b5a820c5679ced,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53f535ac0924c4e539b5a820c5679ced, type: 2}
   m_IsPrefabParent: 0
@@ -71944,9 +71974,9 @@ MonoBehaviour:
   dashParticles: {fileID: 1912231272}
   dashParticles2: {fileID: 315776300}
   distToGrounded: 1
-  distToFall: 10
+  distToFall: 5
   cScript: {fileID: 967102214}
-  maxFlyHeight: 2
+  maxFlyHeight: 3
   cameraYOnly: {fileID: 561102657}
   cameraBox: {fileID: 967102213}
   fallingThroughGround: 80

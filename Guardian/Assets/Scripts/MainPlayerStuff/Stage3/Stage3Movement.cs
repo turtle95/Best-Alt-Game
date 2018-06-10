@@ -50,7 +50,7 @@ public class Stage3Movement : MonoBehaviour {
 	}
 		
 
-	void Update () {
+	void FixedUpdate () {
 		//rotates the player based on its relation to the planet, applies gravity
 		WorldGravity();
 

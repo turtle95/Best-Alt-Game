@@ -30,7 +30,7 @@ public class PlayerMovement001 : MonoBehaviour {
 
 	bool noSlow = false;
 
-	public CameraController cScript;
+	//public CameraController cScript;
 
 
 	public float maxFlyHeight = 2.5f;
@@ -57,7 +57,7 @@ public class PlayerMovement001 : MonoBehaviour {
 	
 
 	//// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
 		//resets walk speed/infected fog when not colliding with enemy
 		if (triggered && !enemCol) {
@@ -106,7 +106,7 @@ public class PlayerMovement001 : MonoBehaviour {
 		}
 
 		//if you are looking down at the right angle and you fire and you are not high enough up to be in a fast fall then shoot yourself upwards
-		if (cScript.lookingDown && Input.GetButtonUp ("Fire1") && NotFastFall()) {
+		if (camScript.lookingDown && Input.GetButtonUp ("Fire1") && NotFastFall()) {
 			movement.y = -movement.y *7;
 			if (movement.y < 1)
 				movement.y = 1;
